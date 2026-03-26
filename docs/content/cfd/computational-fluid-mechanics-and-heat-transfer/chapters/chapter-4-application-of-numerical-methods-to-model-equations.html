@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>chapter-4-application-of-numerical-methods-to-model-equations – Fundamentals of Engineering</title>
+<title>This is a test – Fundamentals of Engineering</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -140,9 +140,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../content/cfd/index.html">CFD</a></li><li class="breadcrumb-item"><a href="../../../../content/cfd/computational-fluid-mechanics-and-heat-transfer/index.html">Computational Fluid Mechanics and Heat Transfer</a></li><li class="breadcrumb-item"><a href="../../../../content/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.html">Chapter 4. Application of Numerical Methods to Model Equations</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">This is a test</h1>
+        </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -184,6 +184,12 @@ window.Quarto = {
  <span class="menu-text">Chapter 4. Application of Numerical Methods to Model Equations</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../content/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 6. Numerical Methods for Inviscid Flows</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -210,9 +216,25 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../content/cfd/index.html">CFD</a></li><li class="breadcrumb-item"><a href="../../../../content/cfd/computational-fluid-mechanics-and-heat-transfer/index.html">Computational Fluid Mechanics and Heat Transfer</a></li><li class="breadcrumb-item"><a href="../../../../content/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.html">Chapter 4. Application of Numerical Methods to Model Equations</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">This is a test</h1>
+</div>
 
 
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="chapter-4.-application-of-numerical-methods-to-model-equations" class="level1">
@@ -223,11 +245,11 @@ window.Quarto = {
 <p><span id="eq-burgers"><span class="math display">\[
 \frac {\partial u}{\partial t}+u\frac {\partial u}{\partial x}=\mu\frac {\partial^2u}{\partial x^2}
 \tag{1}\]</span></span></p>
-<p>When the viscous term is included, equation (<a href="#eq-burgers" class="quarto-xref">Equation&nbsp;1</a>) is parabolic. The inviscid Burgers’ equation arises when viscous effects are zero, <span class="math inline">\(\mu=0\)</span>.</p>
+<p>When the viscous term is included, equation (<a href="#eq-burgers" class="quarto-xref">1</a>) is parabolic. The inviscid Burgers’ equation arises when viscous effects are zero, <span class="math inline">\(\mu=0\)</span>.</p>
 <p><span id="eq-inviscid-burgers"><span class="math display">\[
 \frac {\partial u}{\partial t}+u\frac {\partial u}{\partial x}=0
 \tag{2}\]</span></span></p>
-<p>Equation (<a href="#eq-inviscid-burgers" class="quarto-xref">Equation&nbsp;2</a>) may be viewed as a nonlinear wave equation where each point on the wave front can propagate at different speeds. The linear, 1D convection equation considered earlier is a simpler case of this, where the propagation speed of all waves was at a constant speed. Since Burgers’ equation contains varying wave speeds, shocks may be modeled due to the coalescing of wave information.</p>
+<p>Equation (<a href="#eq-inviscid-burgers" class="quarto-xref">2</a>) may be viewed as a nonlinear wave equation where each point on the wave front can propagate at different speeds. The linear, 1D convection equation considered earlier is a simpler case of this, where the propagation speed of all waves was at a constant speed. Since Burgers’ equation contains varying wave speeds, shocks may be modeled due to the coalescing of wave information.</p>
 <p>Nonlinear hyperbolic PDEs exhibit two types of solutions according to Lax (1954). Consider the general case of the equation below. Introduce the Jacobian <span class="math inline">\(A=\frac {\partial F_i}{\partial u_j}\)</span> from the chain rule.</p>
 <p><span id="eq-general-hyperbolic-pde"><span class="math display">\[
 \frac {\partial u}{\partial t}+\frac {\partial F}{\partial x}=\frac {\partial u}{\partial t}+A\frac {\partial u}{\partial x}=0
@@ -239,7 +261,7 @@ window.Quarto = {
 u_j^{n+1}=\frac {u_{j-1}^n+u_{j+1}^n}2-\frac {\Delta t}{\Delta x}\frac {F_{j+1}^n-F_{j-1}^n}2
 \tag{4}\]</span></span></p>
 <p>The first term is <span class="math inline">\(u_j^n\)</span> averaged between its neighboring cells. This introduces artificial viscosity into the method that smooths out any instabilities or oscillations in the solution.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Derivation of the Lax Method">
+<div class="callout callout-style-simple callout-note callout-titled" title="Derivation of the Lax Method">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -251,7 +273,7 @@ u_j^{n+1}=\frac {u_{j-1}^n+u_{j+1}^n}2-\frac {\Delta t}{\Delta x}\frac {F_{j+1}^
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Expand <span class="math inline">\(u_j^{n+1}\)</span> about <span class="math inline">\(u_j^n\)</span> using a Taylor series and substitute the time derivative term with the spatial derivative. From equation (<a href="#eq-general-hyperbolic-pde" class="quarto-xref">Equation&nbsp;3</a>), we have that <span class="math inline">\(u_t=-F_x\)</span>. Therefore</p>
+<p>Expand <span class="math inline">\(u_j^{n+1}\)</span> about <span class="math inline">\(u_j^n\)</span> using a Taylor series and substitute the time derivative term with the spatial derivative. From equation (<a href="#eq-general-hyperbolic-pde" class="quarto-xref">3</a>), we have that <span class="math inline">\(u_t=-F_x\)</span>. Therefore</p>
 <p><span class="math display">\[
 \begin{align*}
 u(x,t+\Delta t) &amp; =u(x,t)+\left.\frac {\partial u}{\partial t}\right|_{x,t}\Delta t+\left.\frac {\partial^2u}{\partial t^2}\right|_{x,t}\frac {\Delta t^2}{2!}+\cdots \\
@@ -267,7 +289,7 @@ u(x,t+\Delta t) &amp; =u(x,t)+\left.\frac {\partial u}{\partial t}\right|_{x,t}\
 <p><span id="eq-lax-method-inviscid-burgers-amplification-factor"><span class="math display">\[
 G=\cos\beta-i\frac {\Delta t}{\Delta x}A\sin\beta
 \tag{5}\]</span></span></p>
-<p>Stability occurs when <span class="math inline">\(|G|\leq1\)</span> and equation (<a href="#eq-lax-method-inviscid-burgers-amplification-factor" class="quarto-xref">Equation&nbsp;5</a>) reduces down to</p>
+<p>Stability occurs when <span class="math inline">\(|G|\leq1\)</span> and equation (<a href="#eq-lax-method-inviscid-burgers-amplification-factor" class="quarto-xref">5</a>) reduces down to</p>
 <p><span class="math display">\[
 \left|\frac {\Delta t}{\Delta x}u_{\mathrm{max}}\right|\leq1
 \]</span></p>
@@ -275,7 +297,7 @@ G=\cos\beta-i\frac {\Delta t}{\Delta x}A\sin\beta
 </section>
 <section id="lax-wendroff-method" class="level3">
 <h3 class="anchored" data-anchor-id="lax-wendroff-method">Lax-Wendroff Method</h3>
-<p>The Lax-Wendroff method was one of the first second order finite difference methods derived for hyperbolic PDEs. Once again, we consider the general form of the governing equation (<a href="#eq-general-hyperbolic-pde" class="quarto-xref">Equation&nbsp;3</a>). The Lax-Wendroff method is</p>
+<p>The Lax-Wendroff method was one of the first second order finite difference methods derived for hyperbolic PDEs. Once again, we consider the general form of the governing equation (<a href="#eq-general-hyperbolic-pde" class="quarto-xref">3</a>). The Lax-Wendroff method is</p>
 <p><span id="eq-lax-wendroff-method-inviscid-burgers"><span class="math display">\[
 u_j^{n+1}=u_j^n-\frac {\Delta t}{\Delta x}\frac {F_{j+1}^n-F_{j-1}^n}2+\frac 12\left(\frac {\Delta t}{\Delta x}\right)^2\left[A_{j+\frac 12}^n\left(F_{j+1}^n-F_j^n\right)-A_{j-\frac 12}^n\left(F_j^n-F_{j-1}^n\right)\right]
 \tag{6}\]</span></span></p>
@@ -290,7 +312,7 @@ A_{j+\frac 12} &amp; =\frac {u_j+u_{j+1}}2 \\
 A_{j-\frac 12} &amp; =\frac {u_{j-1}+u_j}2
 \end{align*}
 \]</span></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Derivation of the Lax-Wendroff Method">
+<div class="callout callout-style-simple callout-note callout-titled" title="Derivation of the Lax-Wendroff Method">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -306,7 +328,7 @@ A_{j-\frac 12} &amp; =\frac {u_{j-1}+u_j}2
 <p><span class="math display">\[
 u(x,t+\Delta t)=u(x,t)+\left.\frac {\partial u}{\partial t}\right|_{x,t}\Delta t+\left.\frac {\partial^2u}{\partial t^2}\right|_{x,t}\frac {\Delta t^2}{2!}+\left.\frac {\partial^3u}{\partial t^3}\right|_{x,t}\frac {\Delta t^3}{3!}+\cdots
 \]</span></p>
-<p>Next, replace the time derivatives with spatial derivatives. From equation (<a href="#eq-general-hyperbolic-pde" class="quarto-xref">Equation&nbsp;3</a>), the first time derivative is</p>
+<p>Next, replace the time derivatives with spatial derivatives. From equation (<a href="#eq-general-hyperbolic-pde" class="quarto-xref">3</a>), the first time derivative is</p>
 <p><span class="math display">\[
 \frac {\partial u}{\partial t}=-\frac {\partial F}{\partial x}
 \]</span></p>
