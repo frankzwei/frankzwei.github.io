@@ -294,10 +294,8 @@ window.Quarto = {
 <p><span id="eq-inviscid-burgers"><span class="math display">
 \frac {\partial u}{\partial t}+u\frac {\partial u}{\partial x}=0
 \tag{2}</span></span></p>
-<ol class="example" type="1">
-<li>may be viewed as a nonlinear wave equation where each point on the wave front can propagate at different speeds. The linear, 1D convection equation considered earlier is a simpler case of this, where the propagation speed of all waves was at a constant speed. Since Burgers’ equation contains varying wave speeds, shocks may be modeled due to the coalescing of wave information.</li>
-</ol>
-<p>Nonlinear hyperbolic PDEs exhibit two types of solutions according to Lax (1954). Consider the general case of the equation below. Introduce the Jacobian <span class="math inline">A=\frac {\partial F_i}{\partial u_j}</span> from the chain rule.</p>
+<p>Whereas the linear 1D convection equation models the simple case of a wave propagating at a constant speed, Eqn. (<a href="#eq-inviscid-burgers" class="quarto-xref">2</a>) may be viewed as a nonlinear wave equation that can model waves propagating at varying speeds. Since Burgers’ equation can correctly model varying wave speeds, it can be used to model shocks as waves of differing speeds coalesce. This wave equation is similarly hyperbolic.</p>
+<p>Nonlinear hyperbolic PDEs exhibit two types of solutions according to Lax (1954). Consider the general case of the equation below. The Jacobian <span class="math inline">A=\frac {\partial F_i}{\partial u_j}</span> is introduced from the chain rule. If <span class="math inline">u</span> and <span class="math inline">F</span> are both vectors, <span class="math inline">A</span> is a matrix.</p>
 <p><span id="eq-general-hyperbolic-pde"><span class="math display">
 \frac {\partial u}{\partial t}+\frac {\partial F}{\partial x}=\frac {\partial u}{\partial t}+A\frac {\partial u}{\partial x}=0
 \tag{3}</span></span></p>
@@ -348,16 +346,9 @@ G=\cos\beta-i\frac {\Delta t}{\Delta x}A\sin\beta
 <p><span id="eq-lax-wendroff-method-inviscid-burgers"><span class="math display">
 u_j^{n+1}=u_j^n-\frac {\Delta t}{\Delta x}\frac {F_{j+1}^n-F_{j-1}^n}2+\frac 12\left(\frac {\Delta t}{\Delta x}\right)^2\left[A_{j+\frac 12}^n\left(F_{j+1}^n-F_j^n\right)-A_{j-\frac 12}^n\left(F_j^n-F_{j-1}^n\right)\right]
 \tag{6}</span></span></p>
-<p>There are many different ways of evaluating the Jacobian matrix at the half interval <span class="math inline">j\pm\frac 12</span>. The simplest is to use the average of the neighboring cell values. Since <span class="math inline">A=A(u)</span>, then</p>
+<p>There are many different ways of evaluating the Jacobian matrix at the half interval <span class="math inline">j\pm\frac 12</span>. The simplest is to use the average of the neighboring cell values. With Burgers’ equation, <span class="math inline">A(u)=u</span> and the half interval Jacobians can be evaluated as</p>
 <p><span class="math display">
-A_{j\pm\frac 12}=A\left(\frac {u_j+u_{j\pm1}}2\right)
-</span></p>
-<p>For Burgers’ equation, <span class="math inline">A(u)=u</span> and the half interval Jacobians reduce down to</p>
-<p><span class="math display">
-\begin{aligned}
-A_{j+\frac 12} &amp; =\frac {u_j+u_{j+1}}2 \\
-A_{j-\frac 12} &amp; =\frac {u_{j-1}+u_j}2
-\end{aligned}
+A_{j\pm\frac 12}=A\left(\frac {u_j+u_{j\pm1}}2\right)=\frac {u_j+u_{j\pm1}}2
 </span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Derivation of the Lax-Wendroff Method">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
