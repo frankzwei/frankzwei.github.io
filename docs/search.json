@@ -1,7 +1,7 @@
 [
   {
-    "objectID": "content/index.html",
-    "href": "content/index.html",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Fundamentals of Engineering",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
@@ -14,8 +14,8 @@
     "text": "Summary of textbook content including key concepts, equations, and important derivations. This is a work in progress!"
   },
   {
-    "objectID": "content/about.html",
-    "href": "content/about.html",
+    "objectID": "about.html",
+    "href": "about.html",
     "title": "About",
     "section": "",
     "text": "About this site"
@@ -39,6 +39,10 @@
     "href": "content/cfd/index.html",
     "title": "Computational Fluid Dynamics",
     "section": "",
-    "text": "Documents regarding the field of computational fluid dynamics."
+    "text": "Documents regarding the field of computational fluid dynamics.",
+    "crumbs": [
+      "Home",
+      "CFD"
+    ]
   }
 ]
