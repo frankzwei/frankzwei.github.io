@@ -1,0 +1,9 @@
+---
+title: "Chapter 6. Numerical Methods for Inviscid Flows"
+---
+
+# Flux Splitting Schemes
+
+## Stegar-Warming Splitting
+
+## Van-Leer Splitting

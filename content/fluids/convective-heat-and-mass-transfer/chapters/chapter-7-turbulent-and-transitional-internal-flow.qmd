@@ -1,0 +1,6 @@
+---
+title: Chapter 7. Turbulent and Transitional Internal Flow
+---
+
+# Introduction
+In external flows, freestream conditions are typically unaffected by the boundaries. In contrast, due to the confined nature of internal flows, the wall presence has significant impact on the mean flow behavior. If fully developed, turbulent, internal flow is occuring in a smooth pipe, the flow field may be divided into three sublayers. The viscous sublayer is closest to the wall and extends to $y^+=5$. The buffer zone extends beyond to $y^+=30$, and the outer layer occupies the rest of the flow field. The outer outer layer is dominated by turbulent eddies whereas very near the wall, the effect of wall curvature is small, so the fluid is “unaware” that the flow field is confined on all sides. Therefore, the three correlations for u+ all apply.

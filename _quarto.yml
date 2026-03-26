@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: Fundamentals of Engineering
+  bread-crumbs: false
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: About
+        href: about.qmd
+  sidebar:
+    style: floating
+    search: true
+    contents:
+      - section: CFD
+        href: content/cfd/index.qmd
+        contents:
+          - section: Computational Fluid Mechanics and Heat Transfer
+            href: content/cfd/computational-fluid-mechanics-and-heat-transfer/index.qmd
+            contents:
+              - text: Chapter 4. Application of Numerical Methods to Model Equations
+                href: content/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.qmd
+              - text: Chapter 6. Numerical Methods for Inviscid Flows
+                href: content/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.qmd
+      - section: Fluids
+        href: content/fluids/index.qmd
+        contents:
+          - section: Convective Heat and Mass Transfer
+            href: content/fluids/convective-heat-and-mass-transfer/index.qmd
+            contents:
+              - text: Chapter 7. Turbulent and Transitional Internal Flow
+                href: content/fluids/convective-heat-and-mass-transfer/chapters/chapter-7-turbulent-and-transitional-internal-flow.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    toc-location: body
+    callout-appearance: simple
+    html-math-method: katex
+
+crossref:
+  eq-prefix: ""
+  eq-title: ""
