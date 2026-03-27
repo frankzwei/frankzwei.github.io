@@ -261,6 +261,7 @@ window.Quarto = {
   <li><a href="#lax-wendroff-method" id="toc-lax-wendroff-method" class="nav-link" data-scroll-target="#lax-wendroff-method">Lax-Wendroff Method</a></li>
   <li><a href="#maccormack-method" id="toc-maccormack-method" class="nav-link" data-scroll-target="#maccormack-method">MacCormack Method</a></li>
   <li><a href="#godunov-scheme" id="toc-godunov-scheme" class="nav-link" data-scroll-target="#godunov-scheme">Godunov Scheme</a></li>
+  <li><a href="#roe-scheme" id="toc-roe-scheme" class="nav-link" data-scroll-target="#roe-scheme">Roe Scheme</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -512,7 +513,7 @@ u_j &amp; \qquad x\leq0 \\
 u_{j+1} &amp; \qquad x&gt;0
 \end{cases}
 </span></p>
-<p>Graphically, considering the <span class="math inline">j+\frac 12</span> cell boundary, the velocity has a value of <span class="math inline">u_j</span> to the “left” of the interface (<span class="math inline">x&lt;0</span>) and a value of <span class="math inline">u_{j+1}</span> to the “right”. Similarly, taking the <span class="math inline">j-\frac 12</span> boundary, the fluid velocity has a value of <span class="math inline">u_{j-1}</span> and <span class="math inline">u_j</span> to the left and right of the interface. The sharp discontinuity at the interface leads to fluxes that dictate how the flow field will propagate through time. A shock wave will form if <span class="math inline">u_j&gt;u_{j+1}</span> as this corresponds to faster-moving waves “catching up” to the slower-moving waves in front and coalescing. On the other hand, if <span class="math inline">u_j&lt;u_{j+1}</span>, an expansion (rarefaction) wave will form. How each of these waves will propagate in time is determined when solving the Riemann problem.</p>
+<p>Graphically, considering the <span class="math inline">j+\frac 12</span> cell boundary, the velocity has a value of <span class="math inline">u_j</span> to the “left” of the interface (<span class="math inline">x&lt;0</span>) and a value of <span class="math inline">u_{j+1}</span> to the “right”. Similarly, taking the <span class="math inline">j-\frac 12</span> boundary, the fluid velocity has a value of <span class="math inline">u_{j-1}</span> to the left of the interface and <span class="math inline">u_j</span> to the right. The sharp discontinuity at the interface leads to a flux that dictates how the flow field will propagate through time. A shock wave will form if <span class="math inline">u_j&gt;u_{j+1}</span> as this corresponds to faster-moving waves “catching up” to the slower-moving waves in front and coalescing. On the other hand, if <span class="math inline">u_j&lt;u_{j+1}</span>, an expansion (rarefaction) wave will form. How each of these waves will propagate in time is determined when solving the Riemann problem.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="../assets/chapter-4/godunov-riemann-problem-initial-wave-diagram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Initial wave diagram for the Godunov scheme"><img src="../assets/chapter-4/godunov-riemann-problem-initial-wave-diagram.png" class="img-fluid figure-img" width="400" alt="Initial wave diagram for the Godunov scheme"></a></p>
@@ -524,19 +525,113 @@ u_{j+1} &amp; \qquad x&gt;0
 c_{j+\frac 12}=\left.\frac {\mathrm dx}{\mathrm dt}\right|_{j+\frac 12}=\frac {u_j+u_{j+1}}2
 </span></p>
 <p>then the solution to the Riemann problem for Eqn. (<a href="#eq-general-hyperbolic-pde" class="quarto-xref">3</a>) is: for shocks (<span class="math inline">u_j&gt;u_{j+1}</span>)</p>
+<p><span id="eq-godunov-scheme-inviscid-burgers-shock-solution"><span class="math display">
+\begin{aligned}
+u &amp; =\left\{\begin{array}{ll}
+u_j \qquad\qquad &amp; \dfrac xt\leq c_{j+\frac 12} \\ \\
+u_{j+1} \qquad\qquad &amp; \dfrac xt&gt;c_{j+\frac 12}
+\end{array}\right. \\ \\
+f_{j+\frac 12} &amp; =\left\{\begin{array}{ll}
+\dfrac 12u_j^2 \qquad\quad &amp; c_{j+\frac 12}&gt;0 \\ \\
+\dfrac 12u_{j+1}^2 \qquad\quad &amp; c_{j+\frac 12}&lt;0
+\end{array}\right.
+\end{aligned}
+\tag{13}</span></span></p>
+<p>and for expansion waves (<span class="math inline">u_j&lt;u_{j+1}</span>)</p>
+<p><span id="eq-godunov-scheme-inviscid-burgers-expansion-solution"><span class="math display">
+\begin{aligned}
+u &amp; =\left\{\begin{array}{ll}
+u_j \qquad\qquad &amp; \dfrac xt&lt;u_j \\ \\
+\dfrac xt \qquad\qquad &amp; u_j&lt;\dfrac xt&lt;u_{j+1} \\ \\
+u_{j+1} \qquad\qquad &amp; \dfrac xt&gt;u_{j+1}
+\end{array}\right. \\ \\
+f_{j+\frac 12} &amp; =\left\{\begin{array}{lll}
+0 \qquad\quad &amp; u_j&lt;0&lt;u_{j+1} &amp; \\ \\
+\dfrac 12u_j^2 \qquad\quad &amp; c_{j+\frac 12}&gt;0 \qquad\qquad &amp; 0&lt;u_j&lt;u_{j+1} \\ \\
+\dfrac 12u_{j+1}^2 \qquad\quad &amp; c_{j+\frac 12}&lt;0 \qquad\qquad &amp; u_j&lt;u_{j+1}&lt;0
+\end{array}\right.
+\end{aligned}
+\tag{14}</span></span></p>
+<p>Equations (<a href="#eq-godunov-scheme-inviscid-burgers-shock-solution" class="quarto-xref">13</a>) and (<a href="#eq-godunov-scheme-inviscid-burgers-expansion-solution" class="quarto-xref">14</a>) assume that waves from adjacent cells do not interact with one another (i.e., shocks propagating from the left do not interfere with shocks on their right).</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Proof of self-similarity for the Riemann problem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Proof of self-similarity for the Riemann problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An important concept here is the idea of self-similarity of the Riemann problem for the inviscid Burgers’ equation. This can be proven by showing invariance under a uniform scaling of time and space by a factor of <span class="math inline">a</span> where <span class="math inline">a&gt;0</span>. Define transformed time and space coordinates as <span class="math inline">t'=at</span> and <span class="math inline">x'=ax</span>. Note that the prime notation will refer to the transformed coordinates rather than differentiation. By the chain rule, then</p>
 <p><span class="math display">
 \begin{aligned}
-u &amp; =\begin{cases}
-u_j &amp; \phantom{00000} \frac xt&lt;c_{j+\frac 12} \\
-u_{j+1} &amp; \phantom{00000} \frac xt&gt;c_{j+\frac 12}
-\end{cases} \\
-f_{j+\frac 12} &amp; =\begin{cases}
-\frac 12u_j^2 &amp; \phantom{00000} c_{j+\frac 12}&gt;0 \\
-\frac 12u_{j+1}^2 &amp; \phantom{00000} c_{j+\frac 12}&lt;0
-\end{cases}
+\frac {\partial u}{\partial t} &amp; =\frac {\partial u}{\partial t'}\frac {\partial t'}{\partial t}=a\frac {\partial u}{\partial t'} \\
+\frac {\partial u}{\partial x} &amp; =\frac {\partial u}{\partial x'}\frac {\partial x'}{\partial x}=a\frac {\partial u}{\partial x'}
 \end{aligned}
 </span></p>
-<p>and for expansion waves (<span class="math inline">u_j&lt;u_{j+1}</span>)</p>
+<p>Eqn. (<a href="#eq-inviscid-burgers" class="quarto-xref">2</a>) becomes, after normalizing by <span class="math inline">a</span>,</p>
+<p><span class="math display">
+\frac {\partial u}{\partial t'}+u\frac {\partial u}{\partial x'}=0
+</span></p>
+<p>Therefore, Eqn. (<a href="#eq-inviscid-burgers" class="quarto-xref">2</a>) has no inherent time or length scale. If <span class="math inline">u(x,t)</span> is a solution to Eqn. (<a href="#eq-inviscid-burgers" class="quarto-xref">2</a>), then <span class="math inline">u(ax,at)</span> must also be a solution to the PDE in the scaled coordinate system. Invariance can also be shown for the initial condition by inspecting <span class="math inline">u(ax,0)</span>. Taking <span class="math inline">u(ax,0)</span> at the <span class="math inline">j+\frac 12</span> cell boundary, then</p>
+<p><span class="math display">
+u(ax,0)=\begin{cases}
+u_j \qquad\qquad &amp; ax&lt;0 \\
+u_{j+1} \qquad\qquad &amp; ax&gt;0
+\end{cases}
+</span></p>
+<p>Since <span class="math inline">a&gt;0</span>, the <span class="math inline">ax&lt;0</span> and <span class="math inline">ax&gt;0</span> conditions are identical to <span class="math inline">x&lt;0</span> and <span class="math inline">x&gt;0</span>. Therefore, <span class="math inline">u(ax,0)=u(x,0)</span> and the initial condition is also invariant to the scaling parameter <span class="math inline">a</span>. Since the PDE and initial condition are unchanged by scaling, then <span class="math inline">u(ax,at)=u(x,t)</span> for all <span class="math inline">a&gt;0</span>. Since <span class="math inline">a</span> may be any value, choose <span class="math inline">a=\frac 1t</span> to reveal that <span class="math inline">u(ax,at)=u(\xi,1)</span> where <span class="math inline">\xi=\frac xt</span> is the self-similarity parameter. In other words, the ratio between space and time is the critical parameter in the governing equation, not necessarily the exact point in time and space.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Derivation of the Godunov Scheme wave solutions to the Riemann problem">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Derivation of the Godunov Scheme wave solutions to the Riemann problem
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This is a work in progress!</p>
+</div>
+</div>
+</div>
+<p>The stability requirement of this is that the wave can only travel at most half of one cell distance. Therefore, stability is achieved if</p>
+<p><span class="math display">
+\left|\frac {\Delta t}{\Delta x}u_{\mathrm{max}}\right|\leq\frac 12
+</span></p>
+<p>Using Equations (<a href="#eq-godunov-scheme-inviscid-burgers-shock-solution" class="quarto-xref">13</a>) and (<a href="#eq-godunov-scheme-inviscid-burgers-expansion-solution" class="quarto-xref">14</a>) in Eqn. (<a href="#eq-godunov-scheme-inviscid-burgers-conservation-equation" class="quarto-xref">11</a>) to obtain a solution. As shown below, the solution is superior for shock propagation than the methods discussed before and manages to capture the sharp discontinuity very well. This method is also capable of capturing expansion waves with comparable fidelity.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/chapter-4/godunov-solution-example.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Godunov scheme applied to a shock problem"><img src="../assets/chapter-4/godunov-solution-example.png" class="img-fluid figure-img" width="400" alt="Godunov scheme applied to a shock problem"></a></p>
+<figcaption>Godunov scheme applied to a shock problem</figcaption>
+</figure>
+</div>
+</section>
+<section id="roe-scheme" class="level2">
+<h2 class="anchored" data-anchor-id="roe-scheme">Roe Scheme</h2>
+<p>When Godunov’s method is applied to the equations that govern fluid flow, the solution must be determined iteratively. This iteration is computationally inefficient and time consuming, particularly for very complex flow fields. A potential solution is to solve an approximate Riemann problem rather than the exact nonlinear one. Roe (1980, 1981) proposed solving the linear problem below instead to approximate the nonlinear case.</p>
+<p><span id="eq-roe-scheme-inviscid-burgers-linear-riemann-problem"><span class="math display">
+\frac {\partial u}{\partial t}+\overline u\frac {\partial u}{\partial x}=0
+\tag{15}</span></span></p>
+<p>The variable <span class="math inline">\overline u</span> is constant near the cell interface and is based on local conditions across the cell face where the desired flux to be computed is. The coefficient <span class="math inline">\overline u</span> must be constructed such that it satisfies the following conditions:</p>
+<ol type="1">
+<li>For any <span class="math inline">u_j</span> and <span class="math inline">u_{j+1}</span></li>
+</ol>
+<p><span class="math display">
+F_{j+1}-F_j=\overline u\left(u_{j+1}-u_j\right)
+</span></p>
+<ol start="2" type="1">
+<li>When <span class="math inline">u_j=u_{j+1}\equiv u</span>, then</li>
+</ol>
+<p><span class="math display">
+\overline u\left(u_j, u_{j+1}\right)=\overline u(u, u)=\frac {\partial F}{\partial u}=u
+</span></p>
+<p>These conditions apply only <strong>across</strong> cell interfaces. The first condition ensures the correct jump is recovered when a discontinuity occurs, and the second condition ensures that when <span class="math inline">u</span> is smooth, the nonlinear wave speed reduces to its correct value.</p>
 
 
 </section>
