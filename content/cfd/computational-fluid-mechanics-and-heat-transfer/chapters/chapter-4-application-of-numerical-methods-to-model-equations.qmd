@@ -149,7 +149,7 @@ The function $\phi$ limits the presence of the correction term near discontinuit
 
 ## MacCormack Method
 
-This is the two-step predictor-corrector version of Lax-Wendroff. The Jacobian becomes computationally difficult and expensive for nonlinear equations in Lax-Wendroff. MacCormack avoids evaluating the Jacobian entirely and is therefore, more easily implemented for highly nonlinear problems.
+This is the two-step predictor-corrector version of Lax-Wendroff. The Jacobian becomes more computationally difficult and expensive for nonlinear equations with Lax-Wendroff. MacCormack avoids evaluating the Jacobian entirely and is therefore, more easily implemented for highly nonlinear problems.
 
 $$
 \begin{aligned}
@@ -160,7 +160,185 @@ $$ {#eq-maccormack-method-inviscid-burgers}
 
 The amplification factor, Eqn. (@eq-lax-wendroff-method-inviscid-burgers-amplification-factor), and stability requirement, Eqn. (@eq-lax-wendroff-method-inviscid-burgers-stability), are the same as that of Lax-Wendroff. When compared to Lax-Wendroff for the example problem, the two solutions differ. This is due to the switched differencing in the predictor and corrector steps, as well as the nonlinear nature of the PDE. In general, MacCormack provides better resolution at discontinuities. For the best resolution, the difference in the predictor, $F_{j+1}-F_j$, should be in the same direction as the propagation direction of the discontinuity. If the wave is propagating to the left, then the difference should be $F_{j-1}-F_j$ instead.
 
+::: {#fig-lax-wendroff-maccormack-solution-comparison-inviscid-burgers layout-ncol=2}
+
+![Lax-Wendroff solution](../assets/chapter-4/lax-wendroff-solution-example.png){.lightbox}
+
+![MacCormack solution](../assets/chapter-4/maccormack-solution-example.png){.lightbox}
+
+Comparison of Lax-Wendroff and MacCormack solutions to the inviscid Burgers' equation
+:::
+
 ## Godunov Scheme
 
+The previous schemes used a Taylor series expansion to approximate spatial and temporal derivatives. This method works well when the series' convergence criteria are met and the function converges everywhere, meaning the function is continuous and differentiable up until the order of the difference scheme. For shocks and other discontinuities, though, this is not necessarily the case. Godunov (1959) found a way to avoid this differentiability requirement using a finite volume approach to evaluate the fluxes at the cell interface and approximate the conservation equations.
 
+Consider the control volume shown below. The $x$ and $y$ axes are space and time respectively. The control volume extends from $x_{j-\frac 12}$ to $x_{j+\frac 12}$ in space and from $t^n$ to $t^{n+1}$ in time. The center of the control volume is at $\left(x_j, t^{n+\frac 12}\right)$.
 
+![Control volume for the Godunov scheme](../assets/chapter-4/lax-control-volume.png){width=400 .lightbox}
+
+Integrating Eqn. (@eq-general-hyperbolic-pde) across the control volume, then the volume-averaged $u$ and time-averaged flux $f$ are
+
+$$
+\begin{aligned}
+\overline u_j^{n+1}=\overline u_j^n-\frac {\Delta t}{\Delta x}\left[f\left(u_{j+\frac 12}\right)-f\left(u_{j-\frac 12}\right)\right]
+\end{aligned}
+$$ {#eq-godunov-scheme-inviscid-burgers-conservation-equation}
+
+::: {.callout-note title="Derivation of the averaged approximatione quation" collapse=true}
+
+Integrating Eqn. (@eq-general-hyperbolic-pde) and swapping the integration order, then
+
+$$
+\int\limits_t^{t+\Delta t}\int\limits_{x-\Delta x/2}^{x+\Delta x/2}\frac {\partial u}{\partial t}+\frac {\partial F}{\partial x}=\int\limits_{x-\Delta x/2}^{x+\Delta x/2}u(x,t+\Delta t)-u(x,t)\,\mathrm dx+\int\limits_t^{t+\Delta t}F\left(x+\frac {\Delta x}2,t\right)-F\left(x-\frac {\Delta x}2,t\right)\,\mathrm dt=0
+$$
+
+Using the time and volume averages below for $F$ and $u$ respectively
+
+$$
+\begin{aligned}
+\overline u_j^n & =\frac 1{\Delta x}\int\limits_{x-\Delta x/2}^{x+\Delta x/2}u(x,t)\,\mathrm dx \\
+f_j^n & =\frac 1{\Delta t}\int\limits_t^{t+\Delta t}f(x,t)\,\mathrm dt
+\end{aligned}
+$$
+
+Then the discretized equation simplifies down to
+
+$$
+\Delta x\left(\overline u_j^{n+1}-\overline u_j^n\right)+\Delta t\left(f_{j+\frac 12}^n-f_{j-\frac 12}^n\right)=0
+$$
+
+Solving for $\overline u_j^{n+1}$ completes the proof for Eqn. (@eq-godunov-scheme-inviscid-burgers-conservation-equation).
+
+:::
+
+The Godunov scheme solves the Riemann problem that arises when the spatial domain is discretized and the flow field is propagated through time to determine its behavior at the next time step. Recall that this is done by calculating the flux through each cell interface needed to advance the solution. For Burgers' equation, the Riemann problem is governed by the PDE below.
+
+$$
+\begin{aligned}
+\frac {\partial u}{\partial t}+\frac {\partial}{\partial x}\left(\frac {u^2}2\right)=0
+\end{aligned}
+$$ {#eq-godunov-scheme-inviscid-burgers-riemann-problem}
+
+If the local coordinate system is centered at the cell interface, then the initial condition for the local Riemann problem about the cell boundary is given by the step function below.
+
+$$
+u(x,0)=\begin{cases}
+u_j & \qquad x\leq0 \\
+u_{j+1} & \qquad x>0
+\end{cases}
+$$
+
+Graphically, considering the $j+\frac 12$ cell boundary, the velocity has a value of $u_j$ to the "left" of the interface ($x<0$) and a value of $u_{j+1}$ to the "right". Similarly, taking the $j-\frac 12$ boundary, the fluid velocity has a value of $u_{j-1}$ to the left of the interface and $u_j$ to the right. The sharp discontinuity at the interface leads to a flux that dictates how the flow field will propagate through time. A shock wave will form if $u_j>u_{j+1}$ as this corresponds to faster-moving waves "catching up" to the slower-moving waves in front and coalescing. On the other hand, if $u_j<u_{j+1}$, an expansion (rarefaction) wave will form. How each of these waves will propagate in time is determined when solving the Riemann problem.
+
+![Initial wave diagram for the Godunov scheme](../assets/chapter-4/godunov-riemann-problem-initial-wave-diagram.png){width=400 .lightbox}
+
+If $c_{j+\frac 12}$ is defined as
+
+$$
+c_{j+\frac 12}=\left.\frac {\mathrm dx}{\mathrm dt}\right|_{j+\frac 12}=\frac {u_j+u_{j+1}}2
+$$
+
+then the solution to the Riemann problem for Eqn. (@eq-general-hyperbolic-pde) is: for shocks ($u_j>u_{j+1}$)
+
+$$
+\begin{aligned}
+u & =\left\{\begin{array}{ll}
+u_j \qquad\qquad & \dfrac xt\leq c_{j+\frac 12} \\ \\
+u_{j+1} \qquad\qquad & \dfrac xt>c_{j+\frac 12}
+\end{array}\right. \\ \\
+f_{j+\frac 12} & =\left\{\begin{array}{ll}
+\dfrac 12u_j^2 \qquad\quad & c_{j+\frac 12}>0 \\ \\
+\dfrac 12u_{j+1}^2 \qquad\quad & c_{j+\frac 12}<0
+\end{array}\right.
+\end{aligned}
+$$ {#eq-godunov-scheme-inviscid-burgers-shock-solution}
+
+and for expansion waves ($u_j<u_{j+1}$)
+
+$$
+\begin{aligned}
+u & =\left\{\begin{array}{ll}
+u_j \qquad\qquad & \dfrac xt<u_j \\ \\
+\dfrac xt \qquad\qquad & u_j<\dfrac xt<u_{j+1} \\ \\
+u_{j+1} \qquad\qquad & \dfrac xt>u_{j+1}
+\end{array}\right. \\ \\
+f_{j+\frac 12} & =\left\{\begin{array}{lll}
+0 \qquad\quad & u_j<0<u_{j+1} & \\ \\
+\dfrac 12u_j^2 \qquad\quad & c_{j+\frac 12}>0 \qquad\qquad & 0<u_j<u_{j+1} \\ \\
+\dfrac 12u_{j+1}^2 \qquad\quad & c_{j+\frac 12}<0 \qquad\qquad & u_j<u_{j+1}<0
+\end{array}\right.
+\end{aligned}
+$$ {#eq-godunov-scheme-inviscid-burgers-expansion-solution}
+
+Equations (@eq-godunov-scheme-inviscid-burgers-shock-solution) and (@eq-godunov-scheme-inviscid-burgers-expansion-solution) assume that waves from adjacent cells do not interact with one another (i.e., shocks propagating from the left do not interfere with shocks on their right).
+
+::: {.callout-important title="Proof of self-similarity for the Riemann problem"}
+
+An important concept here is the idea of self-similarity of the Riemann problem for the inviscid Burgers' equation. This can be proven by showing invariance under a uniform scaling of time and space by a factor of $a$ where $a>0$. Define transformed time and space coordinates as $t'=at$ and $x'=ax$. Note that the prime notation will refer to the transformed coordinates rather than differentiation. By the chain rule, then
+
+$$
+\begin{aligned}
+\frac {\partial u}{\partial t} & =\frac {\partial u}{\partial t'}\frac {\partial t'}{\partial t}=a\frac {\partial u}{\partial t'} \\
+\frac {\partial u}{\partial x} & =\frac {\partial u}{\partial x'}\frac {\partial x'}{\partial x}=a\frac {\partial u}{\partial x'}
+\end{aligned}
+$$
+
+Eqn. (@eq-inviscid-burgers) becomes, after normalizing by $a$,
+
+$$
+\frac {\partial u}{\partial t'}+u\frac {\partial u}{\partial x'}=0
+$$
+
+Therefore, Eqn. (@eq-inviscid-burgers) has no inherent time or length scale. If $u(x,t)$ is a solution to Eqn. (@eq-inviscid-burgers), then $u(ax,at)$ must also be a solution to the PDE in the scaled coordinate system. Invariance can also be shown for the initial condition by inspecting $u(ax,0)$. Taking $u(ax,0)$ at the $j+\frac 12$ cell boundary, then
+
+$$
+u(ax,0)=\begin{cases}
+u_j \qquad\qquad & ax<0 \\
+u_{j+1} \qquad\qquad & ax>0
+\end{cases}
+$$
+
+Since $a>0$, the $ax<0$ and $ax>0$ conditions are identical to $x<0$ and $x>0$. Therefore, $u(ax,0)=u(x,0)$ and the initial condition is also invariant to the scaling parameter $a$. Since the PDE and initial condition are unchanged by scaling, then $u(ax,at)=u(x,t)$ for all $a>0$. Since $a$ may be any value, choose $a=\frac 1t$ to reveal that $u(ax,at)=u(\xi,1)$ where $\xi=\frac xt$ is the self-similarity parameter. In other words, the ratio between space and time is the critical parameter in the governing equation, not necessarily the exact point in time and space.
+
+:::
+
+::: {.callout-note title="Derivation of the Godunov Scheme wave solutions to the Riemann problem" collapse=true}
+
+This is a work in progress!
+
+:::
+
+The stability requirement of this is that the wave can only travel at most half of one cell distance. Therefore, stability is achieved if
+
+$$
+\left|\frac {\Delta t}{\Delta x}u_{\mathrm{max}}\right|\leq\frac 12
+$$
+
+Using Equations (@eq-godunov-scheme-inviscid-burgers-shock-solution) and (@eq-godunov-scheme-inviscid-burgers-expansion-solution) in Eqn. (@eq-godunov-scheme-inviscid-burgers-conservation-equation) to obtain a solution. As shown below, the solution is superior for shock propagation than the methods discussed before and manages to capture the sharp discontinuity very well. This method is also capable of capturing expansion waves with comparable fidelity.
+
+![Godunov scheme applied to a shock problem](../assets/chapter-4/godunov-solution-example.png){width=400 .lightbox}
+
+## Roe Scheme
+
+When Godunov's method is applied to the equations that govern fluid flow, the solution must be determined iteratively. This iteration is computationally inefficient and time consuming, particularly for very complex flow fields. A potential solution is to solve an approximate Riemann problem rather than the exact nonlinear one. Roe (1980, 1981) proposed solving the linear problem below instead to approximate the nonlinear case.
+
+$$
+\frac {\partial u}{\partial t}+\overline u\frac {\partial u}{\partial x}=0
+$$ {#eq-roe-scheme-inviscid-burgers-linear-riemann-problem}
+
+The variable $\overline u$ is constant near the cell interface and is based on local conditions across the cell face where the desired flux to be computed is. The coefficient $\overline u$ must be constructed such that it satisfies the following conditions:
+
+1. For any $u_j$ and $u_{j+1}$
+
+$$
+F_{j+1}-F_j=\overline u\left(u_{j+1}-u_j\right)
+$$
+
+2. When $u_j=u_{j+1}\equiv u$, then
+
+$$
+\overline u\left(u_j, u_{j+1}\right)=\overline u(u, u)=\frac {\partial F}{\partial u}=u
+$$
+
+These conditions apply only **across** cell interfaces. The first condition ensures the correct jump is recovered when a discontinuity occurs, and the second condition ensures that when $u$ is smooth, the nonlinear wave speed reduces to its correct value.

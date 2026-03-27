@@ -1,9 +1,10 @@
 project:
-  output-dir: rendered-pdfs
+  output-dir: pdfs
 
 format:
   pdf:
     toc: true
+    callout-appearance: simple
     number-sections: true
     colorlinks: true
     papersize: a3
