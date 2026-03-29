@@ -303,12 +303,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#multiaxial-theories" id="toc-multiaxial-theories" class="nav-link" data-scroll-target="#multiaxial-theories">Multiaxial Theories</a>
   <ul class="collapse">
-  <li><a href="#equivalent-stressstrain-approaches" id="toc-equivalent-stressstrain-approaches" class="nav-link" data-scroll-target="#equivalent-stressstrain-approaches">Equivalent Stress/Strain Approaches</a>
-  <ul class="collapse">
-  <li><a href="#maximum-principal-stressstrain" id="toc-maximum-principal-stressstrain" class="nav-link" data-scroll-target="#maximum-principal-stressstrain">Maximum Principal Stress/Strain</a></li>
-  <li><a href="#maximum-shear-stressstrain" id="toc-maximum-shear-stressstrain" class="nav-link" data-scroll-target="#maximum-shear-stressstrain">Maximum Shear Stress/Strain</a></li>
-  <li><a href="#octahedral-criteria" id="toc-octahedral-criteria" class="nav-link" data-scroll-target="#octahedral-criteria">Octahedral Criteria</a></li>
-  </ul></li>
+  <li><a href="#equivalent-stressstrain-approaches" id="toc-equivalent-stressstrain-approaches" class="nav-link" data-scroll-target="#equivalent-stressstrain-approaches">Equivalent Stress/Strain Approaches</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -440,44 +435,56 @@ Figure&nbsp;3: Applied vs.&nbsp;total shear strain in proportional and nonpropor
 <li><p>Octahedral (von Mises) criteria, based on distortion energy</p></li>
 </ol>
 <p>These theories rely on a linear stress-strain relation, meaning they are limited to the <strong>high cycle fatigue</strong> (HCF) regime where the stresses are mostly elastic. For each theory, <span class="math inline">\sigma_i</span> and <span class="math inline">\varepsilon_i</span> denotes principal stress and strain, and are ordered so that <span class="math inline">\sigma_1\geq\sigma_2\geq\sigma_3</span> and <span class="math inline">\varepsilon_1\geq\varepsilon_2\geq\varepsilon_3</span>. Additionally, define <span class="math inline">\sigma_e</span> and <span class="math inline">\varepsilon_e</span> as the effective stress and strain.</p>
-<section id="maximum-principal-stressstrain" class="level3">
-<h3 class="anchored" data-anchor-id="maximum-principal-stressstrain">Maximum Principal Stress/Strain</h3>
-<p><span class="math display">
+<p><strong>Maximum Principal Stress/Strain:</strong></p>
+<p><span id="eq-max-principal-stress-yield-theory"><span class="math display">
 \begin{aligned}
 \sigma_e &amp; =\sigma_1 \\
 \varepsilon_e &amp; =\varepsilon_1
 \end{aligned}
-</span></p>
-</section>
-<section id="maximum-shear-stressstrain" class="level3">
-<h3 class="anchored" data-anchor-id="maximum-shear-stressstrain">Maximum Shear Stress/Strain</h3>
+\tag{1}</span></span></p>
+<p><strong>Maximum Shear Stress/Strain:</strong></p>
 <p>Also called the Tresca criteria</p>
-<p><span class="math display">
+<p><span id="eq-tresca-yield-theory"><span class="math display">
 \begin{aligned}
 \tau_e &amp; =\left|\frac {\sigma_1-\sigma_3}2\right| \\
 \frac {\gamma_e}2=\frac {(1+\nu)\varepsilon_e}2 &amp; =\left|\frac {\varepsilon_1-\varepsilon_3}2\right|
 \end{aligned}
-</span></p>
-</section>
-<section id="octahedral-criteria" class="level3">
-<h3 class="anchored" data-anchor-id="octahedral-criteria">Octahedral Criteria</h3>
+\tag{2}</span></span></p>
+<p><strong>Octahedral Criteria:</strong></p>
 <p>Also called the von Mises criteria, it is based off the distortion energy exceeding the amount needed for yielding.</p>
 <p><span id="eq-von-mises-yield-theory-resolved"><span class="math display">
 \begin{aligned}
 \sigma_e &amp; =\sqrt{\frac 12\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right]} \\
 \varepsilon_e &amp; =\beta\sqrt{(\varepsilon_1-\varepsilon_2)^2+(\varepsilon_2-\varepsilon_3)^2+(\varepsilon_3-\varepsilon_1)^2}
 \end{aligned}
-\tag{1}</span></span></p>
-<p>where <span class="math inline">\beta=\frac 1{(1+\nu)\sqrt2}</span> and <span class="math inline">\nu</span> is the Poisson ratio. If the principal stresses and strains are unresolved, then Eqn. (<a href="#eq-von-mises-yield-theory-resolved" class="quarto-xref">1</a>) is also</p>
-<p><span class="math display">
+\tag{3}</span></span></p>
+<p>where <span class="math inline">\beta=\frac 1{(1+\nu)\sqrt2}</span> and <span class="math inline">\nu</span> is the Poisson ratio. If the principal stresses and strains are unresolved, then Eqn. (<a href="#eq-von-mises-yield-theory-resolved" class="quarto-xref">3</a>) is also</p>
+<p><span id="eq-von-mises-yield-theory-unresolved"><span class="math display">
 \begin{aligned}
 \sigma_e &amp; =\sqrt{\frac 12\left[(\sigma_x-\sigma_y)^2+(\sigma_y-\sigma_z)^2+(\sigma_z-\sigma_x)^2+6\left(\tau_{xy}^2+\tau_{yz}^2+\tau_{xz}^2\right)\right]} \\
 \varepsilon_e &amp; =\beta\sqrt{(\varepsilon_x-\varepsilon_y)^2+(\varepsilon_y-\varepsilon_z)^2+(\varepsilon_x-\varepsilon_z)^2+6\left[\left(\frac {\gamma_{xy}}2\right)^2+\left(\frac {\gamma_{yz}}2\right)^2+\left(\frac {\gamma_{xz}}2\right)^2\right]}
 \end{aligned}
-</span></p>
+\tag{4}</span></span></p>
+<p>::: {.callout-note title=A note on Poisson’s ratio collapse=true}</p>
+<p>Poisson’s ratio, <span class="math inline">\nu</span>, varies as the load is applied and stress state changes. In fully elastic cases, <span class="math inline">\nu=3</span>, whereas for fully plastic cases, <span class="math inline">\nu=0.5</span>. For elastic-plastic cases across the full spectrum, an equivalent Poisson’s ratio, <span class="math inline">\nu^*</span>, is used.</p>
+<p><span id="eq-poisson-ratio-elastic-plastic"><span class="math display">
+\nu^*=\frac {\nu_e\varepsilon_e+\nu_p\varepsilon_p}{\varepsilon_t}
+\tag{5}</span></span></p>
+<p>where <span class="math inline">\nu_e</span> and <span class="math inline">\nu_p</span> are the elastic and plastic Poisson’s ratio, <span class="math inline">\varepsilon_e</span> and <span class="math inline">\varepsilon_p</span> are the elastic and plastic strain, and <span class="math inline">\varepsilon_t</span> is the total strain. Generally, <span class="math inline">\nu_e=\frac 13</span> and <span class="math inline">\nu_p=\frac 13</span>.</p>
+<p>:::</p>
+<p>Equations (<a href="#eq-max-principal-stress-yield-theory" class="quarto-xref">1</a>) through (<a href="#eq-von-mises-yield-theory-unresolved" class="quarto-xref">4</a>) can be used to develop a torsional strain-life curve in terms of uniaxial fatigue properties.</p>
+<p><span id="eq-torsional-strain-life-general"><span class="math display">
+\frac {\Delta\gamma}2=\frac {\tau_f'}G(2N_f)^b+\gamma_f'(2N_f)^c
+\tag{6}</span></span></p>
+<p><strong>Maximum Principal Stress/Strain:</strong></p>
+<p><strong>Maximum Shear Stress/Strain:</strong></p>
+<p><strong>Octahedral Criteria:</strong></p>
+<p>Using von Mises on Eqn. (<a href="#eq-torsional-strain-life-general" class="quarto-xref">6</a>)</p>
+<p><span id="eq-torsional-strain-life-von-mises"><span class="math display">
+\frac {\Delta\gamma}2=\frac {\sigma_f'}{G\sqrt3}(2N_f)^b+\varepsilon_f'\sqrt3(2N_f)^c
+\tag{7}</span></span></p>
 
 
-</section>
 </section>
 </section>
 
