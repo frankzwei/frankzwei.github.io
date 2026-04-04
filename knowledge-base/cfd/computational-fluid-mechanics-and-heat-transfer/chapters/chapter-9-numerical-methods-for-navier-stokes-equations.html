@@ -299,7 +299,7 @@ window.Quarto = {
   <li><a href="#incompressible-navier-stokes-equations" id="toc-incompressible-navier-stokes-equations" class="nav-link" data-scroll-target="#incompressible-navier-stokes-equations">Incompressible Navier-Stokes Equations</a>
   <ul class="collapse">
   <li><a href="#derived-variable-approach" id="toc-derived-variable-approach" class="nav-link" data-scroll-target="#derived-variable-approach">Derived Variable Approach</a></li>
-  <li><a href="#primtive-variable-approach" id="toc-primtive-variable-approach" class="nav-link" data-scroll-target="#primtive-variable-approach">Primtive Variable Approach</a></li>
+  <li><a href="#primitive-variable-approach" id="toc-primitive-variable-approach" class="nav-link" data-scroll-target="#primitive-variable-approach">Primitive Variable Approach</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -359,7 +359,7 @@ window.Quarto = {
 <p>Incompressible, sometimes called constant density, flows arise when changes in fluid properties due to temperature are negligible. For these cases, the properties (i.e., <span class="math inline">\mu</span>, <span class="math inline">\rho</span>, <span class="math inline">c_p</span>, etc.) can be considered independent of temperature, so the mass and momentum equations are independent of temperature. This permits either equation to be solved without knowing the thermal state of the fluid.</p>
 </div>
 </div>
-<p>The 2D constant density conservatione quations in primitive form (neglecting energy equation) are as follows.</p>
+<p>The 2D constant density conservation equations in primitive form (neglecting energy equation) are as follows.</p>
 <p><span id="eq-incompressible-2D-conservation-equations"><span class="math display">
 \begin{gathered}
 \frac {\partial u}{\partial x}+\frac {\partial v}{\partial y}=0 \\
@@ -371,9 +371,9 @@ window.Quarto = {
 <section id="derived-variable-approach" class="level3">
 <h3 class="anchored" data-anchor-id="derived-variable-approach">Derived Variable Approach</h3>
 </section>
-<section id="primtive-variable-approach" class="level3">
-<h3 class="anchored" data-anchor-id="primtive-variable-approach">Primtive Variable Approach</h3>
-<p>The derived variable approach (using <span class="math inline">\zeta</span>, the vorticity, and <span class="math inline">\psi</span>, the stream function), is rarely used for solving 3D incompressible flow fields. The primitive approach is used for both 2D and 3D flows.</p>
+<section id="primitive-variable-approach" class="level3">
+<h3 class="anchored" data-anchor-id="primitive-variable-approach">Primitive Variable Approach</h3>
+<p>The derived variable approach (using <span class="math inline">\zeta</span>, the vorticity, and <span class="math inline">\psi</span>, the stream function), is rarely used for solving 3D incompressible flow fields. The primitive approach is more widely used for both 2D and 3D flows.</p>
 <section id="general" class="level4">
 <h4 class="anchored" data-anchor-id="general">General</h4>
 <p>The nondimensional primitive form of Eqn. (<a href="#eq-incompressible-conservation-equations" class="quarto-xref">1</a>) is</p>
@@ -388,9 +388,9 @@ window.Quarto = {
 <p>The nondimensional parameters are</p>
 <p><span id="eq-nondimensional-parameters"><span class="math display">
 \begin{array}{ccc}
-u^*=\frac u{V_{\infty}} &amp; v^*=\frac v{V_{\infty}} &amp; w^*=\frac w{V_{\infty}} \\
-x^*=\frac xL &amp; y^*=\frac yL &amp; z^*=\frac zL \\
-p^*=\frac p{\rho_{\infty}V_{\infty}^2} &amp; t^*=\frac {tV_{\infty}}L &amp; \mathrm{Re}_L=\frac {V_{\infty}L}{\nu}
+u^*=\dfrac u{V_{\infty}} &amp; v^*=\dfrac v{V_{\infty}} &amp; w^*=\dfrac w{V_{\infty}} \\ \\
+x^*=\dfrac xL &amp; y^*=\dfrac yL &amp; z^*=\dfrac zL \\ \\
+p^*=\dfrac p{\rho_{\infty}V_{\infty}^2} &amp; t^*=\dfrac {tV_{\infty}}L &amp; \mathrm{Re}_L=\dfrac {V_{\infty}L}{\nu}
 \end{array}
 \tag{4}</span></span></p>
 
