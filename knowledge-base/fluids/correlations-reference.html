@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Numerical Methods for Navier-Stokes Equations – Frank’s Engineering Notebook</title>
+<title>Fluids Correlations Summary – Frank’s Engineering Notebook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../../">
-<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-a44d1825680bf4d2a1237acfefc713aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a44d1825680bf4d2a1237acfefc713aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,7 +115,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../../../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -125,7 +125,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Frank’s Engineering Notebook</span>
     </a>
   </div>
@@ -136,19 +136,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../knowledge-base/index.html"> 
+    <a class="nav-link" href="../../knowledge-base/index.html"> 
 <span class="menu-text">Knowledge Base</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../notes/index.html"> 
+    <a class="nav-link" href="../../notes/index.html"> 
 <span class="menu-text">Digital Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../projects/index.html"> 
+    <a class="nav-link" href="../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -163,7 +163,7 @@ window.Quarto = {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Numerical Methods for Navier-Stokes Equations</h1>
+          <h1 class="quarto-secondary-nav-title">Fluids Correlations Summary</h1>
         </a>     
     </div>
   </nav>
@@ -176,7 +176,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../../knowledge-base/standards/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../knowledge-base/standards/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Standards</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -185,7 +185,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/standards/sae-as4395-37deg-flared-fitting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/standards/sae-as4395-37deg-flared-fitting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SAE AS4395 37° Flared Fitting</span></a>
   </div>
 </li>
@@ -193,37 +193,37 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../../knowledge-base/cfd/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../knowledge-base/cfd/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CFD</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../../knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computational Fluid Mechanics and Heat Transfer</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 4. Application of Numerical Methods to Model Equations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 6. Numerical Methods for Inviscid Flows</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-9-numerical-methods-for-navier-stokes-equations.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-9-numerical-methods-for-navier-stokes-equations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 9. Numerical Methods for Navier-Stokes Equations</span></a>
   </div>
 </li>
@@ -233,16 +233,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../../knowledge-base/fluids/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../knowledge-base/fluids/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fluids</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../../knowledge-base/fluids/convective-heat-and-mass-transfer/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../knowledge-base/fluids/convective-heat-and-mass-transfer/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Convective Heat and Mass Transfer</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -251,19 +251,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-4-internal-laminar-flow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-4-internal-laminar-flow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 4. Internal Laminar Flow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-7-turbulent-and-transitional-internal-flow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-7-turbulent-and-transitional-internal-flow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 7. Turbulent and Transitional Internal Flow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-10-natural-convection.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-10-natural-convection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 10. Natural Convection</span></a>
   </div>
 </li>
@@ -271,7 +271,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/fluids/correlations-reference.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/fluids/correlations-reference.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Correlations Reference Sheet</span></a>
   </div>
 </li>
@@ -279,7 +279,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../../knowledge-base/structures/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../knowledge-base/structures/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Structures</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -288,7 +288,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../../knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fundamentals of Metal Fatigue Analysis</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -297,13 +297,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-5-variable-amplitude-loading.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-5-variable-amplitude-loading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 5. Variable Amplitude Loading</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-7-multiaxial-fatigue.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-7-multiaxial-fatigue.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 7. Multiaxial Fatigue</span></a>
   </div>
 </li>
@@ -311,7 +311,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../knowledge-base/structures/limits-and-fits.html" class="sidebar-item-text sidebar-link">
+  <a href="../../knowledge-base/structures/limits-and-fits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Limits and Fits</span></a>
   </div>
 </li>
@@ -327,13 +327,55 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#flat-plate" id="toc-flat-plate" class="nav-link active" data-scroll-target="#flat-plate">Flat Plate</a></li>
+  <li><a href="#circular-channel" id="toc-circular-channel" class="nav-link" data-scroll-target="#circular-channel">Circular Channel</a>
   <ul class="collapse">
-  <li><a href="#compressible-navier-stokes-equations" id="toc-compressible-navier-stokes-equations" class="nav-link" data-scroll-target="#compressible-navier-stokes-equations">Compressible Navier-Stokes Equations</a></li>
-  <li><a href="#incompressible-navier-stokes-equations" id="toc-incompressible-navier-stokes-equations" class="nav-link" data-scroll-target="#incompressible-navier-stokes-equations">Incompressible Navier-Stokes Equations</a>
+  <li><a href="#entrance-lengths" id="toc-entrance-lengths" class="nav-link" data-scroll-target="#entrance-lengths">Entrance Lengths</a>
   <ul class="collapse">
-  <li><a href="#derived-variable-approach" id="toc-derived-variable-approach" class="nav-link" data-scroll-target="#derived-variable-approach">Derived Variable Approach</a></li>
-  <li><a href="#primitive-variable-approach" id="toc-primitive-variable-approach" class="nav-link" data-scroll-target="#primitive-variable-approach">Primitive Variable Approach</a></li>
+  <li><a href="#laminar-flow" id="toc-laminar-flow" class="nav-link" data-scroll-target="#laminar-flow">Laminar Flow</a></li>
+  <li><a href="#turbulent-flow" id="toc-turbulent-flow" class="nav-link" data-scroll-target="#turbulent-flow">Turbulent Flow</a></li>
+  </ul></li>
+  <li><a href="#fully-developed-flow" id="toc-fully-developed-flow" class="nav-link" data-scroll-target="#fully-developed-flow">Fully Developed Flow</a>
+  <ul class="collapse">
+  <li><a href="#hagen-poiseuille-flow" id="toc-hagen-poiseuille-flow" class="nav-link" data-scroll-target="#hagen-poiseuille-flow">Hagen-Poiseuille Flow</a></li>
+  <li><a href="#friction-factor" id="toc-friction-factor" class="nav-link" data-scroll-target="#friction-factor">Friction Factor</a></li>
+  <li><a href="#heat-transfer-coefficient" id="toc-heat-transfer-coefficient" class="nav-link" data-scroll-target="#heat-transfer-coefficient">Heat Transfer Coefficient</a></li>
+  </ul></li>
+  <li><a href="#combined-entrance-region" id="toc-combined-entrance-region" class="nav-link" data-scroll-target="#combined-entrance-region">Combined Entrance Region</a></li>
+  </ul></li>
+  <li><a href="#rectangular-channel" id="toc-rectangular-channel" class="nav-link" data-scroll-target="#rectangular-channel">Rectangular Channel</a>
+  <ul class="collapse">
+  <li><a href="#entrance-lengths-1" id="toc-entrance-lengths-1" class="nav-link" data-scroll-target="#entrance-lengths-1">Entrance Lengths</a></li>
+  <li><a href="#fully-developed-flow-1" id="toc-fully-developed-flow-1" class="nav-link" data-scroll-target="#fully-developed-flow-1">Fully Developed Flow</a>
+  <ul class="collapse">
+  <li><a href="#hagen-poiseuille-flow-1" id="toc-hagen-poiseuille-flow-1" class="nav-link" data-scroll-target="#hagen-poiseuille-flow-1">Hagen-Poiseuille Flow</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#flat-channel" id="toc-flat-channel" class="nav-link" data-scroll-target="#flat-channel">Flat Channel</a>
+  <ul class="collapse">
+  <li><a href="#entrance-lengths-2" id="toc-entrance-lengths-2" class="nav-link" data-scroll-target="#entrance-lengths-2">Entrance Lengths</a>
+  <ul class="collapse">
+  <li><a href="#laminar-flow-3" id="toc-laminar-flow-3" class="nav-link" data-scroll-target="#laminar-flow-3">Laminar Flow</a></li>
+  <li><a href="#turbulent-flow-3" id="toc-turbulent-flow-3" class="nav-link" data-scroll-target="#turbulent-flow-3">Turbulent Flow</a></li>
+  </ul></li>
+  <li><a href="#fully-developed-flow-2" id="toc-fully-developed-flow-2" class="nav-link" data-scroll-target="#fully-developed-flow-2">Fully Developed Flow</a>
+  <ul class="collapse">
+  <li><a href="#hagen-poiseuille-flow-2" id="toc-hagen-poiseuille-flow-2" class="nav-link" data-scroll-target="#hagen-poiseuille-flow-2">Hagen-Poiseuille Flow</a></li>
+  <li><a href="#friction-factor-1" id="toc-friction-factor-1" class="nav-link" data-scroll-target="#friction-factor-1">Friction Factor</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#concentric-annular-duct" id="toc-concentric-annular-duct" class="nav-link" data-scroll-target="#concentric-annular-duct">Concentric Annular Duct</a>
+  <ul class="collapse">
+  <li><a href="#fully-developed-flow-3" id="toc-fully-developed-flow-3" class="nav-link" data-scroll-target="#fully-developed-flow-3">Fully Developed Flow</a>
+  <ul class="collapse">
+  <li><a href="#hagen-poiseuille-flow-3" id="toc-hagen-poiseuille-flow-3" class="nav-link" data-scroll-target="#hagen-poiseuille-flow-3">Hagen-Poiseuille Flow</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#general-duct-geometries" id="toc-general-duct-geometries" class="nav-link" data-scroll-target="#general-duct-geometries">General Duct Geometries</a>
+  <ul class="collapse">
+  <li><a href="#friction-factor-2" id="toc-friction-factor-2" class="nav-link" data-scroll-target="#friction-factor-2">Friction Factor</a>
+  <ul class="collapse">
+  <li><a href="#laminar-flow-5" id="toc-laminar-flow-5" class="nav-link" data-scroll-target="#laminar-flow-5">Laminar Flow</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -344,7 +386,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Numerical Methods for Navier-Stokes Equations</h1>
+<h1 class="title d-none d-lg-block">Fluids Correlations Summary</h1>
 </div>
 
 
@@ -361,151 +403,191 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>For strong viscous-inviscid interactions and large separated flow regimes (e.g., capturing shock-boundary layer interactions, wake flows, leading edge flows, etc.), the full Navier-Stokes equations must be solved. Two strategies are employed depending on whether compressibility effects exist. For <strong>compressible</strong> flows, the system is solved in a coupled manner with <span class="math inline">\rho</span> as the primary variable. For <strong>incompressible</strong> flows, an iterative approach is used, called the <em>segregated approach</em>, with <span class="math inline">p</span> as the primary variable.</p>
-<p>Solving the compressible Navier-Stokes equations (both viscous and inviscid) is very similar to that of the Euler equations, as the unsteady compressible form of the Navier-Stokes equations are hyperbolic-parabolic, whereas the unsteady compressible Euler equations are hyperbolic. Therefore, both the viscous and inviscid form of the Navier-Stokes equations can be solved similarly with a marching procedure. The same is not true for incompressible: treating <span class="math inline">\rho</span> as a constant causes the reduced Euler equations to become elliptic. When viscosity is included, the incompressible Navier-Stokes equations become elliptic-parabolic, which requires a marching problem. Therefore, the inviscid and viscous incompressible equations must be solved with different strategies.</p>
-<p>A key difference between solving viscous and inviscid flows is the need to refine the mesh near the surface. Since viscous flows must satisfy no-slip at the walls, there is a significant velocity gradient near the solid boundaries that require small cell heights. Further away in the freestream, the cells may become larger as the velocity gradients are not as strong. Large aspect ratio cells must be used in the viscous regions of the flow to capture the fluid physics, which oftentimes decreases the rate of convergence.</p>
-<section id="compressible-navier-stokes-equations" class="level2">
-<h2 class="anchored" data-anchor-id="compressible-navier-stokes-equations">Compressible Navier-Stokes Equations</h2>
+<section id="flat-plate" class="level1">
+<h1>Flat Plate</h1>
 </section>
-<section id="incompressible-navier-stokes-equations" class="level2">
-<h2 class="anchored" data-anchor-id="incompressible-navier-stokes-equations">Incompressible Navier-Stokes Equations</h2>
-<p>When heat transfer is negligible and the fluid’s properties remain relatively constant, the incompressible form of the Navier-Stokes equations may be used. The conservations are as follows.</p>
-<p><span id="eq-incompressible-conservation-equations"><span class="math display">
-\begin{gathered}
-\nabla\cdot\textbf V=0 \\
-\rho\frac {\mathrm D\textbf V}{\mathrm Dt}=-\nabla p+\mu\nabla^2\textbf V \\
-\rho c_v\frac {\mathrm DT}{\mathrm Dt}=k\nabla^2T+\Phi
-\end{gathered}
-\tag{1}</span></span></p>
-<p>The unknowns are velocity vector <span class="math inline">\textbf V</span>, pressure <span class="math inline">p</span>, and temperature <span class="math inline">T</span>. Since fluid properties are constant and independent of <span class="math inline">T</span>, the energy equation can be decoupled from continuity and momentum.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Fluid Property Variations in Incompressible Flows">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Fluid Property Variations in Incompressible Flows
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Incompressible, sometimes called constant density, flows arise when changes in fluid properties due to temperature are negligible. For these cases, the properties (i.e., <span class="math inline">\mu</span>, <span class="math inline">\rho</span>, <span class="math inline">c_p</span>, etc.) can be considered independent of temperature, so the mass and momentum equations are independent of temperature. This permits either equation to be solved without knowing the thermal state of the fluid.</p>
-</div>
-</div>
-<p>The 2D constant density conservation equations in primitive form (neglecting energy equation) are as follows.</p>
-<p><span id="eq-incompressible-2D-conservation-equations"><span class="math display">
-\begin{gathered}
-\frac {\partial u}{\partial x}+\frac {\partial v}{\partial y}=0 \\
-\frac {\partial u}{\partial t}+u\frac {\partial u}{\partial x}+v\frac {\partial u}{\partial y}=-\frac 1{\rho}\frac {\partial p}{\partial x}+\nu\left(\frac {\partial^2u}{\partial x^2}+\frac {\partial^2u}{\partial y^2}\right) \\
-\frac {\partial v}{\partial t}+v\frac {\partial u}{\partial x}+v\frac {\partial v}{\partial y}=-\frac 1{\rho}\frac {\partial p}{\partial y}+\nu\left(\frac {\partial^2v}{\partial x^2}+\frac {\partial^2v}{\partial y^2}\right)
-\end{gathered}
-\tag{2}</span></span></p>
-<p>These equations may be solved using derived or primitive variables. Derived quantities, such as vorticity and stream functions, are most useful for 2D case as they introduce an extra layer of derivatives and the equations become very complicated in three dimensions.</p>
-<section id="derived-variable-approach" class="level3">
-<h3 class="anchored" data-anchor-id="derived-variable-approach">Derived Variable Approach</h3>
-</section>
-<section id="primitive-variable-approach" class="level3">
-<h3 class="anchored" data-anchor-id="primitive-variable-approach">Primitive Variable Approach</h3>
-<p>The derived variable approach (using <span class="math inline">\zeta</span> and <span class="math inline">\psi</span>), is rarely used when solving 3D incompressible flow fields. The primitive approach is more widely used for both 2D and 3D flows.</p>
-<section id="general" class="level4">
-<h4 class="anchored" data-anchor-id="general">General</h4>
-<p>The nondimensional primitive form of Eqn. (<a href="#eq-incompressible-conservation-equations" class="quarto-xref">1</a>), ignoring energy, is</p>
-<p><span id="eq-incompressible-nondimensional-conservation-equations"><span class="math display">
-\begin{gathered}
-\frac {\partial u^*}{\partial x^*}+\frac {\partial v^*}{\partial y^*}+\frac {\partial w^*}{\partial z^*}=0 \\
-\frac {\partial u^*}{\partial t^*}+u^*\frac {\partial u^*}{\partial x^*}+v^*\frac {\partial u^*}{\partial y^*}+w^*\frac {\partial u^*}{\partial z^*}=-\frac {\partial p^*}{\partial x^*}+\frac 1{\mathrm{Re}_L}\left(\frac {\partial^2u^*}{\partial x^{*2}}+\frac {\partial^2u^*}{\partial y^{*2}}+\frac {\partial^2u^*}{\partial z^{*2}}\right) \\
-\frac {\partial v^*}{\partial t^*}+u^*\frac {\partial v^*}{\partial x^*}+v^*\frac {\partial v^*}{\partial y^*}+w^*\frac {\partial v^*}{\partial z^*}=-\frac {\partial p^*}{\partial y^*}+\frac 1{\mathrm{Re}_L}\left(\frac {\partial^2v^*}{\partial x^{*2}}+\frac {\partial^2v^*}{\partial y^{*2}}+\frac {\partial^2v^*}{\partial z^{*2}}\right) \\
-\frac {\partial w^*}{\partial t^*}+u^*\frac {\partial w^*}{\partial x^*}+v^*\frac {\partial w^*}{\partial y^*}+w^*\frac {\partial w^*}{\partial z^*}=-\frac {\partial p^*}{\partial z^*}+\frac 1{\mathrm{Re}_L}\left(\frac {\partial^2w^*}{\partial x^{*2}}+\frac {\partial^2w^*}{\partial y^{*2}}+\frac {\partial^2w^*}{\partial z^{*2}}\right)
-\end{gathered}
-\tag{3}</span></span></p>
-<p>The nondimensional parameters are</p>
-<p><span id="eq-nondimensional-parameters"><span class="math display">
-\begin{array}{ccc}
-u^*=\dfrac u{V_{\infty}} &amp; x^*=\dfrac xL &amp; p^*=\dfrac p{\rho_{\infty}V_{\infty}^2} \\ \\
-v^*=\dfrac v{V_{\infty}} &amp; y^*=\dfrac yL &amp; t^*=\dfrac {V_{\infty}t}L \\ \\
-w^*=\dfrac w{V_{\infty}} &amp; z^*=\dfrac zL &amp; \mathrm{Re}_L=\dfrac {V_{\infty}L}{\nu}
-\end{array}
-\tag{4}</span></span></p>
-<p>The primitive variable approach can be divided into two categories. The first is the <em>coupled approach</em>, where all the unknowns are solved simultaneously. For the unsteady Navier-Stokes equations, this is implemented through the <em>artificial compressibility method</em>. An artificial time derivative of pressure term is added to the continuity equation so the solution to the coupled hyperbolic system may be advanced with time. Without it, the algebraic system is singular. When the solution converges, the artificial pressure-time term disappears.</p>
-<p>The second approach is the <em>pressure-correction approach</em>, or the <em>segregated method</em>. Here, a separate equation is used to determine <span class="math inline">p</span> and the momentum equations are solved for <span class="math inline">\textbf V</span>.</p>
-</section>
-<section id="coupled-approach-the-method-of-artificial-compressibility" class="level4">
-<h4 class="anchored" data-anchor-id="coupled-approach-the-method-of-artificial-compressibility">Coupled Approach: The Method of Artificial Compressibility</h4>
-</section>
-<section id="pressure-correction-approach-simple" class="level4">
-<h4 class="anchored" data-anchor-id="pressure-correction-approach-simple">Pressure-Correction Approach: SIMPLE</h4>
-<p>The semi-implicit method for pressure linked equations (SIMPLE) approach is based on an iterative process where the velocity is first solved from the momentum equations based off a guessed pressure field, and then corrected to satisfy continuity. This process repeats until all conservation equations are satisfied. The actual property <span class="math inline">A</span> is written as the sum of an intermediate value, <span class="math inline">A_0</span>, and corrected term, <span class="math inline">A'</span>. For pressure and velocity, they become</p>
-<p><span id="eq-simple-property-decomposition"><span class="math display">
-\begin{aligned}
-p &amp; =p_0+p' \\
-u &amp; =u_0+u' \\
-v &amp; =v_0+v'
-\end{aligned}
-\tag{5}</span></span></p>
-<p>Through an iterative approach, starting with a guess for the pressure field, the final <span class="math inline">p</span> and velocity components, <span class="math inline">u</span> and <span class="math inline">v</span>, may be solved using the procedure below.</p>
-<ol type="1">
-<li><p>Start with an initial guess for the pressure, <span class="math inline">p_0</span>, and solve the momentum equations to determine <span class="math inline">u_0</span> and <span class="math inline">v_0</span>.</p></li>
-<li><p>Solve the pressure correctione quation below to determine <span class="math inline">p'</span> in each cell. Note that <span class="math inline">\textbf V_0</span> is the estimated velocity vector and consists of <span class="math inline">u_0</span> and <span class="math inline">v_0</span> velocity components.</p></li>
-</ol>
-<p><span id="eq-simple-pressure-correction-equation"><span class="math display">
-\nabla^2 p'=\frac 1A(\nabla\textbf V_0)=\frac 1A\left(\frac {\partial u_0}{\partial x}+\frac {\partial v_0}{\partial y}\right)
-\tag{6}</span></span></p>
-<ol start="3" type="1">
-<li>Correct the <span class="math inline">p_0</span>, <span class="math inline">u_0</span>, and <span class="math inline">v_0</span> values obtained from Step 1 using the formulas below.</li>
-</ol>
-<p><span id="eq-simple-correction-update-equations"><span class="math display">
-\begin{aligned}
-p &amp; =p_0+p' \\
-u &amp; =u_0-\frac A{2\Delta x}\left(p_{i+1,j}'-p_{i-1,j}'\right) \\
-v &amp; =v_0-\frac A{2\Delta y}\left(p_{i,j+1}'-p_{i,j-1}'\right)
-\end{aligned}
-\tag{7}</span></span></p>
-<ol start="4" type="1">
-<li>Replace the <span class="math inline">p_0</span>, <span class="math inline">u_0</span>, and <span class="math inline">v_0</span> values calculated from Step 1 with the <span class="math inline">p</span>, <span class="math inline">u</span>, and <span class="math inline">v</span> calculated from Eqn. (<a href="#eq-simple-correction-update-equations" class="quarto-xref">7</a>) and return to Step 2. Repeat this process until the solution converges.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Derivation of the SIMPLE Pressure Correction Equation">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Derivation of the SIMPLE Pressure Correction Equation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The pressure correction is related to the velocity correction through a linearized form of the momentum equation.</p>
-<p><span id="eq-simple-velocity-correction-momentum-equations"><span class="math display">
-\begin{aligned}
-\rho\frac {\partial u'}{\partial t} &amp; =-\frac {\partial p'}{\partial x} \\
-\rho\frac {\partial v'}{\partial t} &amp; =-\frac {\partial p'}{\partial y}
-\end{aligned}
-\tag{8}</span></span></p>
-<p>Since for any given iteration, <span class="math inline">u_k=u_{0,k}+u_k'</span>, then the previous iteration is <span class="math inline">u_{k-1}=u_{0,k-1}</span> and the correction term for the previous step is zero. Therefore, Eqn. (<a href="#eq-simple-velocity-correction-momentum-equations" class="quarto-xref">8</a>) can be written as</p>
-<p><span id="eq-simple-velocity-correction-equations"><span class="math display">
-\begin{aligned}
-u' &amp; =-A\frac {\partial p'}{\partial x} \\
-v' &amp; =-A\frac {\partial p'}{\partial y}
-\end{aligned}
-\tag{9}</span></span></p>
-<p>where <span class="math inline">A=\frac {\Delta t}{\rho}</span>. The <span class="math inline">\Delta t</span> in the <span class="math inline">A</span> equation is a fictitious time for steady flows relevant only to the iterative sequence. Substituting Eqn. (<a href="#eq-simple-velocity-correction-equations" class="quarto-xref">9</a>) and Eqn. (<a href="#eq-simple-property-decomposition" class="quarto-xref">5</a>) into mass conservation gives</p>
+<section id="circular-channel" class="level1">
+<h1>Circular Channel</h1>
+<section id="entrance-lengths" class="level2">
+<h2 class="anchored" data-anchor-id="entrance-lengths">Entrance Lengths</h2>
+<section id="laminar-flow" class="level3">
+<h3 class="anchored" data-anchor-id="laminar-flow">Laminar Flow</h3>
+<p><strong>Chen (1973):</strong> Smooth surface</p>
 <p><span class="math display">
-\cancel{\frac {\partial u}{\partial x}+\frac {\partial v}{\partial y}}-\left(\frac {\partial u_0}{\partial x}+\frac {\partial v_0}{\partial y}\right)+\frac {\Delta t}{\rho}\left(\frac {\partial^2p'}{\partial x^2}+\frac {\partial^2p'}{\partial y^2}\right)=0
+\frac {l_{\mathrm{ent,hy}}}D=\frac {0.60}{0.035\mathrm{Re}_D+1}+0.056\mathrm{Re}_D\tag{4.2.12}
 </span></p>
-<p>The first term disappears since <span class="math inline">\nabla\cdot\textbf V=0</span> and rearranging the remaining terms gives Eqn. (<a href="#eq-simple-pressure-correction-equation" class="quarto-xref">6</a>).</p>
-</div>
-</div>
-</div>
-<p>In practice, Eqn. (<a href="#eq-simple-pressure-correction-equation" class="quarto-xref">6</a>) tends to overestimate the needed <span class="math inline">p'</span> to fully correct <span class="math inline">u_0</span> and <span class="math inline">v_0</span>. To accelerate the rate of convergence, an underrelaxation constant, <span class="math inline">\alpha_p</span>, is added to the pressure correction equation.</p>
+</section>
+<section id="turbulent-flow" class="level3">
+<h3 class="anchored" data-anchor-id="turbulent-flow">Turbulent Flow</h3>
+</section>
+</section>
+<section id="fully-developed-flow" class="level2">
+<h2 class="anchored" data-anchor-id="fully-developed-flow">Fully Developed Flow</h2>
+<section id="hagen-poiseuille-flow" class="level3">
+<h3 class="anchored" data-anchor-id="hagen-poiseuille-flow">Hagen-Poiseuille Flow</h3>
+<p>For smooth surfaces, if <span class="math inline">U_m=\frac {R_0^2}{8\mu}\left(-\frac {\mathrm dP}{\mathrm dx}\right)</span></p>
 <p><span class="math display">
-p=p_0+\alpha_p p'
+u(r)=\frac {R_0^2}{4\pi}\left(-\frac {\mathrm dP}{\mathrm dx}\right)\left[1-\left(\frac r{R_0}\right)\right]^2=2U_m\left[1-\left(\frac r{R_0}\right)\right]^2\tag{4.3.2}
 </span></p>
-<p>Two notable extensions of the SIMPLE algorithm are the revised (SIMPLER) scheme (Patankar, 1981) and the SIMPLEC scheme (van Doormal and Raithby, 1984). The SIMPLEC scheme uses a more complete approximation of the momentum equation to compute <span class="math inline">p'</span> to improve convergence. Recall that with SIMPLE, the convective and viscous (diffusive) terms of the velocity correction were neglected. Physically, SIMPLE assumes that all changes to the velocity are due to the error in the guessed pressure field. By incorporating some of these convective and diffusive terms back, the scheme more completely captures the changes in the flow field. This translates to a modification to the <span class="math inline">A</span> coefficient in Eqn. (<a href="#eq-simple-velocity-correction-equations" class="quarto-xref">9</a>). With this modification, van Doormal and Raithby reported that it was no longer needed to underrelax <span class="math inline">p'</span>. SIMPLEC generally performs more efficiently than both SIMPLE and SIMPLER and is usually one of the default pressure correction schemes in most CFD softwares.</p>
+<p>If <span class="math inline">\mathrm{Re}_D=U_mD/\nu</span></p>
+<p><span class="math display">
+f=\frac {64}{\mathrm{Re}_D}=4C_f\tag{4.3.7}
+</span></p>
+</section>
+<section id="friction-factor" class="level3">
+<h3 class="anchored" data-anchor-id="friction-factor">Friction Factor</h3>
+<section id="laminar-flow-1" class="level4">
+<h4 class="anchored" data-anchor-id="laminar-flow-1">Laminar Flow</h4>
+<p><strong>Shah and London (1978):</strong> Smooth surface, valid for all <span class="math inline">x^*</span> range, <span class="math inline">x^*=x/(D\mathrm{Re}_D)</span></p>
+<p><span class="math display">
+C_{f,\mathrm{app},x}\mathrm{Re}_D=\frac {3.44}{(x^*)^{1/2}}+\frac {\frac {1.25}{4x^*}+16-\frac {3.44}{(x^*)^{1/2}}}{1+0.00021(x^*)^{-2}}\tag{4.2.13}
+</span></p>
+<p><strong>Hagen-Poiseuille (1840):</strong> Smooth surface, Reynolds number defined as <span class="math inline">\mathrm{Re}_D=U_mD/\nu</span></p>
+<p><span class="math display">
+f=\frac {64}{\mathrm{Re}_D}=4C_f\tag{4.3.7}
+</span></p>
+</section>
+<section id="turbulent-flow-1" class="level4">
+<h4 class="anchored" data-anchor-id="turbulent-flow-1">Turbulent Flow</h4>
+</section>
+</section>
+<section id="heat-transfer-coefficient" class="level3">
+<h3 class="anchored" data-anchor-id="heat-transfer-coefficient">Heat Transfer Coefficient</h3>
+<section id="laminar-flow-2" class="level4">
+<h4 class="anchored" data-anchor-id="laminar-flow-2">Laminar Flow</h4>
+<section id="uniform-heat-flux" class="level5">
+<h5 class="anchored" data-anchor-id="uniform-heat-flux">Uniform Heat Flux</h5>
+<p><strong>Analytical:</strong> Smooth surface</p>
+<p><span class="math display">
+\mathrm{Nu}_{D,\mathrm{UHF}}=\frac {48}{11}\approx4.364\tag{4.4.6}
+</span></p>
+<p><strong>Shah and London (1978):</strong> With viscous dissipation and volumetric energy generation, if <span class="math inline">q_v^*=\dot q_vD/q_s''</span> and <span class="math inline">\mathrm{Br}'=\frac {\mu U_m^2}{q_s'' D}</span></p>
+<p><span class="math display">
+\mathrm{Nu}_{D,\mathrm{UHF}}=\frac {48}{11}\frac 1{1+\frac 3{44}q_v^*+\frac {48}{11}q_v^*}\tag{4.4.9}
+</span></p>
+</section>
+<section id="uniform-wall-temperature" class="level5">
+<h5 class="anchored" data-anchor-id="uniform-wall-temperature">Uniform Wall Temperature</h5>
+<p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, if <span class="math inline">\lambda_0=2.70436442</span></p>
+<p><span class="math display">
+\mathrm{Nu}_{D,\mathrm{UWT}}=\frac {\lambda_0^2}2=3.6568\tag{4.4.22}
+</span></p>
+<p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, when <span class="math inline">x^*=\frac x{D\mathrm{Re}\mathrm{Pr}}&gt;0.0335</span>, temperature profile is</p>
+<p><span class="math display">
+\frac {T_m-T_s}{T_{\mathrm{in}}-T_s}=0.81905\exp\left(-2\lambda_0^2x^*\right)\tag{4.4.23}
+</span></p>
+</section>
+</section>
+<section id="turbulent-flow-2" class="level4">
+<h4 class="anchored" data-anchor-id="turbulent-flow-2">Turbulent Flow</h4>
+</section>
+</section>
+</section>
+<section id="combined-entrance-region" class="level2">
+<h2 class="anchored" data-anchor-id="combined-entrance-region">Combined Entrance Region</h2>
+</section>
+</section>
+<section id="rectangular-channel" class="level1">
+<h1>Rectangular Channel</h1>
+<section id="entrance-lengths-1" class="level2">
+<h2 class="anchored" data-anchor-id="entrance-lengths-1">Entrance Lengths</h2>
+</section>
+<section id="fully-developed-flow-1" class="level2">
+<h2 class="anchored" data-anchor-id="fully-developed-flow-1">Fully Developed Flow</h2>
+<section id="hagen-poiseuille-flow-1" class="level3">
+<h3 class="anchored" data-anchor-id="hagen-poiseuille-flow-1">Hagen-Poiseuille Flow</h3>
+<p>For smooth surfaces, if <span class="math inline">a</span> is longer duct side length to center plane</p>
+<p><span class="math display">
+u(y,z)=\frac {16a^2}{\pi^3\mu}\left(-\frac {\mathrm dP}{\mathrm dx}\right)\sum\limits_{j\text{ odd}}^{\infty}(-1)^{(j-1)/2}\left[1-\frac {\cosh\left(\frac {j\pi y}{2a}\right)}{\cosh\left(\frac {j\pi b}{2a}\right)}\right]\cos\left(\frac {j\pi z}{2a}\right)\tag{4.3.14}
+</span></p>
+<p>Mean velocity, <span class="math inline">U_m</span>, is</p>
+<p><span class="math display">
+U_m=\frac {a^2}{3\mu}\left(-\frac {\mathrm dP}{\mathrm dx}\right)\left[1-\frac {192a}{\pi^5b}\sum\limits_{j\text{ odd}}^{\infty}\frac 1{j^5}\tanh\left(\frac {j\pi b}{2a}\right)\right]\tag{4.3.15}
+</span></p>
+<p>If <span class="math inline">\mathrm{Re}_{D_H}=U_mD_H/\nu</span> and <span class="math inline">\alpha^*=\frac ba\leq1</span></p>
+<p><span class="math display">
+C_f\mathrm{Re}_{D_H}=\frac {24}{\left(1+\frac 1{\alpha^*}\right)^2\left[1-\frac {192}{\pi^5\alpha^*}\sum\limits_{j\text{ odd}}\frac 1{j^5}\tanh\left(\frac {j\pi\alpha^*}2\right)\right]}\tag{4.3.16}
+</span></p>
+<p><strong>Shah and Bhatti (1987)</strong> give curve fit as</p>
+<p><span class="math display">
+C_f\mathrm{Re}_{D_H}\approx24\left[1-1.3553\alpha^*+1.9467(\alpha^*)^2-1.7012(\alpha^*)^3+0.9564(\alpha^*)^4-0.2537(\alpha^*)^5\right]\tag{4.3.17}
+</span></p>
+</section>
+</section>
+</section>
+<section id="flat-channel" class="level1">
+<h1>Flat Channel</h1>
+<section id="entrance-lengths-2" class="level2">
+<h2 class="anchored" data-anchor-id="entrance-lengths-2">Entrance Lengths</h2>
+<section id="laminar-flow-3" class="level3">
+<h3 class="anchored" data-anchor-id="laminar-flow-3">Laminar Flow</h3>
+<p><strong>Chen (1973):</strong> Smooth surface, Reynolds number defined as <span class="math inline">\mathrm{Re}_{D_H}=U_mD_H/\nu</span></p>
+<p><span class="math display">
+\frac {l_{\mathrm{ent,hy}}}{D_H}=0.011\mathrm{Re}_{D_H}+\frac {0.315}{1+0.0175\mathrm{Re}_{D_H}}\tag{4.2.15}
+</span></p>
+</section>
+<section id="turbulent-flow-3" class="level3">
+<h3 class="anchored" data-anchor-id="turbulent-flow-3">Turbulent Flow</h3>
+</section>
+</section>
+<section id="fully-developed-flow-2" class="level2">
+<h2 class="anchored" data-anchor-id="fully-developed-flow-2">Fully Developed Flow</h2>
+<section id="hagen-poiseuille-flow-2" class="level3">
+<h3 class="anchored" data-anchor-id="hagen-poiseuille-flow-2">Hagen-Poiseuille Flow</h3>
+<p>Center defined as midplane, both surfaces are a distance <span class="math inline">b</span> from the center line. If a smooth surface and <span class="math inline">U_m=\frac 1{3\mu}\left(-\frac {\mathrm dP}{\mathrm dx}\right)</span></p>
+<p><span class="math display">
+u(y)=\frac {b^2}{2\mu}\left(-\frac {\mathrm dP}{\mathrm dx}\right)\left[1-\left(\frac yb\right)\right]\tag{4.3.11}
+</span></p>
+<p>If <span class="math inline">\mathrm{Re}_{D_H}=U_mD_H/\nu</span></p>
+<p><span class="math display">
+C_f\mathrm{Re}_{D_H}=24\tag{4.3.13}
+</span></p>
+</section>
+<section id="friction-factor-1" class="level3">
+<h3 class="anchored" data-anchor-id="friction-factor-1">Friction Factor</h3>
+<section id="laminar-flow-4" class="level4">
+<h4 class="anchored" data-anchor-id="laminar-flow-4">Laminar Flow</h4>
+<p><strong>Shah and London (1978):</strong> Smooth surface, Reynolds number defined as <span class="math inline">\mathrm{Re}_{D_H}=U_mD_H/\nu</span></p>
+<p><span class="math display">
+C_{f,\mathrm{app},x}\mathrm{Re}_{D_H}=\frac {3.44}{(x^*)^{1/2}}+\frac {24+\frac {0.674}{4x^*}-\frac {3.44}{(x^*)^{1/2}}}{1+0.000029(x^*)^{-2}}\tag{4.2.16}
+</span></p>
+<p><strong>Hagen-Poiseuille (1840):</strong> Smooth surface, Reynolds number defined as <span class="math inline">\mathrm{Re}_{D_H}=U_mD_H/\nu</span></p>
+<p><span class="math display">
+C_f\mathrm{Re}_{D_H}=24\tag{4.3.13}
+</span></p>
+</section>
+<section id="turbulent-flow-4" class="level4">
+<h4 class="anchored" data-anchor-id="turbulent-flow-4">Turbulent Flow</h4>
+</section>
+</section>
+</section>
+</section>
+<section id="concentric-annular-duct" class="level1">
+<h1>Concentric Annular Duct</h1>
+<section id="fully-developed-flow-3" class="level2">
+<h2 class="anchored" data-anchor-id="fully-developed-flow-3">Fully Developed Flow</h2>
+<section id="hagen-poiseuille-flow-3" class="level3">
+<h3 class="anchored" data-anchor-id="hagen-poiseuille-flow-3">Hagen-Poiseuille Flow</h3>
+<p>Smooth surface, if <span class="math inline">R_i</span> and <span class="math inline">R_0</span> are the inner and outer radii respectively</p>
+<p><span class="math display">
+u(r)=\left[R_0^2-r^2+(R_0^2-R_i^2)\frac {\ln\left(r/R_0\right)}{\ln\left(R_0/R_i\right)}\right]\left(-\frac 1{4\mu}\frac {\mathrm dP}{\mathrm dx}\right)\tag{4.3.31}
+</span></p>
+<p>Mean velocity</p>
+</section>
+</section>
+</section>
+<section id="general-duct-geometries" class="level1">
+<h1>General Duct Geometries</h1>
+<section id="friction-factor-2" class="level2">
+<h2 class="anchored" data-anchor-id="friction-factor-2">Friction Factor</h2>
+<section id="laminar-flow-5" class="level3">
+<h3 class="anchored" data-anchor-id="laminar-flow-5">Laminar Flow</h3>
+<p><strong>Muzychka and Yovanovich (2004):</strong> Smooth surface, Reynolds number defined as <span class="math inline">\mathrm{Re}_{\sqrt A}=U_m\sqrt A/\nu</span>, dimensionless distance defined as <span class="math inline">x^*=x/(\sqrt A\mathrm{Re}_{\sqrt A})</span>, accurate to within <span class="math inline">\pm10\%</span></p>
+<p><span class="math display">
+C_{f,\mathrm{app},x}\mathrm{Re}_{\sqrt A}=\sqrt{\left(\frac {12}{\sqrt{\alpha^*}(1+\alpha^*)\left[1-\frac {192\alpha^*}{\pi^5}\tanh\left(\frac {\pi}{2\alpha^*}\right)\right]}\right)^2+\left(\frac {3.44}{\sqrt{x^*}}\right)^2}\tag{4.2.17}
+</span></p>
 
 
-</section>
 </section>
 </section>
 </section>
