@@ -344,6 +344,10 @@ window.Quarto = {
   <li><a href="#friction-factor" id="toc-friction-factor" class="nav-link" data-scroll-target="#friction-factor">Friction Factor</a></li>
   <li><a href="#heat-transfer-coefficient" id="toc-heat-transfer-coefficient" class="nav-link" data-scroll-target="#heat-transfer-coefficient">Heat Transfer Coefficient</a></li>
   </ul></li>
+  <li><a href="#developed-hydrodynamic-thermal-entrance-region" id="toc-developed-hydrodynamic-thermal-entrance-region" class="nav-link" data-scroll-target="#developed-hydrodynamic-thermal-entrance-region">Developed Hydrodynamic, Thermal Entrance Region</a>
+  <ul class="collapse">
+  <li><a href="#heat-transfer-coefficient-1" id="toc-heat-transfer-coefficient-1" class="nav-link" data-scroll-target="#heat-transfer-coefficient-1">Heat Transfer Coefficient</a></li>
+  </ul></li>
   <li><a href="#combined-entrance-region" id="toc-combined-entrance-region" class="nav-link" data-scroll-target="#combined-entrance-region">Combined Entrance Region</a></li>
   </ul></li>
   <li><a href="#rectangular-channel" id="toc-rectangular-channel" class="nav-link" data-scroll-target="#rectangular-channel">Rectangular Channel</a>
@@ -358,14 +362,14 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#entrance-lengths-2" id="toc-entrance-lengths-2" class="nav-link" data-scroll-target="#entrance-lengths-2">Entrance Lengths</a>
   <ul class="collapse">
-  <li><a href="#laminar-flow-3" id="toc-laminar-flow-3" class="nav-link" data-scroll-target="#laminar-flow-3">Laminar Flow</a></li>
+  <li><a href="#laminar-flow-4" id="toc-laminar-flow-4" class="nav-link" data-scroll-target="#laminar-flow-4">Laminar Flow</a></li>
   <li><a href="#turbulent-flow-3" id="toc-turbulent-flow-3" class="nav-link" data-scroll-target="#turbulent-flow-3">Turbulent Flow</a></li>
   </ul></li>
   <li><a href="#fully-developed-flow-2" id="toc-fully-developed-flow-2" class="nav-link" data-scroll-target="#fully-developed-flow-2">Fully Developed Flow</a>
   <ul class="collapse">
   <li><a href="#hagen-poiseuille-flow-2" id="toc-hagen-poiseuille-flow-2" class="nav-link" data-scroll-target="#hagen-poiseuille-flow-2">Hagen-Poiseuille Flow</a></li>
   <li><a href="#friction-factor-1" id="toc-friction-factor-1" class="nav-link" data-scroll-target="#friction-factor-1">Friction Factor</a></li>
-  <li><a href="#heat-transfer-coefficient-1" id="toc-heat-transfer-coefficient-1" class="nav-link" data-scroll-target="#heat-transfer-coefficient-1">Heat Transfer Coefficient</a></li>
+  <li><a href="#heat-transfer-coefficient-2" id="toc-heat-transfer-coefficient-2" class="nav-link" data-scroll-target="#heat-transfer-coefficient-2">Heat Transfer Coefficient</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#concentric-annular-duct" id="toc-concentric-annular-duct" class="nav-link" data-scroll-target="#concentric-annular-duct">Concentric Annular Duct</a>
@@ -379,7 +383,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#friction-factor-2" id="toc-friction-factor-2" class="nav-link" data-scroll-target="#friction-factor-2">Friction Factor</a>
   <ul class="collapse">
-  <li><a href="#laminar-flow-6" id="toc-laminar-flow-6" class="nav-link" data-scroll-target="#laminar-flow-6">Laminar Flow</a></li>
+  <li><a href="#laminar-flow-7" id="toc-laminar-flow-7" class="nav-link" data-scroll-target="#laminar-flow-7">Laminar Flow</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -420,6 +424,10 @@ window.Quarto = {
 <p><span class="math display">
 \frac {l_{\mathrm{ent,hy}}}D=\frac {0.60}{0.035\mathrm{Re}_D+1}+0.056\mathrm{Re}_D\tag{4.2.12}
 </span></p>
+<p><strong>Analytical:</strong> Smooth surface</p>
+<p><span class="math display">
+\frac {l_{\mathrm{ent,th}}}D\approx0.05\mathrm{Re}_D\mathrm{Pr}\tag{4.5.30}
+</span></p>
 </section>
 <section id="turbulent-flow" class="level3">
 <h3 class="anchored" data-anchor-id="turbulent-flow">Turbulent Flow</h3>
@@ -459,8 +467,6 @@ f=\frac {64}{\mathrm{Re}_D}=4C_f\tag{4.3.7}
 <h3 class="anchored" data-anchor-id="heat-transfer-coefficient">Heat Transfer Coefficient</h3>
 <section id="laminar-flow-2" class="level4">
 <h4 class="anchored" data-anchor-id="laminar-flow-2">Laminar Flow</h4>
-<section id="uniform-heat-flux" class="level5">
-<h5 class="anchored" data-anchor-id="uniform-heat-flux">Uniform Heat Flux</h5>
 <p><strong>Analytical:</strong> Smooth surface</p>
 <p><span class="math display">
 \mathrm{Nu}_{D,\mathrm{UHF}}=\frac {48}{11}\approx4.364\tag{4.4.6}
@@ -469,9 +475,6 @@ f=\frac {64}{\mathrm{Re}_D}=4C_f\tag{4.3.7}
 <p><span class="math display">
 \mathrm{Nu}_{D,\mathrm{UHF}}=\frac {48}{11}\frac 1{1+\frac 3{44}q_v^*+\frac {48}{11}q_v^*}\tag{4.4.9}
 </span></p>
-</section>
-<section id="uniform-wall-temperature" class="level5">
-<h5 class="anchored" data-anchor-id="uniform-wall-temperature">Uniform Wall Temperature</h5>
 <p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, if <span class="math inline">\lambda_0=2.70436442</span></p>
 <p><span class="math display">
 \mathrm{Nu}_{D,\mathrm{UWT}}=\frac {\lambda_0^2}2=3.6568\tag{4.4.22}
@@ -488,9 +491,33 @@ f=\frac {64}{\mathrm{Re}_D}=4C_f\tag{4.3.7}
 \end{cases}
 </span></p>
 </section>
-</section>
 <section id="turbulent-flow-2" class="level4">
 <h4 class="anchored" data-anchor-id="turbulent-flow-2">Turbulent Flow</h4>
+</section>
+</section>
+</section>
+<section id="developed-hydrodynamic-thermal-entrance-region" class="level2">
+<h2 class="anchored" data-anchor-id="developed-hydrodynamic-thermal-entrance-region">Developed Hydrodynamic, Thermal Entrance Region</h2>
+<p>This section covers developed hydrodynamic, thermally developing flows.</p>
+<section id="heat-transfer-coefficient-1" class="level3">
+<h3 class="anchored" data-anchor-id="heat-transfer-coefficient-1">Heat Transfer Coefficient</h3>
+<section id="laminar-flow-3" class="level4">
+<h4 class="anchored" data-anchor-id="laminar-flow-3">Laminar Flow</h4>
+<p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation</p>
+<p><span class="math display">
+\begin{aligned}
+\mathrm{Nu}_{D,\mathrm{UWT}} &amp; =1.077\left(\frac {2R_0}x\right)^{1/3}(\mathrm{Re}_D\mathrm{Pr})^{1/3} \\
+\langle\mathrm{Nu}_{D,\mathrm{UWT}}\rangle &amp; =1.615\left(\frac {2R_0}x\right)^{1/3}(\mathrm{Re}_D\mathrm{Pr})^{1/3}
+\end{aligned}\tag{4.5.43a}
+</span></p>
+<p><strong>Muzychka et al.&nbsp;(2011):</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation</p>
+<p><span class="math display">
+\langle\mathrm{Nu}_{D,\mathrm{UWT}}\rangle_x=\left[\left(1.615\left(\frac {2R_0}x\right)^{1/3}(\mathrm{Re}_D\mathrm{Pr})^{1/3}\right)^5+3.65^5\right]^{1/5}\tag{4.5.43b}
+</span></p>
+<p><strong>Muzychka et al.&nbsp;(2011):</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation, <span class="math inline">\mathrm{Pe}\to0</span> (i.e., slug flow)</p>
+<p><span class="math display">
+\langle\mathrm{Nu}_{D,\mathrm{UWT}}\rangle_x=\left[\left(1.128\left(\frac {2R_0}x\right)^{0.5}(\mathrm{Re}_D\mathrm{Pr})^{0.5}\right)^2+5.78^2\right]^{1/2}\tag{4.5.43c}
+</span></p>
 </section>
 </section>
 </section>
@@ -530,8 +557,8 @@ C_f\mathrm{Re}_{D_H}\approx24\left[1-1.3553\alpha^*+1.9467(\alpha^*)^2-1.7012(\a
 <h1>Flat Channel</h1>
 <section id="entrance-lengths-2" class="level2">
 <h2 class="anchored" data-anchor-id="entrance-lengths-2">Entrance Lengths</h2>
-<section id="laminar-flow-3" class="level3">
-<h3 class="anchored" data-anchor-id="laminar-flow-3">Laminar Flow</h3>
+<section id="laminar-flow-4" class="level3">
+<h3 class="anchored" data-anchor-id="laminar-flow-4">Laminar Flow</h3>
 <p><strong>Chen (1973):</strong> Smooth surface, Reynolds number defined as <span class="math inline">\mathrm{Re}_{D_H}=\frac {U_mD_H}{\nu}</span></p>
 <p><span class="math display">
 \frac {l_{\mathrm{ent,hy}}}{D_H}=0.011\mathrm{Re}_{D_H}+\frac {0.315}{1+0.0175\mathrm{Re}_{D_H}}\tag{4.2.15}
@@ -556,8 +583,8 @@ C_f\mathrm{Re}_{D_H}=24\tag{4.3.13}
 </section>
 <section id="friction-factor-1" class="level3">
 <h3 class="anchored" data-anchor-id="friction-factor-1">Friction Factor</h3>
-<section id="laminar-flow-4" class="level4">
-<h4 class="anchored" data-anchor-id="laminar-flow-4">Laminar Flow</h4>
+<section id="laminar-flow-5" class="level4">
+<h4 class="anchored" data-anchor-id="laminar-flow-5">Laminar Flow</h4>
 <p><strong>Shah and London (1978):</strong> Smooth surface, Reynolds number defined as <span class="math inline">\mathrm{Re}_{D_H}=\frac {U_mD_H}{\nu}</span></p>
 <p><span class="math display">
 C_{f,\mathrm{app},x}\mathrm{Re}_{D_H}=\frac {3.44}{(x^*)^{1/2}}+\frac {24+\frac {0.674}{4x^*}-\frac {3.44}{(x^*)^{1/2}}}{1+0.000029(x^*)^{-2}}\tag{4.2.16}
@@ -571,8 +598,8 @@ C_f\mathrm{Re}_{D_H}=24\tag{4.3.13}
 <h4 class="anchored" data-anchor-id="turbulent-flow-4">Turbulent Flow</h4>
 </section>
 </section>
-<section id="heat-transfer-coefficient-1" class="level3">
-<h3 class="anchored" data-anchor-id="heat-transfer-coefficient-1">Heat Transfer Coefficient</h3>
+<section id="heat-transfer-coefficient-2" class="level3">
+<h3 class="anchored" data-anchor-id="heat-transfer-coefficient-2">Heat Transfer Coefficient</h3>
 <p>Refer to the five wall boundary conditions for flat channel: (a) equal and constant surface temperature, (b) unequal and constant surface temperature, (c) equal and constant heat flux, (d) unequal and constant heat flux, (e) one surface constant temperature and the other constant heat flux</p>
 <div id="fig-flat-channel-thermal-boundary-conditions" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -584,9 +611,9 @@ Figure&nbsp;1: Various flat channel wall boundary conditions
 </figcaption>
 </figure>
 </div>
-<section id="laminar-flow-5" class="level4">
-<h4 class="anchored" data-anchor-id="laminar-flow-5">Laminar Flow</h4>
-<p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, uniform wall heat flux (Case C in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">1</a>)</p>
+<section id="laminar-flow-6" class="level4">
+<h4 class="anchored" data-anchor-id="laminar-flow-6">Laminar Flow</h4>
+<p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, uniform wall heat flux (Case C in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">Fig.&nbsp;1</a>)</p>
 <p><span class="math display">
 \mathrm{Nu}_{D_H,\mathrm{UHF}}=\frac {140}{17}\approx8.235\tag{4.4.42}
 </span></p>
@@ -594,28 +621,28 @@ Figure&nbsp;1: Various flat channel wall boundary conditions
 <p><span class="math display">
 \mathrm{Nu}_{D_H,\mathrm{UHF}}=\frac {140}{17}\frac 1{1+\frac 3{68}q_v^*+\frac {108}{17}\mathrm{Br}'}\tag{4.4.43}
 </span></p>
-<p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, unequal and constant heat flux (Case C in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">1</a>)</p>
+<p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, unequal and constant heat flux (Case C in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">Fig.&nbsp;1</a>)</p>
 <p><span class="math display">
 \begin{aligned}
 \mathrm{Nu}_{D_H,1} &amp; =\frac {140}{26-9\frac {q_{s2}''}{q_{s1}''}} \\
 \mathrm{Nu}_{D_H,2} &amp; =\frac {140}{26-9\frac {q_{s1}''}{q_{s2}''}}
 \end{aligned}\tag{4.4.47}
 </span></p>
-<p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation, one surface constant temperature and the other constant heat flux (Case E in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">1</a>)</p>
+<p><strong>Analytical:</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation, one surface constant temperature and the other constant heat flux (Case E in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">Fig.&nbsp;1</a>)</p>
 <p><span class="math display">
 \begin{aligned}
 \mathrm{Nu}_{D_H,T} &amp; =4 \\
 \mathrm{Nu}_{D_H,q''} &amp; =4
 \end{aligned}\tag{4.4.49}
 </span></p>
-<p><strong>Cheng and Wu (1976):</strong> Smooth surface, axial conduction, viscous dissipation, one surface constant temperature and the other constant heat flux (Case E in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">1</a>), assume <span class="math inline">T_{s1}&gt;T_{s2}</span>, if <span class="math inline">\mathrm{Br}=\frac {2\mu U_m^2}{k\left[\frac 12(T_{s1}+T_{s2})-T_m\right]}</span></p>
+<p><strong>Cheng and Wu (1976):</strong> Smooth surface, axial conduction, viscous dissipation, one surface constant temperature and the other constant heat flux (Case E in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">Fig.&nbsp;1</a>), assume <span class="math inline">T_{s1}&gt;T_{s2}</span>, if <span class="math inline">\mathrm{Br}=\frac {2\mu U_m^2}{k\left[\frac 12(T_{s1}+T_{s2})-T_m\right]}</span></p>
 <p><span class="math display">
 \begin{aligned}
 \mathrm{Nu}_{D_H,1} &amp; =\frac {4(1-6\mathrm{Br})}{1-\frac {48}{35}\mathrm{Br}} \\
 \mathrm{Nu}_{D_H,2} &amp; =\frac {4(1+6\mathrm{Br})}{1-\frac {48}{35}\mathrm{Br}}
 \end{aligned}\tag{4.4.56}
 </span></p>
-<p><strong>Analytical:</strong> Smooth surface, negligible axial condution, uniform wall temperature (Case A in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">1</a>)</p>
+<p><strong>Analytical:</strong> Smooth surface, negligible axial condution, uniform wall temperature (Case A in <a href="#fig-flat-channel-thermal-boundary-conditions" class="quarto-xref">Fig.&nbsp;1</a>)</p>
 <p><span class="math display">
 \mathrm{Nu}_{D_H,\mathrm{UWT}}=7.5407\tag{4.4.53}
 </span></p>
@@ -651,8 +678,8 @@ u(r)=\left[R_0^2-r^2+(R_0^2-R_i^2)\frac {\ln\left(r/R_0\right)}{\ln\left(R_0/R_i
 <h1>General Duct Geometries</h1>
 <section id="friction-factor-2" class="level2">
 <h2 class="anchored" data-anchor-id="friction-factor-2">Friction Factor</h2>
-<section id="laminar-flow-6" class="level3">
-<h3 class="anchored" data-anchor-id="laminar-flow-6">Laminar Flow</h3>
+<section id="laminar-flow-7" class="level3">
+<h3 class="anchored" data-anchor-id="laminar-flow-7">Laminar Flow</h3>
 <p><strong>Muzychka and Yovanovich (2004):</strong> Smooth surface, Reynolds number defined as <span class="math inline">\mathrm{Re}_{\sqrt A}=\frac {U_m\sqrt A}{\nu}</span>, dimensionless distance defined as <span class="math inline">x^*=\frac x{\sqrt A\mathrm{Re}_{\sqrt A}}</span>, accurate to within <span class="math inline">\pm10\%</span></p>
 <p><span class="math display">
 C_{f,\mathrm{app},x}\mathrm{Re}_{\sqrt A}=\sqrt{\left(\frac {12}{\sqrt{\alpha^*}(1+\alpha^*)\left[1-\frac {192\alpha^*}{\pi^5}\tanh\left(\frac {\pi}{2\alpha^*}\right)\right]}\right)^2+\left(\frac {3.44}{\sqrt{x^*}}\right)^2}\tag{4.2.17}
