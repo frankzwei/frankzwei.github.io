@@ -1,0 +1,15 @@
+---
+title: "SAE-AS4395: 37&deg Flared Fitting Standard"
+---
+
+::: {layout-ncol=2}
+
+![](assets/sae-as4395-figure-1.png){.lightbox}
+
+![](assets/sae-as4395-figure-2.png){.lightbox}
+
+:::
+
+# Table 1A: Dimensions A - E
+
+# Table 1B: Dimensions F - W

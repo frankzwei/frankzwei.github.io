@@ -1,0 +1,40 @@
+---
+title: Limits and Fits
+---
+
+This document is a summarized document of Shigley's chapter on limits and fits and therefore, only covers the metric version. A version converting to imperial is included for convenience.
+
+::: {.callout-important title="Letter Designation"}
+
+A capital letter always designates the fit for the hole while a lowercase letter always designates the fit for the shaft.
+
+:::
+
+The fundamental deviation for the external feature is given in the tables below. All basic size dimensions shown are for over the lower limit and including the upper limit. For instance, a basic size of 2.00 inches should reference row the 6th row (1.20 - 2.00) for the tolerance.
+
+The lower deviation $H$ for the negative feature is zero. If we define $D$ and $d$ to mean the basic diameter for the hole and shaft respectively, $\delta u$ and $\delta_l$ for the upper and lower deviations respectively, $\delta_F$ for the fundamental deviation, and $\Delta D$ and $\Delta d$ for the tolerance grade of the hole and shaft respectively, then the quantities for the hole can be calculated as
+
+$$
+\begin{aligned}
+D_{\mathrm{max}} & =D+\Delta D \\
+D_{\mathrm{min}} & =D
+\end{aligned}
+$$
+
+For shafts with clearance fits c, d, f, g, and h, then the minimum and maximum diameters can be calculated as
+
+$$
+\begin{aligned}
+d_{\mathrm{max}} & =d+\delta_F \\
+d_{\mathrm{min}} & =d+\delta_F-\Delta d
+\end{aligned}
+$$
+
+And for shafts with interference fits k, n, p, s, u, the diameters can be calculated as
+
+$$
+\begin{aligned}
+d_{\mathrm{max}} & =d+\delta_F+\Delta d \\
+d_{\mathrm{min}} & =d+\delta_F
+\end{aligned}
+$$

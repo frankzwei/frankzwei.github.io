@@ -1,0 +1,5 @@
+---
+title: Aerospace Standards
+---
+
+A compilation of digitized standards frequently used in the aerospace industry.

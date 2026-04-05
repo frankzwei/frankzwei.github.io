@@ -22,13 +22,23 @@ website:
       style: floating
       collapse-level: 1
       contents:
+        - section: Standards
+          href: knowledge-base/standards/index.qmd
+          contents:
+            - text: SAE AS4395 37&deg Flared Fitting
+              href: knowledge-base/standards/sae-as4395-37deg-flared-fitting.qmd
         - section: CFD
           href: knowledge-base/cfd/index.qmd
           contents:
-            - text: Chapter 4. Application of Numerical Methods to Model Equations
-              href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.qmd
-            - text: Chapter 6. Numerical Methods for Inviscid Flows
-              href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.qmd
+            - section: Computational Fluid Mechanics and Heat Transfer
+              href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/index.qmd
+              contents:
+                - text: Chapter 4. Application of Numerical Methods to Model Equations
+                  href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.qmd
+                - text: Chapter 6. Numerical Methods for Inviscid Flows
+                  href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.qmd
+                - text: Chapter 9. Numerical Methods for Navier-Stokes Equations
+                  href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-9-numerical-methods-for-navier-stokes-equations.qmd
         - section: Fluids
           href: knowledge-base/fluids/index.qmd
           contents:
@@ -41,6 +51,8 @@ website:
                   href: knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-7-turbulent-and-transitional-internal-flow.qmd
                 - text: Chapter 10. Natural Convection
                   href: knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-10-natural-convection.qmd
+            - text: Correlations Reference Sheet
+              href: knowledge-base/fluids/correlations-reference.qmd
         - section: Structures
           href: knowledge-base/structures/index.qmd
           contents:
@@ -51,6 +63,8 @@ website:
                   href: knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-5-variable-amplitude-loading.qmd
                 - text: Chapter 7. Multiaxial Fatigue
                   href: knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-7-multiaxial-fatigue.qmd
+            - text: Limits and Fits
+              href: knowledge-base/structures/limits-and-fits.qmd
 format:
   html:
     theme: cosmo
@@ -66,4 +80,4 @@ format:
 crossref:
   eq-prefix: ""
   eq-title: ""
-  fig-prefix: ""
+  fig-prefix: "Fig."
