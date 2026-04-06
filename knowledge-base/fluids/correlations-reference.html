@@ -528,6 +528,38 @@ f=\frac {64}{\mathrm{Re}_D}=4C_f\tag{4.3.7}
 <p><span class="math display">
 \langle\mathrm{Nu}_{D,\mathrm{UWT}}\rangle_x=\left[\left(1.128\left(\frac {2R_0}x\right)^{0.5}(\mathrm{Re}_D\mathrm{Pr})^{0.5}\right)^2+5.78^2\right]^{1/2}\tag{4.5.43c}
 </span></p>
+<p><strong>Gnielinski (2010):</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation, uniform heat flux, <span class="math inline">\frac {D\mathrm{Re}_D\mathrm{Pr}}x\gg1</span></p>
+<p><span class="math display">
+\begin{aligned}
+\mathrm{Nu}_{D,\mathrm{UHF}}(x) &amp; =\left[\mathrm{Nu}_{D,\mathrm{UHF},1}^3+1+(\mathrm{Nu}_{D,\mathrm{UHF},2}-1)^3\right]^{1/3} \\
+\mathrm{Nu}_{D,\mathrm{UHF},1} &amp; =4.364 \\
+\mathrm{Nu}_{D,\mathrm{UHF},2} &amp; =1.302\left(\frac {D\mathrm{Re}_D\mathrm{Pr}}x\right)^{1/3}
+\end{aligned}\tag{4.5.139}
+</span></p>
+<p><strong>Gnielinski (2010):</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation, uniform heat flux, <span class="math inline">\frac {D\mathrm{Re}_D\mathrm{Pr}}x\gg1</span></p>
+<p><span class="math display">
+\begin{aligned}
+\langle\mathrm{Nu}_{D,\mathrm{UHF}}\rangle_x &amp; =\left[\mathrm{Nu}_{D,\mathrm{UHF},1}^3+0.6^3+\left(\langle\mathrm{Nu}_{D,\mathrm{UHF},2}\rangle_x-0.6\right)^3\right]^{1/3} \\
+\mathrm{Nu}_{D,\mathrm{UHF},1} &amp; =4.364 \\
+\langle\mathrm{Nu}_{D,\mathrm{UHF},2}\rangle_x &amp; =1.953\left(\frac {D\mathrm{Re}_D\mathrm{Pr}}x\right)^{1/3}
+\end{aligned}\tag{4.5.141}
+</span></p>
+<p><strong>Gnielinski (2010):</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation, uniform wall temperature, <span class="math inline">\frac {D\mathrm{Re}_D\mathrm{Pr}}x\gg1</span></p>
+<p><span class="math display">
+\begin{aligned}
+\mathrm{Nu}_{D,\mathrm{UWT}}(x) &amp; =\left[\mathrm{Nu}_{D,\mathrm{UWT},1}^3+0.7^3+(\mathrm{Nu}_{D,\mathrm{UWT},2}-0.7)^3\right]^{1/3} \\
+\mathrm{Nu}_{D,\mathrm{UWT},1} &amp; =3.6568 \\
+\mathrm{Nu}_{D,\mathrm{UWT},1} &amp; =1.077\left(\frac {D\mathrm{Re}_D\mathrm{Pr}}x\right)^{1/3}
+\end{aligned}\tag{4.5.135}
+</span></p>
+<p><strong>Gnielinski (2010):</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation, uniform wall temperature, <span class="math inline">\frac {D\mathrm{Re}_D\mathrm{Pr}}x\gg1</span></p>
+<p><span class="math display">
+\begin{aligned}
+\langle\mathrm{Nu}_{D,\mathrm{UWT}}\rangle_x &amp; =\left[\mathrm{Nu}_{D,\mathrm{UWT},1}^3+0.7^3+\left(\langle\mathrm{Nu}_{D,\mathrm{UWT}}\rangle_2-0.7\right)^3\right]^{1/3} \\
+\mathrm{Nu}_{D,\mathrm{UWT},1} &amp; =3.6568 \\
+\langle\mathrm{Nu}_{D,\mathrm{UWT}}\rangle_2 &amp; =1.615\left(\frac {D\mathrm{Re}_D\mathrm{Pr}}x\right)^{1/3}
+\end{aligned}\tag{4.5.137}
+</span></p>
 </section>
 </section>
 </section>
@@ -692,7 +724,7 @@ Figure&nbsp;1: Various flat channel wall boundary conditions
 \begin{aligned}
 \mathrm{Nu}_{D_H,\mathrm{UHF}}(x^*) &amp; =\begin{cases}
 1.490\left(x^*\right)^{-1/3} &amp; \qquad x^*\leq2\times10^{-4} \\
-1.490\left(x^*\right)^{-1/3}-0.4 &amp; \qquad2\times10^{-4}&lt;x^*\leq1\times10^{-3} \\
+1.490\left(x^*\right)^{-1/3}-0.4 &amp; \qquad2\times10^{-4}&lt;x^*\leq10^{-3} \\
 8.235+8.68\left(x^*\times10^3\right)^{-0.506}e^{-164x^*} &amp; \qquad x^*&gt;10^{-3}
 \end{cases} \\
 \langle\mathrm{Nu}_{D_H,\mathrm{UHF}}\rangle_x &amp; =\begin{cases}
@@ -719,6 +751,14 @@ Figure&nbsp;1: Various flat channel wall boundary conditions
 7.541+0.0235\left(x^*\right)^{-1} &amp; \qquad\qquad\qquad\qquad\quad x^*&gt;0.006
 \end{cases}
 \end{aligned}\tag{4.5.128}
+</span></p>
+<p><strong>Gnielinski (2010):</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation, <span class="math inline">\frac {D_H\mathrm{Re}_{D_H}\mathrm{Pr}}x\gg1</span></p>
+<p><span class="math display">
+\begin{aligned}
+\langle\mathrm{Nu}_{D_H,\mathrm{UWT}}\rangle_x &amp; =\left[\mathrm{Nu}_{D_H,\mathrm{UWT},1}^3+\mathrm{Nu}_{D_H,\mathrm{UWT},2}^3(x)\right]^{1/3} \\
+\mathrm{Nu}_{D_H,\mathrm{UWT},1} &amp; =7.5407 \\
+\mathrm{Nu}_{D_H,\mathrm{UWT},2}(x) &amp; =1.841\left(\frac {D_H\mathrm{Re}_{D_H}\mathrm{Pr}}x\right)^{1/3}
+\end{aligned}\tag{4.5.143}
 </span></p>
 </section>
 <section id="turbulent-flow-6" class="level4">
