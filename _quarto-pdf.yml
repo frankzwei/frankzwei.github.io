@@ -7,13 +7,13 @@ format:
     callout-appearance: simple
     number-sections: true
     colorlinks: true
-    papersize: a4
+    papersize: a3
     classoption: portrait
     geometry:
-      - top=0.75in
-      - bottom=.75in
-      - left=.75in
-      - right=.75in
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
       - heightrounded
     include-in-header:
       - text: |

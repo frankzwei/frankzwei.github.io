@@ -1,0 +1,95 @@
+---
+title: Partial Differential Equations
+---
+
+# Mathematical Classification
+
+PDEs are classified based on their characteristic lines in 2D, or surfaces in 3D, along which certain properties remain constant or certain derivatives are discontinuous. Characteristic lines or surfaces are related to the direction that information travels in physical problems governed by the PDE. There are three broad classifications.
+
+1. **Hyperbolic**, where equations that admit wavelike solutions
+
+2. **Parabolic**, where equations admit solutions that correspond to damped waves
+
+3. **Elliptic**, where equations admit solutions that are not wavelike
+
+Consider the general PDE below, where the coefficients only depend on $x$ and $y$ so Eqn. (@eq-pde-general-form) is linear.
+
+$$
+a\frac {\partial^2\phi}{\partial x^2}+b\frac {\partial^2\phi}{\partial x\partial y}+c\frac {\partial^2\phi}{\partial y^2}+d\frac {\partial\phi}{\partial x}+e\frac {\partial\phi}{\partial y}+f\phi=g(x,y)
+$$ {#eq-pde-general-form}
+
+Classifying PDEs only relies on the second order terms, so rearrange Eqn. (@eq-pde-general-form) into
+
+$$
+a\phi_{xx}+b\phi_{xy}+c\phi_{yy}=-d\phi_x-e\phi_y-f\phi+g=H
+$$ {#eq-pde-general-form-rearranged}
+
+The characteristics of this equation are the locus of points along which the second derivative terms are discontinuous. Along these curves, discontinuities such as shockwaves in supersonic flow can appear. These curves may be determined by observing Eqn. (@eq-pde-general-form-rearranged) for points where the solution is not uniquely determined. For a well-posed point, the second derivatives $\phi_{xx}$, $\phi_{xy}$, and $\phi_{yy}$ are uniquely determined for a given $\phi$, $\phi_x$, and $\phi_y$ by Eqn. (@eq-pde-general-form-rearranged). However, if two possible second derivative solutions exist for a given set of $(\phi, \phi_x, \phi_y)$, then the second derivatives are no longer continuous as approaching the point from the two sides can give valid, but different, results.
+
+Let $\tau$ be a parameter that varies along a curve $C$ in the $x-y$ plane. Therefore, $x=x(\tau)$ and $y=y(\tau)$ along $C$. For convenience, define
+
+$$
+\begin{array}{cc}
+\phi_{xx}=u(\tau) & \qquad\qquad\phi_x=p(\tau) \\
+\phi_{xy}=v(\tau) & \qquad\qquad\phi_y=q(\tau) \\
+\phi_{yy}=w(\tau) &
+\end{array}
+$$ {#eq-phi-tau-definitions}
+
+Eqn. (@eq-pde-general-form-rearranged) becomes
+
+$$
+au(\tau)+bv(\tau)+cw(\tau)=H
+$$ {#eq-pde-general-form-rearranged-tau}
+
+From the chain rule, since $p=\phi_x(x(\tau), y(\tau))$ and $q=\phi_y(x(\tau), y(\tau))$, then
+
+$$
+\begin{aligned}
+\frac {\mathrm dp}{\mathrm d\tau} & =\frac {\partial\phi_x}{\partial x}\frac {\mathrm dx}{\mathrm d\tau}+\frac {\partial\phi_x}{\partial y}\frac {\mathrm dy}{\mathrm d\tau}=u\frac {\mathrm dx}{\mathrm d\tau}+v\frac {\mathrm dy}{\mathrm d\tau} \\
+\frac {\mathrm dq}{\mathrm d\tau} & =\frac {\partial\phi_y}{\partial x}\frac {\mathrm dx}{\mathrm d\tau}+\frac {\partial\phi_y}{\partial y}\frac {\mathrm dy}{\mathrm d\tau}=v\frac {\mathrm dx}{\mathrm d\tau}+w\frac {\mathrm dy}{\mathrm d\tau}
+\end{aligned}
+$$ {#eq-phi-tau-chain-rule}
+
+Eqn. (@eq-pde-general-form-rearranged-tau) and Eqn. (@eq-phi-tau-chain-rule) form a $3\times3$ system to calculate second order derivatives from $\phi$ and its first derivatives along $C$.
+
+$$
+\begin{bmatrix}
+a & b & c \\[1ex]
+\frac {\mathrm dx}{\mathrm d\tau} & \frac {\mathrm dy}{\mathrm d\tau} & 0 \\[1ex]
+0 & \frac {\mathrm dx}{\mathrm d\tau} & \frac {\mathrm dy}{\mathrm d\tau}
+\end{bmatrix}
+\begin{bmatrix}
+u \\[1ex] v \\[1ex] w
+\end{bmatrix}=\begin{bmatrix}
+H \\
+\frac {\mathrm dp}{\mathrm d\tau} \\[1ex]
+\frac {\mathrm dq}{\mathrm d\tau}
+\end{bmatrix}
+$$
+
+If the determinant is zero, then there is no independent solution for $u$, $v$, and $w$. The determinant becomes the quadratic
+
+$$
+a(\mathrm dy)^2-b\,\mathrm dx\,\mathrm dy+c(\mathrm dx)^2=0
+$$
+
+Dividing by $(\mathrm dx)^2$ and solving for $h=\frac {\mathrm dy}{\mathrm dx}$, then
+
+$$
+h=\frac {\mathrm dy}{\mathrm dx}=\frac {b\pm\sqrt{b^2-4ac}}{2a}
+$$ {#eq-pde-general-characteristics-differential}
+
+The curves $y(x)$ that satisfy Eqn. (@eq-pde-general-characteristics-differential) are the *characteristics* of the PDE. The discriminant $\Delta\equiv b^2-4ac$ plays an important role in determining the PDE's classification.
+
+1. If $\Delta>0$, then two distinct families of real characteristic curves exist and the PDE is **hyperbolic**.
+
+2. If $\Delta=0$, then only a single family of characteristic curves exist and the PDE is **parabolic**.
+
+3. If $\Delta<0$, then no real characteristic curves exist and the PDE is **elliptical**.
+
+::: {.callout-important}
+
+If $a$, $b$, and $c$ are **not** constants, the PDE's classification may change point to point as the sign of $b^2(x,y)-4a(x,y)c(x,y)$ changes for varying $x$ and $y$.
+
+:::

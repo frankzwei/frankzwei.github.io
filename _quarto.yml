@@ -33,6 +33,8 @@ website:
             - section: Computational Fluid Mechanics and Heat Transfer
               href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/index.qmd
               contents:
+                - text: Chapter 2. Partial Differential Equations
+                  href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-2-partial-differential-equations.qmd
                 - text: Chapter 4. Application of Numerical Methods to Model Equations
                   href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.qmd
                 - text: Chapter 6. Numerical Methods for Inviscid Flows
