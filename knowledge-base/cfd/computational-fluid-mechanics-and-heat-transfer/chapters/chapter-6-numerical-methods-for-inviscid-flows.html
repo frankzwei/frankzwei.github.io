@@ -43,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../../site_libs/bootstrap/bootstrap-a44d1825680bf4d2a1237acfefc713aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,6 +74,49 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../../styles.css">
 </head>
@@ -328,8 +374,100 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="flux-splitting-schemes" class="level1">
 <h1>Flux Splitting Schemes</h1>
+<p>In flux-vector splitting (FVS), the flux contributions into the cell are split into positive and negative components based on the eigenstructure of the system. The discretized form of the Euler equation in 2D is</p>
+<p><span class="math display">
+\frac {\partial\textbf U}{\partial t}\Delta V+\sum\limits_{\text{cell faces}}(\textbf E\Delta y-\textbf F\Delta x)=0
+</span></p>
+<p>where <span class="math inline">\Delta V</span> is the cell volume and <span class="math inline">\Delta x</span> and <span class="math inline">\Delta y</span> are the arc lengths of the cells in the 2D case. Using a forward difference in time, then the discretized equation becomes</p>
+<p><span id="eq-discretized-euler-equation"><span class="math display">
+\left(\textbf U_{i,j}^{n+1}-\textbf U_{i,j}^n\right)\frac {\Delta V}{\Delta t}+\textbf E\Delta y\,\Bigr|_{i-\frac 12,j}+\textbf E\Delta y\,\Bigr|_{i+\frac 12,j}-F\Delta x\,\Bigr|_{i,j-\frac 12}-\textbf F\Delta x\,\Bigr|_{i,j+\frac 12}=0
+\tag{1}</span></span></p>
+<p>The crux of the problem is solving for <span class="math inline">\textbf E</span> and <span class="math inline">\textbf F</span> at the cell boundaries.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Derivation of Discretized Euler Equation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Derivation of Discretized Euler Equation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the 2D control volume below centered on <span class="math inline">(i, j)</span>. The cell boundaries are displayced from the cell centroid by <span class="math inline">\frac 12</span> in all directions.</p>
+<div id="fig-euler-equation-control-volume" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-euler-equation-control-volume-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/chapter-6/euler-equation-control-volume.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Control volume for discretized Euler equation"><img src="../assets/chapter-6/euler-equation-control-volume.png" class="img-fluid figure-img" width="500"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-euler-equation-control-volume-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Control volume for discretized Euler equation
+</figcaption>
+</figure>
+</div>
+<p>Recall that the conservative vector <span class="math inline">\textbf U</span> and face fluxes <span class="math inline">\textbf E</span> and <span class="math inline">\textbf F</span> are defined as</p>
+<p><span class="math display">
+\textbf U=\begin{bmatrix}
+\rho \\
+\rho u \\
+\rho v \\
+\rho e_t
+\end{bmatrix} \qquad\qquad\textbf E=\begin{bmatrix}
+\rho u \\
+\rho u^2+p \\
+\rho uv \\
+\rho h_tu
+\end{bmatrix} \qquad\qquad\textbf F=\begin{bmatrix}
+\rho v \\
+\rho uv \\
+\rho v^2+p \\
+rho h_tv
+\end{bmatrix}
+</span></p>
+<p>Integrate Eqn. (<a href="#eq-discretized-euler-equation" class="quarto-xref">1</a>) over the control volume and applying Green’s theorem to the flux terms gives</p>
+<p><span class="math display">
+\iint\limits_{\mathcal V}\frac {\partial\textbf U}{\partial t}\,\mathrm dV+\iint\limits_{\mathcal V}\frac {\partial\textbf E}{\partial x}-\frac {\partial\textbf F}{\partial y}\,\mathrm dV=\iint\limits_{\mathcal V}\frac {\partial\textbf U}{\partial t}\,\mathrm dV+\oint\limits_{\mathcal S}\left(\textbf E\,\mathrm dy-\textbf F\,\mathrm dx\right)=0
+</span></p>
+<p>The subscript <span class="math inline">\mathcal S</span> denotes the boundary. In discrete form, the contour integral transforms into a sum about each boundary of the cell, completing the proof.</p>
+</div>
+</div>
 <section id="stegar-warming-splitting" class="level2">
 <h2 class="anchored" data-anchor-id="stegar-warming-splitting">Stegar-Warming Splitting</h2>
+<p>Stegar and Warming (1979) developed an implicit algorithm to split <span class="math inline">\textbf E</span> and <span class="math inline">\textbf F</span> into a positive and negative contribution. To show this, consider the 1D Euler equation for simplicity. This procedure can be extended to 2D and 3D by adding more terms to the equation below.</p>
+<p><span id="eq-stegar-warming-euler-equation"><span class="math display">
+\frac {\partial\textbf U}{\partial t}+\frac {\partial\textbf E}{\partial x}=\frac {\partial\textbf U}{\partial t}+[A]\frac {\partial\textbf U}{\partial x}=0
+\tag{2}</span></span></p>
+<p>where <span class="math inline">[A]=\frac {\partial\textbf E}{\partial\textbf U}</span> is a Jacobian, derived from the chain rule. If the system is hyperbolic, like the Euler equations, then there exists eigenvalues such that the eigenvectors are preserved.</p>
+<p><span id="eq-hyperbolic-eigenvalue-equation"><span class="math display">
+[A]=[T][\Lambda][T]^{-1}
+\tag{3}</span></span></p>
+<p>where <span class="math inline">[\Lambda]</span> is a diagonal matrix of the real eigenvalues of <span class="math inline">[A]</span> and <span class="math inline">[T]</span> is a matrix whose columns are the right eigenvectors of <span class="math inline">[A]</span> in corresponding order of the eigenvalues of <span class="math inline">[\Lambda]</span>. The inverse <span class="math inline">[T]^{-1}</span> is a matrix whose rows are the left eigenvectors of <span class="math inline">[A]</span>. According to Stegar and Warming, if the equation state follows the form <span class="math inline">p=\rho f(e)</span>, where <span class="math inline">e</span> is the internal energy, then the flux <span class="math inline">\textbf E(\textbf U)</span> is homogeneous of degree one in <span class="math inline">\textbf U</span>. In other words, for any <span class="math inline">\alpha</span>,</p>
+<p><span class="math display">
+\textbf E(\alpha\textbf U)=\alpha\textbf E(\textbf U)
+</span></p>
+<p>Using Eqn. (<a href="#eq-hyperbolic-eigenvalue-equation" class="quarto-xref">3</a>), the flux vector <span class="math inline">\textbf E</span> (and <span class="math inline">\textbf F</span> if it exists) can be rewritten as</p>
+<p><span class="math display">
+\textbf E=[A]\textbf U=[T][\Lambda][T]^{-1}\textbf U
+</span></p>
+<p>Both the flux vector and eigenvalue matrix can be written as having positive and negative contributions. Rewritting <span class="math inline">[\Lambda]=[\Lambda^+]+[\Lambda^-]</span> allows <span class="math inline">[A]</span> to also be written as having positive and negative contributions.</p>
+<p><span class="math display">
+[A]=[T][\Lambda^+][T]^{-1}+[T][\Lambda^-][T]^{-1}=[A^+]+[A^-]
+</span></p>
+<p>This results in the overall flux vector, <span class="math inline">\textbf E</span>, as</p>
+<p><span class="math display">
+\textbf E=\textbf E^++\textbf E^-=[A^+]\textbf U+[A^-]\textbf U
+</span></p>
+<p>Substitute the positive and negative flux contributions, <span class="math inline">\textbf E^+</span> and <span class="math inline">\textbf E^-</span>, into Eqn. (<a href="#eq-discretized-euler-equation" class="quarto-xref">1</a>) to get</p>
+<p><span class="math display">
+\frac {\partial\textbf U}{\partial t}+\frac {\partial\textbf E^+}{\partial x}+\frac {\partial\textbf E^-}{\partial x}=0
+</span></p>
+<p>The signs indicate the direction of wave propagation of the flux components. For instance, the components of vector <span class="math inline">\textbf E^+</span> are associated with wave propagation in the positive direction. It is important to note that the eigenvalues of <span class="math inline">[A^{\pm}]=\frac {\partial\textbf E^{\pm}}{\partial x}</span> are not the same as <span class="math inline">\lambda^{\pm}</span>, as the exact <span class="math inline">[A]</span> matrix each <span class="math inline">\lambda</span> is assigned to is determined purely based off its sign. For 1D, the eigenvalues of <span class="math inline">[A]</span> are</p>
+<p><span id="eq-1d-euler-equation-eigenvalues"><span class="math display">
+\begin{aligned}
+\lambda_1 &amp; =u \\
+\lambda_2 &amp; =u+a \\
+\lambda_3 &amp; =u-a
+\end{aligned}
+\tag{4}</span></span></p>
 </section>
 <section id="van-leer-splitting" class="level2">
 <h2 class="anchored" data-anchor-id="van-leer-splitting">Van-Leer Splitting</h2>
@@ -740,6 +878,38 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
