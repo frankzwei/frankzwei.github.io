@@ -190,7 +190,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../../knowledge-base/propulsion-design/injector/index.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Injectors</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -246,7 +246,7 @@ window.Quarto = {
 </header>
 
 
-<p>The design parameters for a throttling gas-liquid pintle injector are shown in <a href="#fig-parameters-schematic" class="quarto-xref">Fig.&nbsp;1</a>. Three different pintle tips were tested with different tip angles, <span class="math inline">\theta_{\mathrm{pt}}</span>, in this paper. The post angle, <span class="math inline">\theta_{\mathrm{post}}</span>, was fixed to be 30&amp;deg.</p>
+<p>The design parameters for a throttling gas-liquid pintle injector are shown in <a href="#fig-parameters-schematic" class="quarto-xref">Fig.&nbsp;1</a>. Three different pintle tips were tested with different tip angles, <span class="math inline">\theta_{\mathrm{pt}}</span>, in this paper. The post angle, <span class="math inline">\theta_{\mathrm{post}}</span>, was fixed to be 30&amp;#176.</p>
 <div id="fig-parameters-schematic" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-parameters-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -257,6 +257,15 @@ Figure&nbsp;1: Pintle injector schematic
 </figcaption>
 </figure>
 </div>
+<p>Since <span class="math inline">\theta_{\mathrm{post}}</span> is sufficiently small, the minimum orifice area for the liquid flow always occurred at the post tip. For larger values of <span class="math inline">\theta_{\mathrm{post}}</span> relative to <span class="math inline">\theta_{\mathrm{pt}}</span>, the minimum cross-sectional area may occur further upstream. This is an important design factor to consider, as if the minimum orifice area in the pintle changes, so does the discharge coefficient.</p>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+
+</div>
+<p>The minimum orifice area, <span class="math inline">A_{\mathrm{min}}</span>, can be calculated using</p>
+<p><span id="eq-min-area"><span class="math display">
+A_{\mathrm{min}}=\frac {\pi}{\sin\theta_{\mathrm{pt}}}\left[\left(R_{\mathrm{post}}-t_{\mathrm{post}}\right)^2-\left(R_{\mathrm{post}}-t_{\mathrm{post}}-L_{\mathrm{open}}\sin\theta_{\mathrm{pt}}\cos\theta_{\mathrm{pt}}\right)^2\right]
+\tag{1}</span></span></p>
+<p>As the throttle increases and <span class="math inline">L_{\mathrm{open}}</span> increases, <span class="math inline">A_{\mathrm{min}}</span> increases as well. At some point during the throttle, however, the minimum orifice area will be equal to the center gap area, <span class="math inline">A_{\mathrm{cg}}</span>, which is a constant set by the design of the pintle. After this transition point, the minimum orifice area is now <span class="math inline">A_{\mathrm{cg}}</span> and remains constant throughout the rest of the throttle.</p>
 
 
 
