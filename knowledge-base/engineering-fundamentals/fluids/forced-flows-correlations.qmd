@@ -97,6 +97,43 @@ $$
 
 #### Turbulent Flow
 
+**Yu et al. (2001):** Smooth surface, all thermal boundary conditions, valid for $R_0^+>500$ and $\mathrm{Pr}>\mathrm{Pr}_{\mathrm{tu}}$
+
+$$
+\begin{aligned}
+\mathrm{Nu}_{D_H} & =\frac 1{\frac 1{\mathrm{Nu}_{D_H,1}}\frac {\mathrm{Pr}_{\mathrm{tu}}}{\mathrm{Pr}}+\frac 1{\mathrm{Nu}_{D_H,\infty}}\left[1-\left(\frac {\mathrm{Pr}_{\mathrm{tu}}}{\mathrm{Pr}}\right)^{2/3}\right]} \\
+\mathrm{Nu}_{D_H,\infty} & =0.07343\mathrm{Re}_{D_H}\left(\frac {\mathrm{Pr}}{\mathrm{Pr}_{\mathrm{tu}}}\right)^{1/3}\left(\frac {C_f}2\right)^{1/2} \\
+\mathrm{Pr}_{\mathrm{tu}} & =0.85+0.015\mathrm{Pr}^{-1}
+\end{aligned}
+$$
+
+For uniform wall temperature or uniform heat flux boundaries, $\mathrm{Nu}_{D_H,1}$ is
+
+$$
+\begin{aligned}
+\mathrm{Nu}_{D_H,1,\mathrm{UWT}} & =\frac {\mathrm{Re}_{D_H}C_f/2}{1+145\left(U_m^+\right)^{-2/5}} \\
+\mathrm{Nu}_{D_H,1,\mathrm{UHF}} & =\frac {\mathrm{Re}_{D_H}C_f/2}{1+195\left(U_m^+\right)^{-2.7}}
+\end{aligned}
+$$
+
+---
+
+**Chilton and Colburn (1934):** Smooth surface, valid for $10^4<\mathrm{Re}_D<3\times10^5$ and $0.6<\mathrm{Pr}<100$
+
+$$
+j_{\mathrm{th}}=\mathrm{St}\mathrm{Pr}^{2/3}=\frac {\mathrm{Nu}_l}{\mathrm{Re}_l\mathrm{Pr}^{1/3}}=\frac {C_f}2\tag{9.7.8}
+$$
+
+### Mass Transfer
+
+#### Turbulent Flow
+
+**Chilton and Colburn (1934):** Smooth surface, valid for $2000<\mathrm{Re}_D<3\times10^5$ and $0.6<\mathrm{Sc}<2500$
+
+$$
+j_{\mathrm{ma}}=\mathrm{St}\mathrm{Sc}^{2/3}=\frac {\mathrm{Sh}_l}{\mathrm{Re}_l\mathrm{Sc}^{1/3}}=\frac {C_f}2\tag{9.7.9}
+$$
+
 ## Developed Hydrodynamic, Thermal Entrance Region
 
 This section covers developed hydrodynamic, thermally developing flows.
@@ -198,6 +235,29 @@ $$
 
 $$
 C_f\mathrm{Re}_{D_H}\approx24\left[1-1.3553\alpha^*+1.9467(\alpha^*)^2-1.7012(\alpha^*)^3+0.9564(\alpha^*)^4-0.2537(\alpha^*)^5\right]\tag{4.3.17}
+$$
+
+### Heat Transfer Coefficient
+
+#### Turbulent Flow
+
+**Yu et al. (2001):** Smooth surface, all thermal boundary conditions, valid for $R_0^+>500$ and $\mathrm{Pr}>\mathrm{Pr}_{\mathrm{tu}}$
+
+$$
+\begin{aligned}
+\mathrm{Nu}_{D_H} & =\frac 1{\frac 1{\mathrm{Nu}_{D_H,1}}\frac {\mathrm{Pr}_{\mathrm{tu}}}{\mathrm{Pr}}+\frac 1{\mathrm{Nu}_{D_H,\infty}}\left[1-\left(\frac {\mathrm{Pr}_{\mathrm{tu}}}{\mathrm{Pr}}\right)^{2/3}\right]} \\
+\mathrm{Nu}_{D_H,\infty} & =0.07343\mathrm{Re}_{D_H}\left(\frac {\mathrm{Pr}}{\mathrm{Pr}_{\mathrm{tu}}}\right)^{1/3}\left(\frac {C_f}2\right)^{1/2} \\
+\mathrm{Pr}_{\mathrm{tu}} & =0.85+0.015\mathrm{Pr}^{-1}
+\end{aligned}
+$$
+
+The quantity $\mathrm{Nu}_{D_H,1}$ should be calculated based off whether the boundary is a uniform wall temperature or uniform heat flux boundary.
+
+$$
+\begin{aligned}
+\mathrm{Nu}_{D_H,1,\mathrm{UWT}} & =\frac {\mathrm{Re}_{D_H}C_f/2}{1+145\left(U_m^+\right)^{-2/5}} \\
+\mathrm{Nu}_{D_H,1,\mathrm{UHF}} & =\frac {\mathrm{Re}_{D_H}C_f/2}{1+195\left(U_m^+\right)^{-2.7}}
+\end{aligned}
 $$
 
 # Flat Channel
