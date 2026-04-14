@@ -372,6 +372,7 @@ window.Quarto = {
   <li><a href="#hagen-poiseuille-flow" id="toc-hagen-poiseuille-flow" class="nav-link" data-scroll-target="#hagen-poiseuille-flow">Hagen-Poiseuille Flow</a></li>
   <li><a href="#friction-factor" id="toc-friction-factor" class="nav-link" data-scroll-target="#friction-factor">Friction Factor</a></li>
   <li><a href="#heat-transfer-coefficient" id="toc-heat-transfer-coefficient" class="nav-link" data-scroll-target="#heat-transfer-coefficient">Heat Transfer Coefficient</a></li>
+  <li><a href="#mass-transfer" id="toc-mass-transfer" class="nav-link" data-scroll-target="#mass-transfer">Mass Transfer</a></li>
   </ul></li>
   <li><a href="#developed-hydrodynamic-thermal-entrance-region" id="toc-developed-hydrodynamic-thermal-entrance-region" class="nav-link" data-scroll-target="#developed-hydrodynamic-thermal-entrance-region">Developed Hydrodynamic, Thermal Entrance Region</a>
   <ul class="collapse">
@@ -385,6 +386,7 @@ window.Quarto = {
   <li><a href="#fully-developed-flow-1" id="toc-fully-developed-flow-1" class="nav-link" data-scroll-target="#fully-developed-flow-1">Fully Developed Flow</a>
   <ul class="collapse">
   <li><a href="#hagen-poiseuille-flow-1" id="toc-hagen-poiseuille-flow-1" class="nav-link" data-scroll-target="#hagen-poiseuille-flow-1">Hagen-Poiseuille Flow</a></li>
+  <li><a href="#heat-transfer-coefficient-2" id="toc-heat-transfer-coefficient-2" class="nav-link" data-scroll-target="#heat-transfer-coefficient-2">Heat Transfer Coefficient</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#flat-channel" id="toc-flat-channel" class="nav-link" data-scroll-target="#flat-channel">Flat Channel</a>
@@ -392,17 +394,17 @@ window.Quarto = {
   <li><a href="#entrance-lengths-2" id="toc-entrance-lengths-2" class="nav-link" data-scroll-target="#entrance-lengths-2">Entrance Lengths</a>
   <ul class="collapse">
   <li><a href="#laminar-flow-4" id="toc-laminar-flow-4" class="nav-link" data-scroll-target="#laminar-flow-4">Laminar Flow</a></li>
-  <li><a href="#turbulent-flow-3" id="toc-turbulent-flow-3" class="nav-link" data-scroll-target="#turbulent-flow-3">Turbulent Flow</a></li>
+  <li><a href="#turbulent-flow-5" id="toc-turbulent-flow-5" class="nav-link" data-scroll-target="#turbulent-flow-5">Turbulent Flow</a></li>
   </ul></li>
   <li><a href="#fully-developed-flow-2" id="toc-fully-developed-flow-2" class="nav-link" data-scroll-target="#fully-developed-flow-2">Fully Developed Flow</a>
   <ul class="collapse">
   <li><a href="#hagen-poiseuille-flow-2" id="toc-hagen-poiseuille-flow-2" class="nav-link" data-scroll-target="#hagen-poiseuille-flow-2">Hagen-Poiseuille Flow</a></li>
   <li><a href="#friction-factor-1" id="toc-friction-factor-1" class="nav-link" data-scroll-target="#friction-factor-1">Friction Factor</a></li>
-  <li><a href="#heat-transfer-coefficient-2" id="toc-heat-transfer-coefficient-2" class="nav-link" data-scroll-target="#heat-transfer-coefficient-2">Heat Transfer Coefficient</a></li>
+  <li><a href="#heat-transfer-coefficient-3" id="toc-heat-transfer-coefficient-3" class="nav-link" data-scroll-target="#heat-transfer-coefficient-3">Heat Transfer Coefficient</a></li>
   </ul></li>
   <li><a href="#developed-hydrodynamic-thermal-entrance-region-1" id="toc-developed-hydrodynamic-thermal-entrance-region-1" class="nav-link" data-scroll-target="#developed-hydrodynamic-thermal-entrance-region-1">Developed Hydrodynamic, Thermal Entrance Region</a>
   <ul class="collapse">
-  <li><a href="#heat-transfer-coefficient-3" id="toc-heat-transfer-coefficient-3" class="nav-link" data-scroll-target="#heat-transfer-coefficient-3">Heat Transfer Coefficient</a></li>
+  <li><a href="#heat-transfer-coefficient-4" id="toc-heat-transfer-coefficient-4" class="nav-link" data-scroll-target="#heat-transfer-coefficient-4">Heat Transfer Coefficient</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#concentric-annular-duct" id="toc-concentric-annular-duct" class="nav-link" data-scroll-target="#concentric-annular-duct">Concentric Annular Duct</a>
@@ -526,6 +528,36 @@ f=\frac {64}{\mathrm{Re}_D}=4C_f\tag{4.3.7}
 </section>
 <section id="turbulent-flow-2" class="level4">
 <h4 class="anchored" data-anchor-id="turbulent-flow-2">Turbulent Flow</h4>
+<p><strong>Yu et al.&nbsp;(2001):</strong> Smooth surface, all thermal boundary conditions, valid for <span class="math inline">R_0^+&gt;500</span> and <span class="math inline">\mathrm{Pr}&gt;\mathrm{Pr}_{\mathrm{tu}}</span></p>
+<p><span class="math display">
+\begin{aligned}
+\mathrm{Nu}_{D_H} &amp; =\frac 1{\frac 1{\mathrm{Nu}_{D_H,1}}\frac {\mathrm{Pr}_{\mathrm{tu}}}{\mathrm{Pr}}+\frac 1{\mathrm{Nu}_{D_H,\infty}}\left[1-\left(\frac {\mathrm{Pr}_{\mathrm{tu}}}{\mathrm{Pr}}\right)^{2/3}\right]} \\
+\mathrm{Nu}_{D_H,\infty} &amp; =0.07343\mathrm{Re}_{D_H}\left(\frac {\mathrm{Pr}}{\mathrm{Pr}_{\mathrm{tu}}}\right)^{1/3}\left(\frac {C_f}2\right)^{1/2} \\
+\mathrm{Pr}_{\mathrm{tu}} &amp; =0.85+0.015\mathrm{Pr}^{-1}
+\end{aligned}
+</span></p>
+<p>For uniform wall temperature or uniform heat flux boundaries, <span class="math inline">\mathrm{Nu}_{D_H,1}</span> is</p>
+<p><span class="math display">
+\begin{aligned}
+\mathrm{Nu}_{D_H,1,\mathrm{UWT}} &amp; =\frac {\mathrm{Re}_{D_H}C_f/2}{1+145\left(U_m^+\right)^{-2/5}} \\
+\mathrm{Nu}_{D_H,1,\mathrm{UHF}} &amp; =\frac {\mathrm{Re}_{D_H}C_f/2}{1+195\left(U_m^+\right)^{-2.7}}
+\end{aligned}
+</span></p>
+<hr>
+<p><strong>Chilton and Colburn (1934):</strong> Smooth surface, valid for <span class="math inline">10^4&lt;\mathrm{Re}_D&lt;3\times10^5</span> and <span class="math inline">0.6&lt;\mathrm{Pr}&lt;100</span></p>
+<p><span class="math display">
+j_{\mathrm{th}}=\mathrm{St}\mathrm{Pr}^{2/3}=\frac {\mathrm{Nu}_l}{\mathrm{Re}_l\mathrm{Pr}^{1/3}}=\frac {C_f}2\tag{9.7.8}
+</span></p>
+</section>
+</section>
+<section id="mass-transfer" class="level3">
+<h3 class="anchored" data-anchor-id="mass-transfer">Mass Transfer</h3>
+<section id="turbulent-flow-3" class="level4">
+<h4 class="anchored" data-anchor-id="turbulent-flow-3">Turbulent Flow</h4>
+<p><strong>Chilton and Colburn (1934):</strong> Smooth surface, valid for <span class="math inline">2000&lt;\mathrm{Re}_D&lt;3\times10^5</span> and <span class="math inline">0.6&lt;\mathrm{Sc}&lt;2500</span></p>
+<p><span class="math display">
+j_{\mathrm{ma}}=\mathrm{St}\mathrm{Sc}^{2/3}=\frac {\mathrm{Sh}_l}{\mathrm{Re}_l\mathrm{Sc}^{1/3}}=\frac {C_f}2\tag{9.7.9}
+</span></p>
 </section>
 </section>
 </section>
@@ -616,6 +648,27 @@ C_f\mathrm{Re}_{D_H}=\frac {24}{\left(1+\frac 1{\alpha^*}\right)^2\left[1-\frac 
 C_f\mathrm{Re}_{D_H}\approx24\left[1-1.3553\alpha^*+1.9467(\alpha^*)^2-1.7012(\alpha^*)^3+0.9564(\alpha^*)^4-0.2537(\alpha^*)^5\right]\tag{4.3.17}
 </span></p>
 </section>
+<section id="heat-transfer-coefficient-2" class="level3">
+<h3 class="anchored" data-anchor-id="heat-transfer-coefficient-2">Heat Transfer Coefficient</h3>
+<section id="turbulent-flow-4" class="level4">
+<h4 class="anchored" data-anchor-id="turbulent-flow-4">Turbulent Flow</h4>
+<p><strong>Yu et al.&nbsp;(2001):</strong> Smooth surface, all thermal boundary conditions, valid for <span class="math inline">R_0^+&gt;500</span> and <span class="math inline">\mathrm{Pr}&gt;\mathrm{Pr}_{\mathrm{tu}}</span></p>
+<p><span class="math display">
+\begin{aligned}
+\mathrm{Nu}_{D_H} &amp; =\frac 1{\frac 1{\mathrm{Nu}_{D_H,1}}\frac {\mathrm{Pr}_{\mathrm{tu}}}{\mathrm{Pr}}+\frac 1{\mathrm{Nu}_{D_H,\infty}}\left[1-\left(\frac {\mathrm{Pr}_{\mathrm{tu}}}{\mathrm{Pr}}\right)^{2/3}\right]} \\
+\mathrm{Nu}_{D_H,\infty} &amp; =0.07343\mathrm{Re}_{D_H}\left(\frac {\mathrm{Pr}}{\mathrm{Pr}_{\mathrm{tu}}}\right)^{1/3}\left(\frac {C_f}2\right)^{1/2} \\
+\mathrm{Pr}_{\mathrm{tu}} &amp; =0.85+0.015\mathrm{Pr}^{-1}
+\end{aligned}
+</span></p>
+<p>The quantity <span class="math inline">\mathrm{Nu}_{D_H,1}</span> should be calculated based off whether the boundary is a uniform wall temperature or uniform heat flux boundary.</p>
+<p><span class="math display">
+\begin{aligned}
+\mathrm{Nu}_{D_H,1,\mathrm{UWT}} &amp; =\frac {\mathrm{Re}_{D_H}C_f/2}{1+145\left(U_m^+\right)^{-2/5}} \\
+\mathrm{Nu}_{D_H,1,\mathrm{UHF}} &amp; =\frac {\mathrm{Re}_{D_H}C_f/2}{1+195\left(U_m^+\right)^{-2.7}}
+\end{aligned}
+</span></p>
+</section>
+</section>
 </section>
 </section>
 <section id="flat-channel" class="level1">
@@ -641,8 +694,8 @@ C_f\mathrm{Re}_{D_H}\approx24\left[1-1.3553\alpha^*+1.9467(\alpha^*)^2-1.7012(\a
 \frac {l_{\mathrm{ent,ma,UMF}}}{D_H}=0.0115\mathrm{Re}_{D_H}\mathrm{Sc}\tag{4.5.107}
 </span></p>
 </section>
-<section id="turbulent-flow-3" class="level3">
-<h3 class="anchored" data-anchor-id="turbulent-flow-3">Turbulent Flow</h3>
+<section id="turbulent-flow-5" class="level3">
+<h3 class="anchored" data-anchor-id="turbulent-flow-5">Turbulent Flow</h3>
 </section>
 </section>
 <section id="fully-developed-flow-2" class="level2">
@@ -671,12 +724,12 @@ C_{f,\mathrm{app},x}\mathrm{Re}_{D_H}=\frac {3.44}{(x^*)^{1/2}}+\frac {24+\frac 
 C_f\mathrm{Re}_{D_H}=24\tag{4.3.13}
 </span></p>
 </section>
-<section id="turbulent-flow-4" class="level4">
-<h4 class="anchored" data-anchor-id="turbulent-flow-4">Turbulent Flow</h4>
+<section id="turbulent-flow-6" class="level4">
+<h4 class="anchored" data-anchor-id="turbulent-flow-6">Turbulent Flow</h4>
 </section>
 </section>
-<section id="heat-transfer-coefficient-2" class="level3">
-<h3 class="anchored" data-anchor-id="heat-transfer-coefficient-2">Heat Transfer Coefficient</h3>
+<section id="heat-transfer-coefficient-3" class="level3">
+<h3 class="anchored" data-anchor-id="heat-transfer-coefficient-3">Heat Transfer Coefficient</h3>
 <p>Refer to the five wall boundary conditions for flat channel: (a) equal and constant surface temperature, (b) unequal and constant surface temperature, (c) equal and constant heat flux, (d) unequal and constant heat flux, (e) one surface constant temperature and the other constant heat flux</p>
 <div id="fig-flat-channel-thermal-boundary-conditions" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -731,15 +784,15 @@ Figure&nbsp;1: Various flat channel wall boundary conditions
 \end{cases}
 </span></p>
 </section>
-<section id="turbulent-flow-5" class="level4">
-<h4 class="anchored" data-anchor-id="turbulent-flow-5">Turbulent Flow</h4>
+<section id="turbulent-flow-7" class="level4">
+<h4 class="anchored" data-anchor-id="turbulent-flow-7">Turbulent Flow</h4>
 </section>
 </section>
 </section>
 <section id="developed-hydrodynamic-thermal-entrance-region-1" class="level2">
 <h2 class="anchored" data-anchor-id="developed-hydrodynamic-thermal-entrance-region-1">Developed Hydrodynamic, Thermal Entrance Region</h2>
-<section id="heat-transfer-coefficient-3" class="level3">
-<h3 class="anchored" data-anchor-id="heat-transfer-coefficient-3">Heat Transfer Coefficient</h3>
+<section id="heat-transfer-coefficient-4" class="level3">
+<h3 class="anchored" data-anchor-id="heat-transfer-coefficient-4">Heat Transfer Coefficient</h3>
 <section id="laminar-flow-7" class="level4">
 <h4 class="anchored" data-anchor-id="laminar-flow-7">Laminar Flow</h4>
 <p><strong>Shah and London (1978):</strong> Smooth surface, negligible axial conduction, negligible viscous dissipation, if <span class="math inline">x^*=\frac x{D_H\mathrm{Re}_{D_H}\mathrm{Pr}}</span></p>
@@ -784,8 +837,8 @@ Figure&nbsp;1: Various flat channel wall boundary conditions
 \end{aligned}\tag{4.5.143}
 </span></p>
 </section>
-<section id="turbulent-flow-6" class="level4">
-<h4 class="anchored" data-anchor-id="turbulent-flow-6">Turbulent Flow</h4>
+<section id="turbulent-flow-8" class="level4">
+<h4 class="anchored" data-anchor-id="turbulent-flow-8">Turbulent Flow</h4>
 </section>
 </section>
 </section>
