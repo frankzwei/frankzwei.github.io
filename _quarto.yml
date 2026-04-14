@@ -11,62 +11,74 @@ website:
       - text: Home
         href: index.qmd
       - text: Knowledge Base
-        href: knowledge-base/index.qmd
+        menu:
+          - text: Fundamentals of Engineering
+            href: knowledge-base/engineering-fundamentals/index.qmd
+          - text: Propulsion Design
+            href: knowledge-base/propulsion-design/index.qmd
       - text: Digital Notes
         href: notes/index.qmd
       - text: Projects
         href: projects/index.qmd
   sidebar:
-    - id: knowledge-base
-      title: Knowledge Base
+    - id: engineering-fundamentals
+      title: Fundamentals of Engineering
       style: floating
       collapse-level: 1
       contents:
         - section: Standards
-          href: knowledge-base/standards/index.qmd
           contents:
             - text: SAE AS4395 37&deg Flared Fitting
-              href: knowledge-base/standards/sae-as4395-37deg-flared-fitting.qmd
+              href: knowledge-base/engineering-fundamentals/standards/sae-as4395-37deg-flared-fitting.qmd
         - section: CFD
-          href: knowledge-base/cfd/index.qmd
           contents:
             - section: Computational Fluid Mechanics and Heat Transfer
-              href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/index.qmd
               contents:
                 - text: Chapter 2. Partial Differential Equations
-                  href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-2-partial-differential-equations.qmd
+                  href: knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-2-partial-differential-equations.qmd
                 - text: Chapter 4. Application of Numerical Methods to Model Equations
-                  href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.qmd
+                  href: knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.qmd
                 - text: Chapter 6. Numerical Methods for Inviscid Flows
-                  href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.qmd
+                  href: knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.qmd
                 - text: Chapter 9. Numerical Methods for Navier-Stokes Equations
-                  href: knowledge-base/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-9-numerical-methods-for-navier-stokes-equations.qmd
+                  href: knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-9-numerical-methods-for-navier-stokes-equations.qmd
         - section: Fluids
-          href: knowledge-base/fluids/index.qmd
           contents:
             - section: Convective Heat and Mass Transfer
-              href: knowledge-base/fluids/convective-heat-and-mass-transfer/index.qmd
               contents:
                 - text: Chapter 4. Internal Laminar Flow
-                  href: knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-4-internal-laminar-flow.qmd
+                  href: knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-4-internal-laminar-flow.qmd
                 - text: Chapter 7. Turbulent and Transitional Internal Flow
-                  href: knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-7-turbulent-and-transitional-internal-flow.qmd
+                  href: knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-7-turbulent-and-transitional-internal-flow.qmd
+                - text: Chapter 8. Effects of Transpiration
+                  href: knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-8-effects-of-transpiration.qmd
                 - text: Chapter 10. Natural Convection
-                  href: knowledge-base/fluids/convective-heat-and-mass-transfer/chapters/chapter-10-natural-convection.qmd
-            - text: Correlations Reference Sheet
-              href: knowledge-base/fluids/correlations-reference.qmd
+                  href: knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-10-natural-convection.qmd
+            - text: Forced Flows Correlations
+              href: knowledge-base/engineering-fundamentals/fluids/forced-flows-correlations.qmd
+            - text: Free and Mixed Convection Correlations
+              href: knowledge-base/engineering-fundamentals/fluids/free-mixed-convection-correlations.qmd
         - section: Structures
-          href: knowledge-base/structures/index.qmd
           contents:
             - section: Fundamentals of Metal Fatigue Analysis
-              href: knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/index.qmd
               contents:
                 - text: Chapter 5. Variable Amplitude Loading
-                  href: knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-5-variable-amplitude-loading.qmd
+                  href: knowledge-base/engineering-fundamentals/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-5-variable-amplitude-loading.qmd
                 - text: Chapter 7. Multiaxial Fatigue
-                  href: knowledge-base/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-7-multiaxial-fatigue.qmd
+                  href: knowledge-base/engineering-fundamentals/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-7-multiaxial-fatigue.qmd
             - text: Limits and Fits
-              href: knowledge-base/structures/limits-and-fits.qmd
+              href: knowledge-base/engineering-fundamentals/structures/limits-and-fits.qmd
+    - id: propulsion-design
+      title: Propulsion Design
+      style: floating
+      collapse-level: 1
+      contents:
+        - section: Injectors
+          contents:
+            - section: Pintle Injector
+              contents:
+                - text: Design Procedures for Moveable Pintle
+                  href: knowledge-base/propulsion-design/injector/pintle/design-procedures-moveable-pintle.qmd
 format:
   html:
     theme: cosmo
