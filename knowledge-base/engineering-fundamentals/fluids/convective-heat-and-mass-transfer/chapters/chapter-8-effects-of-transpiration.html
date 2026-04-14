@@ -366,6 +366,7 @@ window.Quarto = {
   <li><a href="#sec-couette-film-model-heat-transfer-coefficient" id="toc-sec-couette-film-model-heat-transfer-coefficient" class="nav-link" data-scroll-target="#sec-couette-film-model-heat-transfer-coefficient">Heat Transfer Coefficient</a></li>
   </ul></li>
   <li><a href="#gas-liquid-interphase" id="toc-gas-liquid-interphase" class="nav-link" data-scroll-target="#gas-liquid-interphase">Gas-Liquid Interphase</a></li>
+  <li><a href="#transpiration-and-sweat-cooling" id="toc-transpiration-and-sweat-cooling" class="nav-link" data-scroll-target="#transpiration-and-sweat-cooling">Transpiration and Sweat Cooling</a></li>
   </ul>
 </nav>
     </div>
@@ -410,7 +411,7 @@ m_{1,s}'' &amp; =n_sm_{1,s}-\left.\rho\mathfrak D_{12}\frac {\partial\overline m
 \begin{aligned}
 \tau_s &amp; =\frac 12\rho\dot C_fU_{\infty}^2 \\
 \left.-k\frac {\partial T}{\partial y}\right|_{y=0} &amp; =\dot h(T_s-T_{\infty}) \\
-\left.-\rho\mathfrak D_{12}\frac {\partial m_1}{\partial y}\right|_{y=0} &amp; =\dot\mathfrak K(m_{1,s}-m_{1,\infty})
+\left.-\rho\mathfrak D_{12}\frac {\partial m_1}{\partial y}\right|_{y=0} &amp; =\dot{\mathfrak K}(m_{1,s}-m_{1,\infty})
 \end{aligned}
 </span></p>
 <p>The dot implies a modified parameter for mass transpiration. Explicit and implicit equations for calculating each parameter is given below. Derivations for <span class="math inline">\dot C_f</span> and <span class="math inline">\dot h</span> are given in <a href="#sec-couette-film-model-wall-friction" class="quarto-xref">Section&nbsp;2.1</a> and <a href="#sec-couette-film-model-heat-transfer-coefficient" class="quarto-xref">Section&nbsp;2.2</a> respectively. The <strong>explicit</strong> formulations are</p>
@@ -457,6 +458,23 @@ m_2''=(1-m_{1,u})m_{\mathrm{tot}}''-\left.\rho_{L,u}\mathfrak D_{12,L}\frac {\pa
 <p><span class="math display">
 U_{I,y}=frac {m_{\mathrm{tot}}''}{\rho_L}
 </span></p>
+</section>
+<section id="transpiration-and-sweat-cooling" class="level1">
+<h1>Transpiration and Sweat Cooling</h1>
+<p>Transpiration cooling involves the flow of a gas or liquid coolant through a heated perforated or porous medium to cool the internal hot-gas surface. This type of cooling is used under high thermal loading that includes a significant amount of convective heat transfer into the neighboring surfaces. The coolant absorbs not only some of the energy in the solid, but also reduces the convective heat flux to the surface, before being convected away into the hot-gas freestream. Adjusting the transpiration cooling flow rate can raise or lower the surface temperature.</p>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled" title="">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 
 
 </section>
