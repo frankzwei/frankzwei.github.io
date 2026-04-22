@@ -436,7 +436,7 @@ window.Quarto = {
 0 \\ p \\ 0 \\ 0
 \end{bmatrix}
 </span></p>
-<p>The convective term <span class="math inline">\textbf E^{(c)}</span> can be viewed as <em>passive</em> scalar quantities convected by the velocity <span class="math inline">u</span> at the cell interface. The pressure flux contribution is governed by the acoustic wave speeds as pressure information propagates through a fluid at the speed of sound. If we denote an arbitrary interface with a subscript of <span class="math inline">\frac 12</span>, and denote the left and right properties as <span class="math inline">\mathrm L</span> and <span class="math inline">\mathrm R</span>, then both terms may be expressed in terms of a left and right average quantity. The convective term can be expressed as</p>
+<p>The convective term <span class="math inline">\textbf E^{(c)}</span> can be viewed as passive scalar quantities that are convected away by the velocity <span class="math inline">u</span> at the cell interface. The pressure flux contribution is governed by the acoustic wave speeds as pressure information propagates through a fluid at the speed of sound. If we denote an arbitrary interface with a subscript of <span class="math inline">\frac 12</span>, and denote the left and right properties as <span class="math inline">\mathrm L</span> and <span class="math inline">\mathrm R</span>, then both terms may be expressed in terms of a left and right average quantity. The convective term can be expressed as</p>
 <p><span id="eq-convective-term-interface-expression"><span class="math display">
 \textbf E_{\frac 12}^{(c)}=u_{\frac 12}\begin{bmatrix}
 \rho \\\rho u \\v \\\rho h_t
@@ -451,7 +451,7 @@ window.Quarto = {
 (\cdot)_{\mathrm R} &amp; \qquad M_{\frac 12}&lt;0
 \end{cases}
 \tag{3}</span></span></p>
-<p>The crux here is coming up with a suitable scheme to calculate the Mach number at the cell interface, <span class="math inline">M_{\frac 12}</span>. Note that from this point, <span class="math inline">M_{\frac 12}</span> will be referred to as the advection velocity. Liou and Steffen (1993) recommend representing this velocity as a combination of wave speeds traveling towards the interface from the neighboring left and right cell states. By combining the contributions of the left and right states, this is expressed mathematically as</p>
+<p>The crux here is coming up with a suitable scheme to calculate the Mach number at the cell interface, <span class="math inline">M_{\frac 12}</span>. From this point on, <span class="math inline">M_{\frac 12}</span> will be referred to as the advection velocity. Liou and Steffen (1993) recommend representing this velocity as a combination of wave speeds traveling towards the interface from the neighboring left and right cell states. By combining the contributions of the left and right states, this is expressed mathematically as</p>
 <p><span id="eq-advection-velocity-decomposition"><span class="math display">
 M_{\frac 12}=M_{\mathrm L}^++M_{\mathrm R}^-
 \tag{4}</span></span></p>
@@ -462,8 +462,7 @@ M^{\pm}=\begin{cases}
 \frac 12(M\pm|M|) &amp; \qquad|M|&gt;1
 \end{cases}
 \tag{5}</span></span></p>
-<p>Note that <span class="math inline">M^+</span> and <span class="math inline">M^-</span> represent the flux contributions moving in the positive and negative axis directions respectively. They correspond to the left and right cell states respectively, as that is the direction the flux must move towards the cell boundary.</p>
-<p>The pressure flux term can also be decomposed in the same manner as Eqn. (<a href="#eq-advection-velocity-decomposition" class="quarto-xref">4</a>).</p>
+<p>Note that <span class="math inline">M^+</span> and <span class="math inline">M^-</span> represent the flux contributions moving in the positive and negative axis directions respectively. They correspond to the left and right cell states respectively as well, as that is the direction the flux must travel to reach the cell boundary. The pressure flux term can also be decomposed in the same manner as Eqn. (<a href="#eq-advection-velocity-decomposition" class="quarto-xref">4</a>).</p>
 <p><span id="eq-pressure-decomposition"><span class="math display">
 p_{\frac 12}=p_{\mathrm L}^++p_{\mathrm R}^-
 \tag{6}</span></span></p>
