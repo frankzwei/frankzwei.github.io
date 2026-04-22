@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Internal Laminar Flow – Frank’s Engineering Notebook</title>
+<title>Introduction to the AUSM Scheme – Frank’s Engineering Notebook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../../../">
-<script src="../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../site_libs/bootstrap/bootstrap-a44d1825680bf4d2a1237acfefc713aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-a44d1825680bf4d2a1237acfefc713aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,7 +115,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../../../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -125,7 +125,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Frank’s Engineering Notebook</span>
     </a>
   </div>
@@ -136,7 +136,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -145,21 +145,21 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-knowledge-base">    
         <li>
-    <a class="dropdown-item" href="../../../../../knowledge-base/engineering-fundamentals/index.html">
+    <a class="dropdown-item" href="../../../knowledge-base/engineering-fundamentals/index.html">
  <span class="dropdown-text">Fundamentals of Engineering</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../../knowledge-base/propulsion-design/index.html">
+    <a class="dropdown-item" href="../../../knowledge-base/propulsion-design/index.html">
  <span class="dropdown-text">Propulsion Design</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../../../../notes/index.html"> 
+    <a class="nav-link" href="../../../notes/index.html"> 
 <span class="menu-text">Digital Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../../projects/index.html"> 
+    <a class="nav-link" href="../../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -174,7 +174,7 @@ window.Quarto = {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Internal Laminar Flow</h1>
+          <h1 class="quarto-secondary-nav-title">Introduction to the AUSM Scheme</h1>
         </a>     
     </div>
   </nav>
@@ -196,7 +196,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/standards/sae-as4395-37deg-flared-fitting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/standards/sae-as4395-37deg-flared-fitting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SAE AS4395 37° Flared Fitting</span></a>
   </div>
 </li>
@@ -204,13 +204,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">CFD</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -222,25 +222,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-2-partial-differential-equations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-2-partial-differential-equations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 2. Partial Differential Equations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-4-application-of-numerical-methods-to-model-equations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 4. Application of Numerical Methods to Model Equations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-6-numerical-methods-for-inviscid-flows.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 6. Numerical Methods for Inviscid Flows</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-9-numerical-methods-for-navier-stokes-equations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/cfd/computational-fluid-mechanics-and-heat-transfer/chapters/chapter-9-numerical-methods-for-navier-stokes-equations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 9. Numerical Methods for Navier-Stokes Equations</span></a>
   </div>
 </li>
@@ -248,7 +248,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/cfd/ausm-flux-splitting-scheme.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/cfd/ausm-flux-splitting-scheme.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">AUSM Flux Splitting Scheme</span></a>
   </div>
 </li>
@@ -256,43 +256,43 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Fluids</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Convective Heat and Mass Transfer</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-4-internal-laminar-flow.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-4-internal-laminar-flow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 4. Internal Laminar Flow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-7-turbulent-and-transitional-internal-flow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-7-turbulent-and-transitional-internal-flow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 7. Turbulent and Transitional Internal Flow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-8-effects-of-transpiration.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-8-effects-of-transpiration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 8. Effects of Transpiration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-10-natural-convection.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/fluids/convective-heat-and-mass-transfer/chapters/chapter-10-natural-convection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 10. Natural Convection</span></a>
   </div>
 </li>
@@ -309,7 +309,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/fluids/fundamentals-of-heat-and-mass-transfer/chapters/chapter-7-external-flow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/fluids/fundamentals-of-heat-and-mass-transfer/chapters/chapter-7-external-flow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 7. External Flow</span></a>
   </div>
 </li>
@@ -317,13 +317,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/fluids/forced-flows-correlations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/fluids/forced-flows-correlations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Forced Flows Correlations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/fluids/free-mixed-convection-correlations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/fluids/free-mixed-convection-correlations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Free and Mixed Convection Correlations</span></a>
   </div>
 </li>
@@ -349,13 +349,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-5-variable-amplitude-loading.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-5-variable-amplitude-loading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 5. Variable Amplitude Loading</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-7-multiaxial-fatigue.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-7-multiaxial-fatigue.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 7. Multiaxial Fatigue</span></a>
   </div>
 </li>
@@ -363,7 +363,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../knowledge-base/engineering-fundamentals/structures/limits-and-fits.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../knowledge-base/engineering-fundamentals/structures/limits-and-fits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Limits and Fits</span></a>
   </div>
 </li>
@@ -379,8 +379,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#couette-flow" id="toc-couette-flow" class="nav-link active" data-scroll-target="#couette-flow">Couette Flow</a></li>
-  <li><a href="#poiseuille-flow" id="toc-poiseuille-flow" class="nav-link" data-scroll-target="#poiseuille-flow">Poiseuille Flow</a></li>
+  <li><a href="#derivation" id="toc-derivation" class="nav-link active" data-scroll-target="#derivation">Derivation</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -389,7 +389,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Internal Laminar Flow</h1>
+<h1 class="title d-none d-lg-block">Introduction to the AUSM Scheme</h1>
 </div>
 
 
@@ -406,34 +406,116 @@ window.Quarto = {
 </header>
 
 
-<section id="couette-flow" class="level1">
-<h1>Couette Flow</h1>
-<p>Consider two parallel plates with infinite span separated by a constant density fluid of height <span class="math inline">2b</span>. Each plate is a distance of <span class="math inline">b</span> away from the centerline. Neglect buoyancy effects and assume the top plate is moving at a constant velocity of <span class="math inline">U</span> while the bottom plate is stationary. Furthermore, assume the bottom and top plates are isothermal at temperatures of <span class="math inline">T_s</span> and <span class="math inline">T_1</span> respectively. The flow considered here is called <strong>parallel flow</strong> as all streamlines are parallel. Since all fluid elements move parallel to each other, <span class="math inline">v=0</span> and constant density mass conservation is</p>
-<p><span class="math display">
-\frac {\partial u}{\partial x}=-\frac {\partial v}{\partial y}=0
-</span></p>
-<p>Therefore, the velocity profile <span class="math inline">u</span> can <em>only</em> be a function of <span class="math inline">y</span>. Assuming steady flow of a Newtonian fluid, the momentum equation in the <span class="math inline">x</span> and <span class="math inline">y</span> directions simplify to</p>
-<p><span class="math display">
-\begin{align*}
-u\cancel{\frac {\partial u}{\partial x}}+\cancel{v\frac {\partial u}{\partial y}} &amp; =-\frac 1{\rho}\cancel{\frac {\partial p}{\partial x}}+\nu\left(\cancel{\frac {\partial^2u}{\partial x^2}}+\frac {\partial^2u}{\partial y^2}\right) \\
-u\cancel{\frac {\partial v}{\partial x}}+\cancel{v\frac {\partial v}{\partial y}} &amp; =-\frac 1{\rho}\frac {\partial p}{\partial v}+\nu\left(\cancel{\frac {\partial^2v}{\partial x^2}}+\cancel{\frac {\partial^2v}{\partial y^2}}\right)
-\end{align*}
-</span></p>
-<p>Momentum in the <span class="math inline">y</span> direction shows there is no pressure gradient in the <span class="math inline">y</span> direction. There also cannot be a pressure gradient in the <span class="math inline">x</span> direction as that would violate continuity. If we assumed <span class="math inline">\frac {\partial p}{\partial x}\neq0</span>, then this would require <span class="math inline">\frac {\partial^2u}{\partial x^2}\neq0</span> so <span class="math inline">u=u(x,y)</span>, which violates continuity. The PDE above reduces down to</p>
-<p><span class="math display">
-\frac {\mathrm d^2u}{\mathrm dy^2}=0
-</span></p>
-<p>subject to the boundary conditions <span class="math inline">u(-b)=0</span> and <span class="math inline">u(b)=U</span>. Integrating twice to determine the velocity profile gives</p>
-<p><span id="eq-couette-flow-velocity-profile"><span class="math display">
-u(y)=\frac U2\left(1+\frac yb\right)
+<section id="derivation" class="level1">
+<h1>Derivation</h1>
+<p>Consider the two dimensional system of Euler equations for an ideal gas.</p>
+<p><span id="eq-euler-equation"><span class="math display">
+\frac {\partial\textbf U}{\partial t}+\frac {\partial\textbf E}{\partial x}+\frac {\partial\textbf F}{\partial y}=0
 \tag{1}</span></span></p>
-<p>The energy equation for a constant density fluid is</p>
+<p>The conservative vector, <span class="math inline">\textbf U</span>, and inviscid flux vectors, <span class="math inline">\textbf E</span> and <span class="math inline">\textbf F</span>, are defined as</p>
 <p><span class="math display">
-\rho C_p\left(u\cancel{\frac {\partial T}{\partial x}}+\cancel v\frac {\partial T}{\partial y}\right)=k\frac {\partial^2T}{\partial y^2}+\mu\left(\frac {\partial u}{\partial y}\right)^2
+\begin{aligned}
+\textbf U=\begin{bmatrix}
+\rho \\\rho u \\\rho v\\\rho e_t
+\end{bmatrix} &amp; \qquad\qquad &amp;
+\textbf E=\begin{bmatrix}
+\rho u \\\rho u^2+p \\\rho uv \\\rho h_tu
+\end{bmatrix} &amp; \qquad\qquad &amp;
+\textbf F=\begin{bmatrix}
+\rho u \\\rho uv \\\rho v^2+p \\\rho h_tv
+\end{bmatrix}
+\end{aligned}
 </span></p>
+<p>The specific total energy, <span class="math inline">e_t</span>, is the sum of the specific internal energy, <span class="math inline">e</span>, and the kinetic energy, <span class="math inline">\frac 12(u^2+v^2)</span>. The specific stagnation enthalpy, <span class="math inline">h_t</span> is related to <span class="math inline">e_t</span> through <span class="math inline">\rho h_t=\rho e_t-p</span>. The first step in the derivation is to realize that the inviscid flux vector may be decomposed as the sum of a convective and pressure component.</p>
+<p><span class="math display">
+\textbf E=\begin{bmatrix}
+\rho \\\rho u \\\rho v \\\rho h_t
+\end{bmatrix}u+\begin{bmatrix}
+0 \\ p \\ 0 \\ 0
+\end{bmatrix}=\textbf E^{(c)}+\begin{bmatrix}
+0 \\ p \\ 0 \\ 0
+\end{bmatrix}
+</span></p>
+<p>The convective term <span class="math inline">\textbf E^{(c)}</span> can be viewed as <em>passive</em> scalar quantities convected by the velocity <span class="math inline">u</span> at the cell interface. The pressure flux contribution is governed by the acoustic wave speeds as pressure information propagates through a fluid at the speed of sound. If we denote an arbitrary interface with a subscript of <span class="math inline">\frac 12</span>, and denote the left and right properties as <span class="math inline">\mathrm L</span> and <span class="math inline">\mathrm R</span>, then both terms may be expressed in terms of a left and right average quantity. The convective term can be expressed as</p>
+<p><span id="eq-convective-term-interface-expression"><span class="math display">
+\textbf E_{\frac 12}^{(c)}=u_{\frac 12}\begin{bmatrix}
+\rho \\\rho u \\v \\\rho h_t
+\end{bmatrix}_{\mathrm L/\mathrm R}=M_{\frac 12}\begin{bmatrix}
+\rho a \\\rho ua \\\rho va \\\rho h_ta
+\end{bmatrix}_{\mathrm L/\mathrm R}
+\tag{2}</span></span></p>
+<p>where the <span class="math inline">\mathrm L/\mathrm R</span> notation is defined as</p>
+<p><span id="eq-left-right-notation-definition"><span class="math display">
+(\cdot)_{\mathrm L/\mathrm R}=\begin{cases}
+(\cdot)_{\mathrm L} &amp; \qquad M_{\frac 12}\geq0 \\
+(\cdot)_{\mathrm R} &amp; \qquad M_{\frac 12}&lt;0
+\end{cases}
+\tag{3}</span></span></p>
+<p>The crux here is coming up with a suitable scheme to calculate the Mach number at the cell interface, <span class="math inline">M_{\frac 12}</span>. Note that from this point, <span class="math inline">M_{\frac 12}</span> will be referred to as the advection velocity. Liou and Steffen (1993) recommend representing this velocity as a combination of wave speeds traveling towards the interface from the neighboring left and right cell states. By combining the contributions of the left and right states, this is expressed mathematically as</p>
+<p><span id="eq-advection-velocity-decomposition"><span class="math display">
+M_{\frac 12}=M_{\mathrm L}^++M_{\mathrm R}^-
+\tag{4}</span></span></p>
+<p>The split Mach numbers <span class="math inline">M_{\mathrm L}^+</span> and <span class="math inline">M_{\mathrm R}^-</span> may be calculated using any suitable manner. Liou and Steffen (1993) recommend using a Van Leer splitting scheme to calculate <span class="math inline">M^{\pm}</span>.</p>
+<p><span id="eq-advection-velocity-van-leer-splitting"><span class="math display">
+M^{\pm}=\begin{cases}
+\pm\frac 14(M\pm1)^2 &amp; \qquad|M|\leq1 \\
+\frac 12(M\pm|M|) &amp; \qquad|M|&gt;1
+\end{cases}
+\tag{5}</span></span></p>
+<p>Note that <span class="math inline">M^+</span> and <span class="math inline">M^-</span> represent the flux contributions moving in the positive and negative axis directions respectively. They correspond to the left and right cell states respectively, as that is the direction the flux must move towards the cell boundary.</p>
+<p>The pressure flux term can also be decomposed in the same manner as Eqn. (<a href="#eq-advection-velocity-decomposition" class="quarto-xref">4</a>).</p>
+<p><span id="eq-pressure-decomposition"><span class="math display">
+p_{\frac 12}=p_{\mathrm L}^++p_{\mathrm R}^-
+\tag{6}</span></span></p>
+<p>Pressure splitting <span class="math inline">p^{\pm}</span> is weighted using a polynomial expansion based on the characteristic speeds <span class="math inline">M\pm1</span>. Two equations are given for the pressure split terms, one is for a third order cubic split and the other is for a first order linear split. Each pressure splitting equation is divided into whether the advection velocity is subsonic or supersonic. For the third order split, then</p>
+<p><span id="eq-pressure-splitting-third-order"><span class="math display">
+p_3^{\pm}=\begin{cases}
+\frac p4(M\pm1)^2(2\mp M) &amp; \qquad|M|\leq1 \\
+\frac p2\frac {M\pm|M|}M &amp; \qquad|M|&gt;1
+\end{cases}
+\tag{7}</span></span></p>
+<p>A simpler form is the first order linear split.</p>
+<p><span class="math display">
+p_1^{\pm}=\begin{cases}
+\frac p2(1\pm M) &amp; \qquad|M|\leq1 \\
+\frac p2\frac {M\pm|M|}M &amp; \qquad|M|&gt;1
+\end{cases}
+</span></p>
+<p>It is important to note that the first order pressure split, <span class="math inline">p_1</span>, is not differentiable at the speed of sound, when <span class="math inline">|M|=1</span>. From testing, Liou and Steffen (1993) conclude that both first and third order splits perform reasonably well. The flux at the cell boundary is then</p>
+<p><span id="eq-ausm-flux-formulation"><span class="math display">
+\begin{bmatrix}
+\rho u \\\rho u^2+p \\\rho uv \\\rho h_tu
+\end{bmatrix}_{\frac 12}=\frac 12M_{\frac 12}\left[\begin{bmatrix}
+\rho a \\\rho ua \\\rho va \\\rho h_ta
+\end{bmatrix}_{\mathrm L}+\begin{bmatrix}
+\rho a \\\rho ua \\\rho va \\\rho h_ta
+\end{bmatrix}_{\mathrm R}\right]-\frac 12\left|M_{\frac 12}\right|\Delta_{\frac 12}\left\{\begin{bmatrix}
+\rho a \\\rho ua \\\rho va \\\rho h_ta
+\end{bmatrix}\right\}+\begin{bmatrix}
+0 \\p_{\mathrm L}^++p_{\mathrm R}^- \\0 \\0
+\end{bmatrix}
+\tag{8}</span></span></p>
+<p>where <span class="math inline">\{\cdot\}_{\mathrm L/\mathrm R}=\{\cdot\}_{\mathrm R}-\{\cdot\}_{\mathrm L}</span>. As can be seen, the first term in Eqn. (<a href="#eq-ausm-flux-formulation" class="quarto-xref">8</a>) is a Mach number-weighted average of the left and right flux quantities. The second term is the numerical dissipation term that renders the flux formula upwinding.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The numerical dissipation term has the scalar coefficient <span class="math inline">\left|M_{\frac 12}</span> that requires only <span class="math inline">\mathcal O(n)</span> operations to evaluate, in contrast to the <span class="math inline">\mathcal O(n^2)</span> operations required for the Roe matrix. This is one, albeit small, advantage of AUSM compared to the Roe scheme.</p>
+</div>
+</div>
+</div>
+<p>If viscous terms are present, <span class="math inline">\textbf E_v</span> and <span class="math inline">\textbf F_v</span> should be calculated using the typical central-average representation. The AUSM scheme retains the simplicity and efficiency of a standard flux-vector splitting (FVS) scheme, while also achieving a comparable level of superior accuracy as standard flux differencing splitting (FDS) schemes.</p>
 </section>
-<section id="poiseuille-flow" class="level1">
-<h1>Poiseuille Flow</h1>
+<section id="references" class="level1">
+<h1>References</h1>
 
 
 </section>
