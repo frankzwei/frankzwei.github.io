@@ -379,9 +379,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#derivation" id="toc-derivation" class="nav-link active" data-scroll-target="#derivation">Derivation</a></li>
+  <li><a href="#sec-derivation" id="toc-sec-derivation" class="nav-link active" data-scroll-target="#sec-derivation">Derivation</a></li>
+  <li><a href="#extension-to-all-speeds" id="toc-extension-to-all-speeds" class="nav-link" data-scroll-target="#extension-to-all-speeds">Extension to All Speeds</a></li>
   </ul>
-<div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="files/Liou-1993-AUSM_Scheme-JCP-107.pdf"><i class="bi bi-file-pdf"></i>Liou and Steffen (1993)</a></li></ul></div></nav>
+<div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="files/Liou-1993-AUSM_Scheme-JCP-107.pdf"><i class="bi bi-file-pdf"></i>Liou and Steffen (1993)</a></li><li><a href="files/Liou-2006-AUSM_Scheme_Sequel-JCP-214.pdf"><i class="bi bi-file-pdf"></i>Liou (2006)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -405,7 +406,7 @@ window.Quarto = {
 </header>
 
 
-<section id="derivation" class="level1">
+<section id="sec-derivation" class="level1">
 <h1>Derivation</h1>
 <p>Consider the two dimensional system of Euler equations for an ideal gas.</p>
 <p><span id="eq-euler-equation"><span class="math display">
@@ -414,34 +415,34 @@ window.Quarto = {
 <p>The conservative vector, <span class="math inline">\textbf U</span>, and inviscid flux vectors, <span class="math inline">\textbf E</span> and <span class="math inline">\textbf F</span>, are defined as</p>
 <p><span class="math display">
 \begin{aligned}
-\textbf U=\begin{bmatrix}
+\textbf U=\begin{pmatrix}
 \rho \\\rho u \\\rho v\\\rho e_t
-\end{bmatrix} &amp; \qquad\qquad &amp;
-\textbf E=\begin{bmatrix}
+\end{pmatrix} &amp; \qquad\qquad &amp;
+\textbf E=\begin{pmatrix}
 \rho u \\\rho u^2+p \\\rho uv \\\rho h_tu
-\end{bmatrix} &amp; \qquad\qquad &amp;
-\textbf F=\begin{bmatrix}
+\end{pmatrix} &amp; \qquad\qquad &amp;
+\textbf F=\begin{pmatrix}
 \rho u \\\rho uv \\\rho v^2+p \\\rho h_tv
-\end{bmatrix}
+\end{pmatrix}
 \end{aligned}
 </span></p>
 <p>The specific total energy, <span class="math inline">e_t</span>, is the sum of the specific internal energy, <span class="math inline">e</span>, and the kinetic energy, <span class="math inline">\frac 12(u^2+v^2)</span>. The specific stagnation enthalpy, <span class="math inline">h_t</span> is related to <span class="math inline">e_t</span> through <span class="math inline">\rho h_t=\rho e_t-p</span>. The first step in the derivation is to realize that the inviscid flux vector may be decomposed as the sum of a convective and pressure component.</p>
 <p><span class="math display">
-\textbf E=\begin{bmatrix}
+\textbf E=\begin{pmatrix}
 \rho \\\rho u \\\rho v \\\rho h_t
-\end{bmatrix}u+\begin{bmatrix}
+\end{pmatrix}u+\begin{pmatrix}
 0 \\ p \\ 0 \\ 0
-\end{bmatrix}=\textbf E^{(c)}+\begin{bmatrix}
+\end{pmatrix}=\textbf E^{(c)}+\begin{pmatrix}
 0 \\ p \\ 0 \\ 0
-\end{bmatrix}
+\end{pmatrix}
 </span></p>
 <p>The convective term <span class="math inline">\textbf E^{(c)}</span> can be viewed as passive scalar quantities that are convected away by the velocity <span class="math inline">u</span> at the cell interface. The pressure flux contribution is governed by the acoustic wave speeds as pressure information propagates through a fluid at the speed of sound. If we denote an arbitrary interface with a subscript of <span class="math inline">\frac 12</span>, and denote the left and right properties as <span class="math inline">\mathrm L</span> and <span class="math inline">\mathrm R</span>, then both terms may be expressed in terms of a left and right average quantity. The convective term can be expressed as</p>
 <p><span id="eq-convective-term-interface-expression"><span class="math display">
-\textbf E_{\frac 12}^{(c)}=u_{\frac 12}\begin{bmatrix}
+\textbf E_{\frac 12}^{(c)}=u_{\frac 12}\begin{pmatrix}
 \rho \\\rho u \\v \\\rho h_t
-\end{bmatrix}_{\mathrm L/\mathrm R}=M_{\frac 12}\begin{bmatrix}
+\end{pmatrix}_{\mathrm L/\mathrm R}=M_{\frac 12}\begin{pmatrix}
 \rho a \\\rho ua \\\rho va \\\rho h_ta
-\end{bmatrix}_{\mathrm L/\mathrm R}
+\end{pmatrix}_{\mathrm L/\mathrm R}
 \tag{2}</span></span></p>
 <p>where the <span class="math inline">\mathrm L/\mathrm R</span> notation is defined as</p>
 <p><span id="eq-left-right-notation-definition"><span class="math display">
@@ -457,8 +458,8 @@ M_{\frac 12}=M_{\mathrm L}^++M_{\mathrm R}^-
 <p>The split Mach numbers <span class="math inline">M_{\mathrm L}^+</span> and <span class="math inline">M_{\mathrm R}^-</span> may be calculated using any suitable manner. Liou and Steffen (1993) recommend using a Van Leer splitting scheme to calculate <span class="math inline">M^{\pm}</span>.</p>
 <p><span id="eq-advection-velocity-van-leer-splitting"><span class="math display">
 M^{\pm}=\begin{cases}
-\pm\frac 14(M\pm1)^2 &amp; \qquad|M|\leq1 \\
-\frac 12(M\pm|M|) &amp; \qquad|M|&gt;1
+\pm\dfrac 14(M\pm1)^2 &amp; \qquad|M|\leq1 \\\\
+\dfrac 12(M\pm|M|) &amp; \qquad|M|&gt;1
 \end{cases}
 \tag{5}</span></span></p>
 <p>Note that <span class="math inline">M^+</span> and <span class="math inline">M^-</span> represent the flux contributions moving in the positive and negative axis directions respectively. They correspond to the left and right cell states respectively as well, as that is the direction the flux must travel to reach the cell boundary. The pressure flux term can also be decomposed in the same manner as Eqn. (<a href="#eq-advection-velocity-decomposition" class="quarto-xref">Eqn.&nbsp;4</a>).</p>
@@ -468,49 +469,46 @@ p_{\frac 12}=p_{\mathrm L}^++p_{\mathrm R}^-
 <p>Pressure splitting <span class="math inline">p^{\pm}</span> is weighted using a polynomial expansion based on the characteristic speeds <span class="math inline">M\pm1</span>. Two equations are given for the pressure split terms, one is for a third order cubic split and the other is for a first order linear split. Each pressure splitting equation is divided into whether the advection velocity is subsonic or supersonic. For the third order split, then</p>
 <p><span id="eq-pressure-splitting-third-order"><span class="math display">
 p_3^{\pm}=\begin{cases}
-\frac p4(M\pm1)^2(2\mp M) &amp; \qquad|M|\leq1 \\
-\frac p2\frac {M\pm|M|}M &amp; \qquad|M|&gt;1
+\dfrac p4(M\pm1)^2(2\mp M) &amp; \qquad|M|\leq1 \\\\
+\dfrac p2\dfrac {M\pm|M|}M &amp; \qquad|M|&gt;1
 \end{cases}
 \tag{7}</span></span></p>
 <p>A simpler form is the first order linear split.</p>
 <p><span class="math display">
 p_1^{\pm}=\begin{cases}
-\frac p2(1\pm M) &amp; \qquad|M|\leq1 \\
-\frac p2\frac {M\pm|M|}M &amp; \qquad|M|&gt;1
+\dfrac p2(1\pm M) &amp; \qquad|M|\leq1 \\\\
+\dfrac p2\dfrac {M\pm|M|}M &amp; \qquad|M|&gt;1
 \end{cases}
 </span></p>
 <p>It is important to note that the first order pressure split, <span class="math inline">p_1</span>, is not differentiable at the speed of sound, when <span class="math inline">|M|=1</span>. From testing, Liou and Steffen (1993) conclude that both first and third order splits perform reasonably well. The flux at the cell boundary is then</p>
 <p><span id="eq-ausm-flux-formulation"><span class="math display">
-\begin{bmatrix}
+\begin{pmatrix}
 \rho u \\\rho u^2+p \\\rho uv \\\rho h_tu
-\end{bmatrix}_{\frac 12}=\frac 12M_{\frac 12}\left[\begin{bmatrix}
+\end{pmatrix}_{\frac 12}=\frac 12M_{\frac 12}\left[\begin{pmatrix}
 \rho a \\\rho ua \\\rho va \\\rho h_ta
-\end{bmatrix}_{\mathrm L}+\begin{bmatrix}
+\end{pmatrix}_{\mathrm L}+\begin{pmatrix}
 \rho a \\\rho ua \\\rho va \\\rho h_ta
-\end{bmatrix}_{\mathrm R}\right]-\frac 12\left|M_{\frac 12}\right|\Delta_{\frac 12}\left\{\begin{bmatrix}
+\end{pmatrix}_{\mathrm R}\right]-\frac 12\left|M_{\frac 12}\right|\Delta_{\frac 12}\left\{\begin{pmatrix}
 \rho a \\\rho ua \\\rho va \\\rho h_ta
-\end{bmatrix}\right\}+\begin{bmatrix}
+\end{pmatrix}\right\}+\begin{pmatrix}
 0 \\p_{\mathrm L}^++p_{\mathrm R}^- \\0 \\0
-\end{bmatrix}
+\end{pmatrix}
 \tag{8}</span></span></p>
-<p>where <span class="math inline">\{\cdot\}_{\mathrm L/\mathrm R}=\{\cdot\}_{\mathrm R}-\{\cdot\}_{\mathrm L}</span>. As can be seen, the first term in Eqn. (<a href="#eq-ausm-flux-formulation" class="quarto-xref">Eqn.&nbsp;8</a>) is a Mach number-weighted average of the left and right flux quantities. The second term is the numerical dissipation term that renders the flux formula upwinding.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The numerical dissipation term has the scalar coefficient <span class="math inline">\left|M_{\frac 12}\right|</span> that requires only <span class="math inline">\mathcal O(n)</span> operations to evaluate, in contrast to the <span class="math inline">\mathcal O(n^2)</span> operations required for the Roe matrix. This is one, albeit small, advantage of AUSM compared to the Roe scheme.</p>
-</div>
-</div>
-</div>
+<p>where <span class="math inline">\{\cdot\}_{\mathrm L/\mathrm R}=\{\cdot\}_{\mathrm R}-\{\cdot\}_{\mathrm L}</span>. As can be seen, the first term in Eqn. (<a href="#eq-ausm-flux-formulation" class="quarto-xref">Eqn.&nbsp;8</a>) is a Mach number-weighted average of the left and right flux quantities. The second term is the numerical dissipation term that renders the flux formula upwinding. This term contains the scalar coefficient <span class="math inline">\left|M_{\frac 12}\right|</span> that requires only <span class="math inline">\mathcal O(n)</span> operations to evaluate. In contrast, the Roe matrix from the Roe scheme requires <span class="math inline">\mathcal O(n^2)</span> operations to evaluate. This is one, albeit a very small, advantage of AUSM over the Roe scheme.</p>
 <p>If viscous terms are present, <span class="math inline">\textbf E_v</span> and <span class="math inline">\textbf F_v</span> should be calculated using the typical central-average representation. The AUSM scheme retains the simplicity and efficiency of a standard flux-vector splitting (FVS) scheme, while also achieving a comparable level of superior accuracy as standard flux differencing splitting (FDS) schemes.</p>
+</section>
+<section id="extension-to-all-speeds" class="level1">
+<h1>Extension to All Speeds</h1>
+<p>The formulation from <a href="#sec-derivation" class="quarto-xref">Section&nbsp;1</a> is only applicable to high speed compressible flows. With the trend of current CFD applications, it is highly advantageous to have a scheme that is applicable for all flow regimes (subsonic, transonic, and supersonic). There are two major deficiencies that occur when applying an existing compressible scheme to low speed flows.</p>
+<ol type="1">
+<li><p>Convergence is increasingly slow for low Mach numbers to the point where convergence may stall after a certain point.</p></li>
+<li><p>Solutions are grossly inaccurate</p></li>
+</ol>
+<p>To extend the baseline AUSM scheme to all flow regimes, referred to in literature as AUSM<sup>+</sup>-up, consider the inviscid Euler equation of one dimension.</p>
+<p><span id="eq-ausm-extension-euler-equation"><span class="math display">
+\frac {\partial\textbf U}{\partial t}+\nabla\cdot\textbf E=0
+\tag{9}</span></span></p>
+<p>Extending to multiple dimensions means repeating the same flux splitting process to each new flux term added. Like <a href="#sec-derivation" class="quarto-xref">Section&nbsp;1</a>, the definitions for <span class="math inline">\textbf U</span> and <span class="math inline">\textbf E</span> remain identical.</p>
 
 
 </section>
