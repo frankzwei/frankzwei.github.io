@@ -4,7 +4,12 @@
     "href": "knowledge-base/propulsion-design/sprays-and-atomization/spray-impingement-simulation.html",
     "title": "Development of Methodology for Spray Impingement Simulation",
     "section": "",
-    "text": "Introduction\n\n\nLiterature Review\n\n\nModel Formulation"
+    "text": "Introduction\n\n\nLiterature Review\n\n\nModel Formulation",
+    "crumbs": [
+      "Home",
+      "Sprays and Atomization",
+      "Spray Impingement Simulation"
+    ]
   },
   {
     "objectID": "knowledge-base/propulsion-design/injector/pintle/design-procedures-moveable-pintle.html",
@@ -613,14 +618,24 @@
     "href": "knowledge-base/propulsion-design/sprays-and-atomization/spray-dropsize-correlations.html",
     "title": "NASA-CR-125674: Correlation of Spray Dropsize Distribution and Injector Variables",
     "section": "",
-    "text": "For the experimental data, the parameters captured in the empirical correlations are\n\n\\overline D=\\overline D\\left[\\left(V_j, d_j, \\gamma, \\frac {p_c}{p_j},\\frac {\\psi_c}{p_j}, \\frac {\\Delta}{d_j}\\right)_1, \\left(P_{D_i}, \\frac {d_{j_i}}{d_{j1}}, \\frac {\\psi_i}{p_{j1}},\\frac {p_{c_i}}{p_{j1}}, \\frac {\\Delta_i}{d_{j1}}\\right)_{i=2,\\ldots n}\\right]\n\\tag{1}\nThere are additional parameters not accounted for in Eqn. 1, most notably the flow conditions at the entrance of the injection orifice, the orifice length L_0, and the interaction between the impinging jet and the ambient surroundings across the jet free length L_j. Eqn. 1 takes these factors into account through their effect on the velocity profile and turbulence.\n\n\nFor like-doublets, the parameters in Eqn. 1 that relate one jet’s characteristics with that of the other’s is all one. The angle \\gamma is defined as the included angle between the jets and \\Delta is the distance between the jets at the impingement point. The simplified form of Eqn. 1 becomes\n\n\\overline D=CV_j^{\\alpha_1}d_j^{\\alpha_2}\\left(\\frac {p_c}{p_j}\\right)^{\\alpha_3}\\left(\\frac {\\psi_c}{p_j}\\right)^{\\alpha_4}\\gamma^{\\alpha_5}\\left(1-\\frac {\\Delta}{d_j}\\right)^{\\alpha_6}\n\\tag{2}\nThe factor 1-\\frac {\\Delta}{d_j} is used since it results in Eqn. 2 being finite when \\Delta=0. Using a least squares regression technique to determine C and \\alpha_i, Eqn. 2 was curve fit to flow through a 0.081 inch diameter orifice. For a laminar jet, the correlation is\n\n\\overline D=4.85\\times10^4V_j^{-0.75}d_j^{0.57}\\left(\\frac {p_c}{p_j}\\right)^{-0.52}\n\\tag{3}\nFor a turbulent jet, the empirical equation is\n\n\\overline D=15.9\\times10^4V_j^{-1.0}d_j^{0.57}\\left(\\frac {p_c}{p_j}\\right)^{-0.10}\n\\tag{4}"
+    "text": "For the experimental data, the parameters captured in the empirical correlations are\n\n\\overline D=\\overline D\\left[\\left(V_j, d_j, \\gamma, \\frac {p_c}{p_j},\\frac {\\psi_c}{p_j}, \\frac {\\Delta}{d_j}\\right)_1, \\left(P_{D_i}, \\frac {d_{j_i}}{d_{j1}}, \\frac {\\psi_i}{p_{j1}},\\frac {p_{c_i}}{p_{j1}}, \\frac {\\Delta_i}{d_{j1}}\\right)_{i=2,\\ldots n}\\right]\n\\tag{1}\nThere are additional parameters not accounted for in Eqn. 1, most notably the flow conditions at the entrance of the injection orifice, the orifice length L_0, and the interaction between the impinging jet and the ambient surroundings across the jet free length L_j. Eqn. 1 takes these factors into account through their effect on the velocity profile and turbulence.\n\n\nFor like-doublets, the parameters in Eqn. 1 that relate one jet’s characteristics with that of the other’s is all one. The angle \\gamma is defined as the included angle between the jets and \\Delta is the distance between the jets at the impingement point. The simplified form of Eqn. 1 becomes\n\n\\overline D=CV_j^{\\alpha_1}d_j^{\\alpha_2}\\left(\\frac {p_c}{p_j}\\right)^{\\alpha_3}\\left(\\frac {\\psi_c}{p_j}\\right)^{\\alpha_4}\\gamma^{\\alpha_5}\\left(1-\\frac {\\Delta}{d_j}\\right)^{\\alpha_6}\n\\tag{2}\nThe factor 1-\\frac {\\Delta}{d_j} is used since it results in Eqn. 2 being finite when \\Delta=0. Using a least squares regression technique to determine C and \\alpha_i, Eqn. 2 was curve fit to flow through a 0.081 inch diameter orifice. For a laminar jet, the correlation is\n\n\\overline D=4.85\\times10^4V_j^{-0.75}d_j^{0.57}\\left(\\frac {p_c}{p_j}\\right)^{-0.52}\n\\tag{3}\nFor a turbulent jet, the empirical equation is\n\n\\overline D=15.9\\times10^4V_j^{-1.0}d_j^{0.57}\\left(\\frac {p_c}{p_j}\\right)^{-0.10}\n\\tag{4}",
+    "crumbs": [
+      "Home",
+      "Sprays and Atomization",
+      "Spray Dropsize Correlations"
+    ]
   },
   {
     "objectID": "knowledge-base/propulsion-design/sprays-and-atomization/spray-dropsize-correlations.html#like-doublet-atomization-characteristics",
     "href": "knowledge-base/propulsion-design/sprays-and-atomization/spray-dropsize-correlations.html#like-doublet-atomization-characteristics",
     "title": "NASA-CR-125674: Correlation of Spray Dropsize Distribution and Injector Variables",
     "section": "",
-    "text": "For like-doublets, the parameters in Eqn. 1 that relate one jet’s characteristics with that of the other’s is all one. The angle \\gamma is defined as the included angle between the jets and \\Delta is the distance between the jets at the impingement point. The simplified form of Eqn. 1 becomes\n\n\\overline D=CV_j^{\\alpha_1}d_j^{\\alpha_2}\\left(\\frac {p_c}{p_j}\\right)^{\\alpha_3}\\left(\\frac {\\psi_c}{p_j}\\right)^{\\alpha_4}\\gamma^{\\alpha_5}\\left(1-\\frac {\\Delta}{d_j}\\right)^{\\alpha_6}\n\\tag{2}\nThe factor 1-\\frac {\\Delta}{d_j} is used since it results in Eqn. 2 being finite when \\Delta=0. Using a least squares regression technique to determine C and \\alpha_i, Eqn. 2 was curve fit to flow through a 0.081 inch diameter orifice. For a laminar jet, the correlation is\n\n\\overline D=4.85\\times10^4V_j^{-0.75}d_j^{0.57}\\left(\\frac {p_c}{p_j}\\right)^{-0.52}\n\\tag{3}\nFor a turbulent jet, the empirical equation is\n\n\\overline D=15.9\\times10^4V_j^{-1.0}d_j^{0.57}\\left(\\frac {p_c}{p_j}\\right)^{-0.10}\n\\tag{4}"
+    "text": "For like-doublets, the parameters in Eqn. 1 that relate one jet’s characteristics with that of the other’s is all one. The angle \\gamma is defined as the included angle between the jets and \\Delta is the distance between the jets at the impingement point. The simplified form of Eqn. 1 becomes\n\n\\overline D=CV_j^{\\alpha_1}d_j^{\\alpha_2}\\left(\\frac {p_c}{p_j}\\right)^{\\alpha_3}\\left(\\frac {\\psi_c}{p_j}\\right)^{\\alpha_4}\\gamma^{\\alpha_5}\\left(1-\\frac {\\Delta}{d_j}\\right)^{\\alpha_6}\n\\tag{2}\nThe factor 1-\\frac {\\Delta}{d_j} is used since it results in Eqn. 2 being finite when \\Delta=0. Using a least squares regression technique to determine C and \\alpha_i, Eqn. 2 was curve fit to flow through a 0.081 inch diameter orifice. For a laminar jet, the correlation is\n\n\\overline D=4.85\\times10^4V_j^{-0.75}d_j^{0.57}\\left(\\frac {p_c}{p_j}\\right)^{-0.52}\n\\tag{3}\nFor a turbulent jet, the empirical equation is\n\n\\overline D=15.9\\times10^4V_j^{-1.0}d_j^{0.57}\\left(\\frac {p_c}{p_j}\\right)^{-0.10}\n\\tag{4}",
+    "crumbs": [
+      "Home",
+      "Sprays and Atomization",
+      "Spray Dropsize Correlations"
+    ]
   },
   {
     "objectID": "notes/index.html",
