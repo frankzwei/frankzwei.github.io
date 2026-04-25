@@ -6,10 +6,10 @@ format:
     toc-location: right
     other-links:
       - text: Liou and Steffen (1993)
-        href: files/Liou-1993-AUSM_Scheme-JCP-107.pdf
+        href: "@FILES_BASE_URL@/knowledge-base/engineering-fundamentals/cfd/files/Liou-1993-AUSM_Scheme-JCP-107.pdf"
         icon: file-pdf
       - text: Liou (2006)
-        href: files/Liou-2006-AUSM_Scheme_Sequel-JCP-214.pdf
+        href: "@FILES_BASE_URL@/knowledge-base/engineering-fundamentals/cfd/files/Liou-2006-AUSM_Scheme_Sequel-JCP-214.pdf"
         icon: file-pdf
 ---
 
