@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-# Install quarto
-wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.37/quarto-1.9.37-linux-amd64.deb
-sudo dpkg -i quarto-1.9.37-linux-amd64.deb
+QUARTO_VERSION=1.9.37
 
-# Render site
-quarto render
+# Install quarto
+wget https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-{QUARTO_VERSION}-linux-amd64.tar.gz
+tar -xzf quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
+
+# Run render command in Quarto folder
+./quarto-v${QUARTO_VERSION}/bin/quarto render
