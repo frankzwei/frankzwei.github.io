@@ -2,7 +2,7 @@ project:
   type: website
   resources:
     - "**/files**/*"
-  output-dir: docs
+  output-dir: _site
 
 website:
   title: Frank's Engineering Notebook
