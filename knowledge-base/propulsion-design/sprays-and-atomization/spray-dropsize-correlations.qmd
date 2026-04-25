@@ -8,6 +8,28 @@ format:
         icon: file-pdf
 ---
 
+# Free Jet Characteristics
+
+The internal characteristics of the jet, including the state of velocity profile development, Reynolds number and turbulence level, the manifold or orifice entrance conditions, etc., are important parameters that affect the degree of atomization happening. From theory, similar flow fields exist for geometrically similar objects with identical initial conditions and Reynolds numbers. For these experiments, the initial conditions are defined to be at the orifice entrance; and between experiments, these conditions remain identical or nearly identical as the flow is quiescent or nearly quiescent. Because of this, the jet's characteristics at the orifice exit are only a function of Reynolds number and orifice length.
+
+However, practically speaking, cross-flows exist at the orifice entrance in many injection systems owing to the fact that the flow is not perfectly settled as it collects the feeder manifolds. As a result, the entrance conditions, such as manifold Reynolds number, orifice entrance geometry, orifice Reynolds number, and orifice length, will affect the velocity profile growth and transition from laminar to turbulent flow.
+
+Furthermore, as the jet exist the orifice and collides with a neighboring stream, the change in characteristics and any onset of jet disintegration will also affect atomization. This is not an objective of the experiments, but some data on the influence of free jet length and jet characteristics are presented.
+
+## Influence of Reynolds Number and Orifice Length
+
+Changing the injection velocity and orifice diameter allowed for varying Reynolds number. For geometrically similar orifices of constant $L_o/d_j$, the velocity profiles were found to be identical, proving flow field dynamic similarity at equal Reynolds numbers. As a result, for any other fluid with geometrically similar orifices, the velocity profile is already known based off the available data.
+
+## Influence of Orifice Entrance Conditions
+
+Both hydraulic and geometric orifice inlet conditions play a significant role on the development of the free jet's internal characteristics. In the experiments, sharp and round geometric conditions were examined, whereas injection velocity and manifold cross-velocities were examined for the hydraulic conditions.
+
+For rounded orifices, transition to turbulence occurred for inlet $\mathrm{Re}\leq2300$. Since the inlet flow is laminar, turbulent transition occurred within the orifice. One exception occurred for the like-doublet element No. 63/63-10-3LD, where the inlet $\mathrm{Re}\simeq2900$, so the inlet flow could have already been turbulent. The level of turbulence for this element No. was still on the same order as that obtained for a fully developed jet.
+
+For sharp-edged orifices in quiescent entry conditions, the jets were completely separated from the orifice walls across the $L_o/d_j\leq10$ considered. The Reynolds number at separation ranged from $\mathrm{Re}=3300$ for $2L_o/d_j$ to $\mathrm{Re}=4500$ for $10L_o/d_j$ for both wax and dew fluids. These Reynolds numbers may be much lower or higher, however, for other fluids, as the point of separation depends on the fluid's vapor pressure as well: increasing the fluid's vapor pressure or Reynolds number decreases cavitation margin and also promotes wall separation.
+
+## Influence of Free Jet Length
+
 # Atomization Characteristics
 
 For the experimental data, the parameters captured in the empirical correlations are
@@ -37,3 +59,14 @@ For a turbulent jet, the empirical equation is
 $$
 \overline D=15.9\times10^4V_j^{-1.0}d_j^{0.57}\left(\frac {p_c}{p_j}\right)^{-0.10}
 $$ {#eq-like-doublet-turbulent-jet-correlation}
+
+This correlation was curve fit for all $\overline D$ values for $10\leq L_o/d_j\leq50$ and $L_o/d_j=1.5$. The exponent of $d_j$ was set equal to that of @eq-like-doublet-laminar-jet-correlation due to the small range of $d_j$ considered. When compared against experimental data, several points do not conform to either @eq-like-doublet-laminar-jet-correlation or @eq-like-doublet-turbulent-jet-correlation in the range $70\leq V_j\leq100$ ft/s. For these cases, the flow is likely transitional and experiences intermittent laminar and turbulent characteristics.
+
+::: {#fig-like-doublet-dropsize-velocity layout-nrow=2}
+
+![](assets/like-doublet-dropsize-velocity-graphs-1.png){.lightbox}
+
+![](assets/like-doublet-dropsize-velocity-graphs-2.png){.lightbox}
+
+Mass median dropsizes for like-doublet elements against varying injection velocities across a range of $L_o/d_j$
+:::
