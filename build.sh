@@ -8,4 +8,4 @@ wget https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSIO
 tar -xzf quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
 
 # Run render command in Quarto folder
-./quarto-v${QUARTO_VERSION}/bin/quarto render
+./quarto-${QUARTO_VERSION}/bin/quarto render
