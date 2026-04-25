@@ -160,7 +160,7 @@ $$ {#eq-maccormack-method-inviscid-burgers}
 
 The amplification factor, @eq-lax-wendroff-method-inviscid-burgers-amplification-factor, and stability requirement, @eq-lax-wendroff-method-inviscid-burgers-stability, are the same as that of Lax-Wendroff. When compared to Lax-Wendroff for the example problem, the two solutions differ. This is due to the switched differencing in the predictor and corrector steps, as well as the nonlinear nature of the PDE. In general, MacCormack provides better resolution at discontinuities. For the best resolution, the difference in the predictor, $F_{j+1}-F_j$, should be in the same direction as the propagation direction of the discontinuity. If the wave is propagating to the left, then the difference should be $F_{j-1}-F_j$ instead.
 
-::: {#fig-lax-wendroff-maccormack-solution-comparison-inviscid-burgers layout-ncol=2}
+::: {#fig-lax-wendroff-maccormack-solution-comparison-inviscid-burgers layout-ncol=2 layout-align="center"}
 
 ![Lax-Wendroff solution](../assets/chapter-4/lax-wendroff-solution-example.png){.lightbox}
 
