@@ -26,6 +26,26 @@ $$
 
 <!-- ![Free convection on a heated vertical surface setup](assets/free-convection-heated-vertical-plate-setup.png){#fig-free-convection-heated-vertical-plate-setup width=550 .lightbox} -->
 
+### Profiles
+
+**Analytical:** Uniform wall temperature, Grashof number defined as $\mathrm{Gr}_x=\frac {g\beta x^3(T_s-T_{\infty})}{\nu}$
+
+$$
+\frac {\delta}x=3.93\mathrm{Pr}^{-1/2}\mathrm{Gr}_x^{-1/4}\left(\mathrm{Pr}+\frac {20}{21}\right)^{1/4}\tag{10.5.23}
+$$
+
+**Analytical:** Uniform heat flux, modified Grashof number defined as $\mathrm{Gr}_x^*=\frac {g\beta q_s''x^4}{k\nu^2}$
+
+$$
+\frac {\delta}x & =\left[\frac {360(\mathrm{Pr}+0.8)}{\mathrm{Pr}^2\mathrm{Gr}_x^*}\right]^{1/5}\tag{10.5.34}
+$$
+
+**Analytical:** Uniform heat flux, modified Grashof number defined as $\mathrm{Gr}_x^*=\frac {g\beta q_s''x^4}{k\nu^2}$
+
+$$
+T_s-T_{\infty} & =\frac {1.622q_s''x}k\left(\frac {\mathrm{Pr}+0.8}{\mathrm{Pr}^2\mathrm{Gr}_x^*}\right)^{1/5}\tag{10.5.37}
+$$
+
 ### Heat Transfer Coefficient
 
 #### Laminar Flow
@@ -54,10 +74,7 @@ $$
 **Analytical:** Uniform heat flux, modified Grashof number defined as $\mathrm{Gr}_x^*=\frac {g\beta q_s''x^4}{k\nu^2}$
 
 $$
-\begin{aligned}
-\frac {\delta}x & =\left[\frac {360(\mathrm{Pr}+0.8)}{\mathrm{Pr}^2\mathrm{Gr}_x^*}\right]^{1/5} \\
-\mathrm{Nu}_{x,\mathrm{UHF}} & =0.62\left(\frac {\mathrm{Pr}^2\mathrm{Gr}_x^*}{\mathrm{Pr}+0.8}\right)^{1/5} \\
-T_s-T_{\infty} & =\frac {1.622q_s''x}k\left(\frac {\mathrm{Pr}+0.8}{\mathrm{Pr}^2\mathrm{Gr}_x^*}\right)^{1/5}
+\mathrm{Nu}_{x,\mathrm{UHF}} & =0.62\left(\frac {\mathrm{Pr}^2\mathrm{Gr}_x^*}{\mathrm{Pr}+0.8}\right)^{1/5}\tag{10.5.35}
 \end{aligned}
 $$
 
@@ -88,7 +105,7 @@ $$
 \end{aligned}\tag{10.6.7}
 $$
 
-**Vliet and Liu (1969):** Uniform heat flux, air only, modified Rayleigh number is defined as $\mathrm{Ra}_x^*=\mathrm{Gr}_x^*\mathrm{Pr}=\frac {g\beta q_s''x^4}{k\nu\alpha}$, average Nusselt number defined as $\langle\mathrm{Nu}_l\rangle_l=\frac {q_s''l}{k\left(\langle T_s\rangle_l-T_{\infty}\right)}$
+**Vliet and Ross (1975):** Uniform heat flux, air only, modified Rayleigh number is defined as $\mathrm{Ra}_x^*=\mathrm{Gr}_x^*\mathrm{Pr}=\frac {g\beta q_s''x^4}{k\nu\alpha}$, average Nusselt number defined as $\langle\mathrm{Nu}_l\rangle_l=\frac {q_s''l}{k\left(\langle T_s\rangle_l-T_{\infty}\right)}$
 
 $$
 \langle\mathrm{Nu}_{l,\mathrm{UHF}}\rangle_l=0.55\left(\mathrm{Ra}_l^*\right)^{1/5}\tag{10.6.12}
@@ -96,7 +113,7 @@ $$
 
 #### Turbulent Flow
 
-**Oosthuizen and Naylor (1999):** Smooth surface, if $\mathrm{Pr}=0.7$ and using $1/7$ approximation for turbulent boundary layer, Grashof number defined as $\mathrm{Gr}_x=\frac {g\beta x^3(T_s-T_{\infty})}{\nu}$
+**Oosthuizen and Naylor (1999):** Smooth surface, $\frac 17$ power law velocity profile, valid for $\mathrm{Pr}=0.7$, Grashof number defined as $\mathrm{Gr}_x=\frac {g\beta x^3(T_s-T_{\infty})}{\nu}$
 
 $$
 \begin{aligned}
@@ -111,7 +128,7 @@ $$
 \langle\mathrm{Nu}_{l,\mathrm{UWT}}\rangle_l=\left[0.825+\frac {0.387\mathrm{Ra}_l^{1/6}}{\left[1+(0.492/\mathrm{Pr})^{9/16}\right]^{8/27}}\right]^2\tag{10.6.3}
 $$
 
-**McAdams (1954):** Uniform wall temperature, for $\mathrm{Pr}\approx1$, for $10^9<\mathrm{Ra}_l<10^{13}$, Rayleigh number defined as $\mathrm{Ra}_x=\mathrm{Pr}\mathrm{Gr}_x=\frac {g\beta x^3(T_s-T_{\infty})}{\nu\alpha}$, calculate fluid properties at $T_{\mathrm{film}}=\frac 12(T_s+T_{\infty})$
+**McAdams (1954):** Uniform wall temperature, valid for $\mathrm{Pr}\approx1$ and $10^9<\mathrm{Ra}_l<10^{13}$, Rayleigh number defined as $\mathrm{Ra}_x=\mathrm{Pr}\mathrm{Gr}_x=\frac {g\beta x^3(T_s-T_{\infty})}{\nu\alpha}$, calculate fluid properties at $T_{\mathrm{film}}=\frac 12(T_s+T_{\infty})$
 
 $$
 \langle\mathrm{Nu}_l\rangle_l=0.1\mathrm{Ra}_l^{1/3}\tag{10.6.2}
@@ -126,7 +143,7 @@ $$
 \end{aligned}\tag{10.6.9}
 $$
 
-**Vliet and Liu (1969):** Uniform heat flux, air only, modified Rayleigh number is defined as $\mathrm{Ra}_x^*=\mathrm{Gr}_x^*\mathrm{Pr}=\frac {g\beta q_s''x^4}{k\nu\alpha}$, average Nusselt number defined as $\langle\mathrm{Nu}_l\rangle_l=\frac {q_s''l}{k\left(\langle T_s\rangle_l-T_{\infty}\right)}$
+**Vliet and Ross (1975):** Uniform heat flux, air only, modified Rayleigh number is defined as $\mathrm{Ra}_x^*=\mathrm{Gr}_x^*\mathrm{Pr}=\frac {g\beta q_s''x^4}{k\nu\alpha}$, average Nusselt number defined as $\langle\mathrm{Nu}_l\rangle_l=\frac {q_s''l}{k\left(\langle T_s\rangle_l-T_{\infty}\right)}$
 
 $$
 \langle\mathrm{Nu}_{l,\mathrm{UHF}}\rangle_l=0.17\left(\mathrm{Ra}_l^*\right)^{1/4}\tag{10.6.13}
@@ -138,7 +155,7 @@ $$
 
 #### Laminar Flow
 
-**LeFevre and Ede (1965), Sparrow and Gregg (1956):** Uniform wall temperature, if $\mathrm{Pr}\leq1$ and $\frac Dl>35\mathrm{Gr}_l^{-1/4}$ or if $\mathrm{Pr}\gtrsim1$ and $\frac Dl>(\mathrm{Gr}_l\mathrm{Pr})^{-1/4}$
+**LeFevre and Ede (1965), Sparrow and Gregg (1956):** Uniform wall temperature, valid for $\mathrm{Pr}\leq1$ and $\frac Dl>35\mathrm{Gr}_l^{-1/4}$ or if $\mathrm{Pr}\gtrsim1$ and $\frac Dl>(\mathrm{Gr}_l\mathrm{Pr})^{-1/4}$
 
 $$
 \begin{aligned}
@@ -147,7 +164,7 @@ $$
 \end{aligned}\tag{10.4.14}
 $$
 
-**LeFevre and Ede (1965):** Uniform wall tempearture, if $\mathrm{Pr}\leq1$ and $\frac Dl\leq35\mathrm{Gr}_l^{-1/4}$ or if $\mathrm{Pr}\gtrsim1$ and $\frac Dl\leq(\mathrm{Gr}_l\mathrm{Pr})^{-1/4}$
+**LeFevre and Ede (1965):** Uniform wall temperature, valid for $\mathrm{Pr}\leq1$ and $\frac Dl\leq35\mathrm{Gr}_l^{-1/4}$ or if $\mathrm{Pr}\gtrsim1$ and $\frac Dl\leq(\mathrm{Gr}_l\mathrm{Pr})^{-1/4}$
 
 $$
 \begin{aligned}

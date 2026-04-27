@@ -62,11 +62,11 @@ $$ {#eq-like-doublet-turbulent-jet-correlation}
 
 This correlation was curve fit for all $\overline D$ values for $10\leq L_o/d_j\leq50$ and $L_o/d_j=1.5$. The exponent of $d_j$ was set equal to that of @eq-like-doublet-laminar-jet-correlation due to the small range of $d_j$ considered. When compared against experimental data, several points do not conform to either @eq-like-doublet-laminar-jet-correlation or @eq-like-doublet-turbulent-jet-correlation in the range $70\leq V_j\leq100$ ft/s. For these cases, the flow is likely transitional and experiences intermittent laminar and turbulent characteristics.
 
-::: {#fig-like-doublet-dropsize-velocity layout-nrow=2 layout-align=center}
+::: {#fig-like-doublet-dropsize-velocity layout-nrow=2}
 
-![](assets/like-doublet-dropsize-velocity-graphs-1.png){.lightbox width=100%}
+![](assets/like-doublet-dropsize-velocity-graphs-1.png){.lightbox width=100% fig-align=center}
   
-![](assets/like-doublet-dropsize-velocity-graphs-2.png){.lightbox width=100%}
+![](assets/like-doublet-dropsize-velocity-graphs-2.png){.lightbox width=100% fig-align=center}
 
-Mass median dropsizes for like-doublet elements against varying injection velocities across a range of $L_o/d_j$
+Mass median dropsizes for like-doublet elements against varying injection velocities
 :::
