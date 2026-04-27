@@ -171,7 +171,7 @@ $$
 **Wang (1946):** Smooth surface
 
 $$
-\frac {U_{\mathrm{max}}-\overline u}{U_{\tau}}=2.5\left[\ln\left(\frac {1+\sqrt{1-\frac y{R_0}}}{1-\sqrt{1-\frac y{R_0}}}\right)-2\arctan\left(\sqrt{1-\frac y{R_0}}\right)-0.572\ln\left(\frac {2.53-\frac y{R_0}+1.75\sqrt{1-\frac y{R_0}}}{2.53-\frac y{R_0}-1.75\sqrt{1-\frac y{R_0}}}\right)+1.143\arctan\left(\frac {1.75\sqrt{1-\frac y{R_0}}}{0.53+\frac y{R_0}}\right)\right]\tag{7.2.9}
+\frac {U_{\mathrm{max}}-\overline u}{2.5U_{\tau}}=\ln\left(\frac {1+\sqrt{1-\frac y{R_0}}}{1-\sqrt{1-\frac y{R_0}}}\right)-2\arctan\sqrt{1-\frac y{R_0}}-0.572\ln\left(\frac {2.53-\frac y{R_0}+1.75\sqrt{1-\frac y{R_0}}}{2.53-\frac y{R_0}-1.75\sqrt{1-\frac y{R_0}}}\right)+1.143\arctan\left(\frac {1.75\sqrt{1-\frac y{R_0}}}{0.53+\frac y{R_0}}\right)\tag{7.2.9}
 $$
 
 **Yu et al. (2001):** Smooth surface, valid for $150<R_0^+<50,000$ where $R_0^+=\frac {U_{\tau}R_0}{\nu}$ and $U_{\tau}=\sqrt{\frac {\tau_s}{\rho}}$
@@ -325,7 +325,7 @@ $$
 \end{aligned}\tag{9.6.9}
 $$
 
-The dimensionless mean velocity, $U_m^+$, see Yu et al. (2001)'s correlation in @sec-circular-fully-developed-flow-profiles-turbulent.
+For the dimensionless mean velocity, $U_m^+$, see Yu et al. (2001)'s correlation in @sec-circular-fully-developed-flow-profiles-turbulent.
 
 **Chilton and Colburn (1934):** Smooth surface, valid for $10^4<\mathrm{Re}_D<3\times10^5$ and $0.6<\mathrm{Pr}<100$
 

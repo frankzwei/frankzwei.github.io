@@ -32,7 +32,7 @@ The dot implies a modified parameter for mass transpiration. Explicit and implic
 
 $$
 \begin{aligned}
-\frac {\dot C_f}{C_f} & =\frac {\beta}{\beta-1}\qquad & \qquad & \beta=\frac {2n_s}{\rho U_{\infty}C_f} \\
+\frac {\dot C_f}{C_f} & =\frac {\beta}{e^{\beta}-1}\qquad & \qquad & \beta=\frac {2n_s}{\rho U_{\infty}C_f} \\
 \frac {\dot h}h & =\frac {\beta_{\mathrm{th}}}{e^{\beta_{\mathrm{th}}}-1}\qquad & \qquad & \beta_{\mathrm{th}}=\frac {n_sC_p}h \\
 \frac {\dot{\mathfrak K}}{\mathfrak K} & =\frac {\beta_{\mathrm{ma}}}{e^{\beta_{\mathrm{ma}}}-1}\qquad & \qquad & \beta_{\mathrm{ma}}=\frac {n_s}{\mathfrak K} \\
 \frac {\dot{\tilde{\mathfrak K}}}{\tilde{\mathfrak K}} & =\frac {\tilde{\beta}_{\mathrm{ma}}}{e^{\tilde{\beta}_{\mathrm{ma}}}-1}\qquad & \qquad & \tilde{\beta}_{\mathrm{ma}}=\frac {N_s''}{\tilde{\mathfrak K}}
