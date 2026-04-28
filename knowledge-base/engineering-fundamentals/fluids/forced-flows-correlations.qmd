@@ -633,12 +633,6 @@ $$
 C_{f,\mathrm{app},x}\mathrm{Re}_{D_H}=\frac {3.44}{(x^*)^{1/2}}+\frac {24+\frac {0.674}{4x^*}-\frac {3.44}{(x^*)^{1/2}}}{1+0.000029(x^*)^{-2}}\tag{4.2.16}
 $$
 
-**Hagen-Poiseuille (1840):** Smooth surface, Reynolds number defined as $\mathrm{Re}_{D_H}=\frac {U_mD_H}{\nu}$
-
-$$
-C_f\mathrm{Re}_{D_H}=24\tag{4.3.13}
-$$
-
 #### Turbulent Flow
 
 ### Heat Transfer Coefficient
