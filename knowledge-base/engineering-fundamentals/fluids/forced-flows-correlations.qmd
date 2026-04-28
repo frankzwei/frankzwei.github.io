@@ -22,6 +22,15 @@ $$
 
 ### Turbulent Flow
 
+**Analytical:** Smooth surface, no wall injection, if $\delta$ and $\delta_2$ are the $0.99U_{\infty}$ boundary layer and momentum layer thickness
+
+$$
+\begin{aligned}
+\delta & =0.37x\mathrm{Re}_x^{-0.2} \\
+\delta_2 & =0.036x\mathrm{Re}_x^{-0.2}
+\end{aligned}\tag{5.2.36}
+$$
+
 ## Friction Factor
 
 ### Laminar Flow
@@ -50,7 +59,7 @@ $$
 
 ### Laminar Flow
 
-**Reynolds:** Smooth surface
+**Reynolds (1874):** Smooth surface
 
 $$
 \mathrm{Nu}_x=\frac 12\mathrm{Re}_xC_{f,x}\tag{9.2.10}
@@ -59,22 +68,31 @@ $$
 **Analytical:** Smooth surface, uniform wall temperature, no wall injection
 
 $$
-\mathrm{Nu}_x=0.3317\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}\tag{5.4.16}
+\mathrm{Nu}_{x,\mathrm{UWT}}=0.3317\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}\tag{5.4.16}
 $$
 
 **Analytical:** Smooth surface, uniform wall temperature with an adiabatic segment of length $\xi$, no wall injection
 
 $$
-\mathrm{Nu}_x=0.3317\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}\left[1-\left(\frac {\xi}x\right)^{3/4}\right]^{-1/3}\tag{5.4.19}
+\mathrm{Nu}_{x,\mathrm{UWT}}=0.3317\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}\left[1-\left(\frac {\xi}x\right)^{3/4}\right]^{-1/3}\tag{5.4.19}
 $$
 
 **Analytical:** Smooth surface, uniform heat flux with an adiabatic segment of length $\xi$, no wall injection
 
 $$
-\mathrm{Nu}_x=0.418\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}\left(1-\frac {\xi}x\right)^{-1/3}\tag{5.4.21}
+\mathrm{Nu}_{x,\mathrm{UHF}}=0.418\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}\left(1-\frac {\xi}x\right)^{-1/3}\tag{5.4.21}
 $$
 
 ### Turbulent Flow
+
+**Analytical:** Smooth surface, $\frac 17$ power law velocity and temperature profile, valid for $\mathrm{Pr}\geq1$, if $\mathrm{St}_x=\frac {\mathrm{Nu}_x}{\mathrm{Re}_x\mathrm{Pr}}$
+
+$$
+\begin{aligned}
+\mathrm{St}_x\mathrm{Pr}^{0.4} & =\left.\frac {\mathrm{Nu}_x}{\mathrm{Re}_x\mathrm{Pr}}\right|_{\xi=0}\left[1-\left(\frac {\xi}x\right)^{9/10}\right]^{-1/9} \\
+\left.\frac {\mathrm{Nu}_x}{\mathrm{Re}_x\mathrm{Pr}}\right|_{\xi=0} & =0.0287\mathrm{Re}_x^{-0.2}
+\end{aligned}\tag{5.4.27}
+$$
 
 **Prandtl-Taylor (1916):** Smooth surface, $\mathrm{Pr}=\mathrm{Pr}_{\mathrm{tu}}\approx1$, viscous sublayer and fully turbulent sublayer in the boundary layer, laminar-like sublayers (viscous and buffer zone) extend to $\delta_{\mathrm{lam}}^+=\frac {\delta_{\mathrm{lam}U_{\tau}}}{\nu}=5$
 
@@ -88,17 +106,17 @@ $$
 \mathrm{Nu}_x=\frac {0.029\mathrm{Re}_x^{0.8}\mathrm{Pr}}{1+1.525\mathrm{Re}_x^{-0.1}(\mathrm{Pr}-1)}\tag{9.3.13}
 $$
 
-**von-Karman (1939):** Smooth surface, valid for $\mathrm{Pr}\lesssim40$
+**Von-Karman (1939):** Smooth surface, valid for $\mathrm{Pr}\lesssim40$
 
 $$
-\mathrm{Nu}_x=\frac {0.5C_f\mathrm{Re}_x\mathrm{Pr}\mathrm{Pr}_{\mathrm{tu}}^{-1}}{1+5\sqrt{\frac {C_f}2}\left\{\left(\mathrm{Pr}\mathrm{Pr}_{\mathrm{tu}}^{-1}-1\right)+\ln\left[1+\frac 56\left(\mathrm{Pr}\mathrm{Pr}_{\mathrm{tu}}^{-1}-1\right)\right]\right\}}\tag{9.4.9}
+\mathrm{Nu}_x=\frac {0.5C_f\mathrm{Re}_x\mathrm{Pr}\mathrm{Pr}_{\mathrm{tu}}^{-1}}{1+5\sqrt{\frac {C_f}2}\left(\mathrm{Pr}\mathrm{Pr}_{\mathrm{tu}}^{-1}-1+\ln\left[1+\frac 56\left(\mathrm{Pr}\mathrm{Pr}_{\mathrm{tu}}^{-1}-1\right)\right]\right)}\tag{9.4.9}
 $$
 
 ## Mass Transfer
 
 ### Turbulent Flow
 
-**Reynolds:** Smooth surface, if $\mathrm{Sh}_x=\frac {\mathfrak K_x}{\rho\mathfrak D_{12}}$ where $\mathfrak D_{12}$ is the diffusivity of the transferred species in the mixture
+**Reynolds (1874):** Smooth surface, if $\mathrm{Sh}_x=\frac {\mathfrak K_x}{\rho\mathfrak D_{12}}$ where $\mathfrak D_{12}$ is the diffusivity of the transferred species in the mixture
 
 $$
 \mathrm{Sh}_x=\frac 12\mathrm{Re}_x\mathrm{Sc}\tag{9.2.13}
@@ -119,7 +137,7 @@ $$
 **von-Karman (1939):** Smooth surface, valid for $\mathrm{Sc}\lesssim40$
 
 $$
-\mathrm{Sh}_x=\frac {0.5C_f\mathrm{Re}_x\mathrm{Sc}\mathrm{Sc}_{\mathrm{tu}}^{-1}}{1+5\sqrt{\frac {C_f}2}\left\{\left(\mathrm{Sc}\mathrm{Sc}_{\mathrm{tu}}^{-1}-1\right)+\ln\left[1+\frac 56\left(\mathrm{Sc}\mathrm{Sc}_{\mathrm{tu}}^{-1}-1\right)\right]\right\}}\tag{9.4.9}
+\mathrm{Sh}_x=\frac {0.5C_f\mathrm{Re}_x\mathrm{Sc}\mathrm{Sc}_{\mathrm{tu}}^{-1}}{1+5\sqrt{\frac {C_f}2}\left(\mathrm{Sc}\mathrm{Sc}_{\mathrm{tu}}^{-1}-1+\ln\left[1+\frac 56\left(\mathrm{Sc}\mathrm{Sc}_{\mathrm{tu}}^{-1}-1\right)\right]\right)}\tag{9.4.9}
 $$
 
 # Circular Channel
