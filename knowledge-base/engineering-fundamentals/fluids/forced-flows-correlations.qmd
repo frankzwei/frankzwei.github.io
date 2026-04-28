@@ -46,7 +46,7 @@ $$
 **Analytical:** Smooth surface, valid for $\mathrm{Re}_x<10^6$
 
 $$
-C_f=0.0574\mathrm{Re}_x^{-0.2}tag{5.2.38}
+C_f=0.0574\mathrm{Re}_x^{-0.2}\tag{5.2.38}
 $$
 
 **Schultz-Grunow (1941):** Smooth surface, valid for $\mathrm{Re}_x\geq5\times10^5$
