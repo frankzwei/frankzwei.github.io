@@ -1,0 +1,66 @@
+---
+title: Stress Life Approach
+---
+
+# Multiaxial Cyclic Stresses
+
+Practical applications tend to experience multiaxial cyclic loading rather than purely uniaxial. An example is the fuselage of an aircraft, where it experiences both tangential and axial cyclic stresses from cabin pressurization, or transmission shafts in automobiles, where shear stresses generated from torque and axial loads from bending produce multiaxial stress states. Different types of loading may occur statically (i.e., constant across time) or cyclically in phase or out of phase. The fatigue life is dictated by the relations these phases have with one another.
+
+## Proportional and Nonproportional Loading
+
+If a specimen is subjected to a time-varying multiaxial cyclic load, and the different components of the stress tensor vary in constant proportion to one another across time, then the loading is said to be **proportional**. The specimen and stress element may be defined in terms of a global or material coordinate system and a principal stress coordinate system respectively. The two may be in arbitrary orientations with respect to one another. If the principal stresses, $\sigma_1$, $\sigma_2$, and $\sigma_3$ vary in the following manner
+
+$$
+\frac {\sigma_2}{\sigma_1}=\lambda_1\qquad\qquad\qquad\frac {\sigma_3}{\sigma_1}=\lambda_2
+$$ {#eq-proportional-loading-principal-stress-definition}
+
+then the loading is proportional. The constants $\lambda_1$ and $\lambda_2$ may vary across the specimen, but they must remain constant at the same location across time.
+
+Examples of proportional loading include a pressure vessel and shaft. For a closed, thin-walled pressure vessel subject to an internal pressure, the hoop and axial stresses vary proportionally with each other such that their ratio is always $\sigma_{\mathrm{hoop}}/\sigma_{\mathrm{axial}}=2$. With a shaft subjected to a torque $T$ and axial tension $P$, proportional loading occurs if $P\propto T$. Any other variation results in nonproportional loading.
+
+## Effective Stresses
+
+For fully reversed cyclic stresses where all cyclic loads are in phase or $180^{\circ}$ out of phase, the von Mises criterion based on the octahedral shear stress gives the effective stress as
+
+$$
+\begin{aligned}
+\sigma_e=\frac {3\tau_{\mathrm{oct}}}{\sqrt2} & =\frac 1{\sqrt2}\sqrt{(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2} \\
+ & =\frac 1{\sqrt2}\sqrt{(\sigma_x-\sigma_y)^2+(\sigma_y-\sigma_z)^2+(\sigma_z-\sigma_x)^2+6(\tau_{xy}^2+\tau_{yz}^2+\tau_{zx}^2)}
+\end{aligned}
+$$ {#eq-von-mises-uniaxial}
+
+where $\sigma_x$, $\sigma_y$, $\sigma_z$, $\tau_{xy}$, $\tau_{yz}$, and $\tau_{zx}$ are their standard defined stress states and $\sigma_1$, $\sigma_2$, and $\sigma_3$ are the principal stresses. In @eq-von-mises-uniaxial, it is assumed that the principal stresses are ordered such that $\sigma_1\geq\sigma_2\geq\sigma_3$.
+
+For fluctuating stresses, @eq-von-mises-uniaxial is written in terms of the stress amplitudes. The amplitude of the effective stress becomes
+
+$$
+\frac {\Delta\sigma_e}2=\frac 1{\sqrt2}\sqrt{\left(\frac {\Delta\sigma_1}2-\frac {\Delta\sigma_2}2\right)^2+\left(\frac {\Delta\sigma_2}2-\frac {\Delta\sigma_3}2\right)^2+\left(\frac {\Delta\sigma_3}2-\frac {\Delta\sigma_1}2\right)^2}
+$$ {#eq-von-mises-multiaxial-cyclic}
+
+Basquin's equation may be used with the fully reversed stress amplitude written instead of the fully reversed uniaxial cyclic load.
+
+$$
+\frac {\Delta\sigma_e}2=\sigma_f'(2N_f)^b
+$$ {#eq-basquin-multiaxial-cyclic}
+
+For cases where there is a mean stress, the equivalent fully reversed stress should be calculated first. If the mean stress is related to the hydrostatic stress in the stress tensor, then the effective value of the mean stress $\overline{\sigma}_m$ can be defined as
+
+$$
+\overline{\sigma}_m=\sigma_{1m}+\sigma_{2m}+\sigma_{3m}=\sigma_{xm}+\sigma_{ym}+\sigma_{zm}
+$$ {#eq-effective-mean-stress-definition}
+
+Alternatively, von Mises criterion may be used to define $\overline{\sigma}_m$ as
+
+$$
+\sigma_{m,e}=\frac 1{\sqrt2}\sqrt{(\sigma_{1m}-\sigma_{2m})^2+(\sigma_{2m}-\sigma_{3m})^2+(\sigma_{3m}-\sigma_{1m})^2}
+$$ {#eq-effective-mean-stress-von-mises-definition}
+
+Using the Goodman equation, the *equivalent fully reversed uniaxial cyclic stress* is then determined as
+
+$$
+\frac {\Delta\sigma_e}2=\left.\frac {\Delta\sigma_e}2\right|_{\sigma_{im}=0}\left(1-\frac {\sigma_{m,e}}{\sigma_{\mathrm{TS}}}\right)
+$$ {#eq-goodman-equation-multiaxial}
+
+The subscript $\sigma_{im}=0$ simply means there is no mean principal stress for $i=1,2,3$. With the equivalent fully reversed value of $\frac {\Delta\sigma_e}2$ determined, @eq-eq-basquin-multiaxial-cyclic may be used to calculate $N_f$.
+
+One of the major drawbacks with applying the uniaxial equations to multiaxial fatigue through an effective stress quantity is that the difference in tensile and compressive mean stresses in multiaxial fatigue tests are not accurately captured. Additionally, the orientation of the fatigue crack with respect to the loading axes is essentially neglected. From experiments, normal stresses play an important role in influencing fatigue lives in multiaxial loading by keeping the crack open or close.

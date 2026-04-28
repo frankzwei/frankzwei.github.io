@@ -74,6 +74,10 @@ website:
                   href: knowledge-base/engineering-fundamentals/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-5-variable-amplitude-loading.qmd
                 - text: Chapter 7. Multiaxial Fatigue
                   href: knowledge-base/engineering-fundamentals/structures/fundamentals-of-metal-fatigue-analysis/chapters/chapter-7-multiaxial-fatigue.qmd
+            - section: Fatigue of Materials
+              contents:
+                - text: Chapter 7. Stress Life Approach
+                  href: knowledge-base/engineering-fundamentals/structures/fatigue-of-materials/chapters/chapter-7-stress-life-approach.qmd
             - text: Limits and Fits
               href: knowledge-base/engineering-fundamentals/structures/limits-and-fits.qmd
     - id: propulsion-design
