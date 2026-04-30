@@ -62,6 +62,10 @@ website:
               contents:
                 - text: Chapter 7. External Flow
                   href: knowledge-base/engineering-fundamentals/fluids/fundamentals-of-heat-and-mass-transfer/chapters/chapter-7-external-flow.qmd
+            - section:
+              contents:
+                - text: The Scales of Turbulent Motion
+                  href: knowledge-base/engineering-fundamentals/fluids/turbulent-flows/chapters/chapter-6-scales-of-turbulent-motion.qmd
             - text: Forced Flows Correlations
               href: knowledge-base/engineering-fundamentals/fluids/forced-flows-correlations.qmd
             - text: Free and Mixed Convection Correlations
@@ -97,6 +101,17 @@ website:
               href: knowledge-base/propulsion-design/sprays-and-atomization/spray-dropsize-correlations.qmd
             - text: Spray Impingement Simulation
               href: knowledge-base/propulsion-design/sprays-and-atomization/spray-impingement-simulation.qmd
+    - id: notes
+      title: Notes
+      style: floating
+      collapse-level: 1
+      contents:
+        - section: Georgia Tech
+          contents:
+            - section: AE 6012
+              contents:
+                - text: Free Shear Flows
+                  href: notes/gatech/ae-6012/free-shear-flows.qmd
 
 format:
   html:

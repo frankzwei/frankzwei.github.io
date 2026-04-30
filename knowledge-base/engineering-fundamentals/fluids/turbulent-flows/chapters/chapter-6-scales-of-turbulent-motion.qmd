@@ -1,0 +1,63 @@
+---
+title: The Scales of Turbulent Motion
+---
+
+Turbulent length scales can range from the Kolmogorov scale, $\eta$, at the smallest, up to the width of the flow, $\delta$, at the largest. These small scales will also become smaller as Reynolds number increases. This chapter is concerned with how properties of the flow, namely turbulent kinetic energy and Reynolds stresses, are distributed amongst the different length scales.
+
+The energy cascade concept states that kinetic energy enters at the largest scales of motion and is transferred down the length scale spectrum to smaller and smaller scales through inviscid processes. At the smallest scales, this energy is then dissipated through viscous processes.
+
+# The Energy Cascade and Kolmogorov Hypotheses
+
+For the rest of this section, consider a fully turbulent flow with a high Reynolds number that has a characteristic velocity $\mathcal U$ and length scale $\mathcal L$. The Reynolds number is defined as $\mathrm{Re}=\mathcal U\mathcal L/\nu$.
+
+## The Energy Cascade
+
+The energy cascade is predicated on the idea that turbulence is composed of eddies (or vortices) of varying sizes. These eddies have a length scale $\ell$ with a characteristic velocity $u(\ell)$. The time scale can be defined as $\tau(\ell)=\ell/u(\ell)$.
+
+::: {.callout-note title="Definition of Eddies"}
+
+An "eddy" does not have a precise definition applied to it, but is generally perceived as a coherent structure within the turbulent flow field that is localized to a region of its size, $\ell$. Most eddies will tend to have some macroscopic motion that differs itself from purely turbulent flows. The region occupied by a large eddy, furthermore, can also contain smaller eddies.
+
+:::
+
+For eddies of the largest size $\ell_0$, they are comparable to the flow scale $\mathcal L$. If we approximate all turbulent fluctuations to be of the same order, then $k\sim\frac 32\left(u'\right)^2$ so the characteristic velocity of these eddies, $u(\ell_0)$, is on the order of $u'=\left(\frac 23k\right)^{1/2}$, which is comparable to $\mathcal U$. The Reynolds number of these eddies, $\mathrm{Re}=u_0\ell_0/\nu$, is therefore large, so the effects of viscosity are negligibly small.
+
+In turbulent flows, large eddies are unstable and break up into smaller and smaller eddies. During this process, they transfer their energy to these small eddies, which then continue the chain of energy transfer. These smaller eddies have smaller $\mathrm{Re}(\ell)=u(\ell)\ell/\nu$ and as such, viscosity begins to play a larger and larger role in dissipating turbulent kinetic energy. At some point, $\mathrm{Re}(\ell)$ is small enough that the eddy is stable and viscosity effectively dissipates any kinetic energy present.
+
+The rate that this energy is dissipated is determined by the amount of energy transferred from the largest scales, which is on the order of $u_0^2$. If these eddies have a time scale of $\tau_0=\ell_0/u_0$, then the rate of energy transfer can be assumed to scale proportionally as $u_0^2/\tau_0=u_0^3/\ell_0$. Therefore, the dissipation rate scales as $\varepsilon\sim u_0^3/\ell_0$ and is independent of $\nu$ at the high Reynolds numbers considered.
+
+## The Kolmogorov Hypotheses
+
+Several important questions regarding fundamental turbulent theory include
+
+1. What is the size of the smallest eddies responsible for dissipating turbulent kinetic energy?
+
+2. As $\ell$ decreases, do $u(\ell)$ and $\tau(\ell)$ increase, decrease, or remain the same assuming either quantities are not strictly determined by decreasing $\mathrm{Re}=u(\ell)\ell/\nu$?
+
+These two questions can be answered through a series of hypotheses proposed by Komolgorov in 1941. The first hypothesis regards the validity of local isotropy at small scales. Large scale eddies are anisotropic, as they are affected by the physical boundaries and boundary conditions of the flow field. Kolmogorov argued that as the energy cascades down to the smallest scales, the directional preferences of the flow field are "lost" during the chaotic scale-reduction process. Hence, small-scale turbulence can be considered locally isotropic.
+
+::: {.callout-important title="Kolmogorov's Hypothesis of Local Isotropy"}
+
+At sufficiently high Reynolds number, the small-scale turbulent motions where $\ell\ll\ell_0$ are statistically isotropic. Such a concept is referred to as the *universality of small scale turbulence*.
+
+:::
+
+We may define a "cutoff" lengthscale, $\ell_{\mathrm{EI}}$ where eddies with $\ell>\ell_{\mathrm{EI}}$ are anisotropic large eddies, and eddies with $\ell<\ell_{\mathrm{EI}}$ are isotropic small eddies.
+
+## The Energy Spectrum
+
+The wavenumber $\kappa=2\pi/\ell$ is defined as the number of waves (or eddies) of size $\ell$ that can fit within an interval of $2\pi$. The total energy in the wavenumber range $\kappa_a\leq\kappa\leq\kappa_b$ is determined by integrating the energy spectrum function $E(\kappa)$ across the wavenumber range.
+
+$$
+k_{(\kappa_a,\kappa_b)}=\int\limits_{\kappa_a}^{\kappa_b}E(\kappa)\,\mathrm d\kappa
+$$ {#eq-energy-in-wavenumber-range}
+
+# Structure Functions
+
+The 2nd order velocity structure function is defined as covariance of the difference in velocity between two points separated by a separation vector, $\textbf r$.
+
+$$
+D_{ij}(\textbf r,\textbf x,t)=\left\langle\left[U_i(\textbf x+\textbf r,t)-U_i(\textbf x,t)\right]\left[U_j(\textbf x+\textbf r,t)-U_j(\textbf x,t)\right]\right\rangle
+$$ {#eq-second-order-velocity-structure-function-definition}
+
+If we assume local isotropy, then $r=|\textbf r|\ll\mathcal L$ and $D_{ij}$ is independent of $\textbf x^{(0)}$.

@@ -1,0 +1,73 @@
+---
+title: Free Shear Flows
+---
+
+# Self-Preserving Wakes
+
+## Turbulent Kinetic Energy Budget
+
+Recall the general form of the turbulent kinetic energy, where the substantial derivative is defined as $\frac {\overline{\mathrm D}}{\mathrm Dt}=\frac {\partial}{\partial t}+\overline U_j\frac {\partial}{x_j}$.
+
+$$
+\frac {\overline{\mathrm D}}{\mathrm Dt}\left(\frac 12\overline{u_iu_i}\right)=-\frac {\partial}{\partial x_j}\left[\frac {\overline{u_jp}}{\rho}+\frac 12\overline{u_iu_iu_j}-2\nu\overline{u_i\mathfrak s_{ij}}\right]-\overline{u_iu_j}\overline{S_{ij}}-2\nu\overline{s_{ij}s_{ij}}
+$$ {#eq-wakes-turbulent-kinetic-energy}
+
+Now, make the following assumptions:
+
+1. Statistically stationary, so the statistics of the fluctuations do not vary across time and $\frac {\partial}{\partial t}(\overline{\ldots})=0$.
+
+2. The wake is *thin*, meaning the spanwise thickness, $\ell$, is much smaller than the streamwise length, $L$.
+
+3. Stream-wise mean flow is much larger than the cross-stream flow, $\overline U_1\gg\overline U_2$
+
+4. Homogeneity in $x_1$ approximately and $x_3$
+
+The simplification of @eq-wakes-turbulent-kinetic-energy from order of magnitude analysis becomes
+
+$$
+-U_{\infty}\frac {\partial}{\partial x}\left(\frac 12\overline{q^2}\right)-\frac {\partial}{\partial y}\left(\frac {\overline{vp}}{\rho}+\frac 12\overline{vq^2}\right)-\overline{uv}\frac {\partial\overline U}{\partial y}-\varepsilon=0
+$$ {#eq-wakes-simplified-turbulent-kinetic-energy}
+
+::: {.callout-note title="Order of Magnitude Analysis", collapse=true}
+
+Starting from @eq-wakes-turbulent-kinetic-energy, the substantial derivative is purely composed of the spatial convective derivative terms due to statistical stationarity. When expanded out, then we get
+
+$$
+\begin{aligned}
+\frac {\overline{\mathrm D}}{\mathrm Dt}\left(\frac 12\overline{u_iu_i}\right) & =\overline U_j\frac {\partial}{x_j}\left(\frac 12\overline{u_iu_i}\right) \\ & =\overline U_1\frac {\partial}{\partial x_1}\left(\frac 12\overline{u_1u_1}\right)+\overline U_2\frac {\partial}{\partial x_2}\left(\frac 12\overline{u_2u_2}\right)+\overline U_3\frac {\partial}{\partial x_3}\left(\frac 12\overline{u_3u_3}\right)
+\end{aligned}
+$$
+
+Because of homogeneity in the $x_3$ direction, $\overline U_3\approx0$ and $\frac {\partial}{\partial x_3}\left(\frac 12\overline{u_3u_3}\right)\approx0$. For the convective term in the $x_2$ direction, we use continuity and order of magnitude analysis on the stream-wise and cross-stream flow directions. Consider a turbulent wake with a point $A$ positioned close to the bluff body, and another point $B$ positioned far away downstream. The velocity at point $A$ is subject to the velocity defect and is $\overline U_A\sim U_{\infty}-\overline U_s$. At point $B$, since it is far downstream, $\overline U_s$ is negligible and $\overline U_B\sim U_{\infty}$. Denoting the length scale in the $x_1$ and $x_2$ directions as $L$ and $\ell$ respectively, then
+
+$$
+\frac {\partial\overline U}{\partial x_1}\sim\frac {\overline U_B-\overline U_A}{\partial x_1}\sim\frac {U_{\infty}-\left(U_{\infty}-\overline U_s\right)}L\sim\frac {\overline U_s}L
+$$
+
+From continuity for constant density flows, then
+
+$$
+\frac {\partial\overline U_2}{\partial x_2}=-\frac {\partial\overline U_1}{\partial x_1}\sim\frac {\overline U_s}L
+$$
+
+Since the length scale in the $x_2$ direction is $\ell$, then
+
+$$
+\overline U_2\sim\frac {\overline U_s\ell}L
+$$
+
+By assuming a thin turbulent wake, then $\ell\ll L$ and $\overline U_2\ll\overline U_1$. As a result, the convective term in the $x_2$ direction, $\overline U_2\frac {\partial}{\partial x_2}\left(\frac 12\overline{u_2u_2}\right)$ becomes negligible when compared to the $x_1$ direction due to the $\overline U_2$ term. Using the fact that $\overline U_1=U_{\infty}-\overline U_s\approx U_{\infty}$ far downstream, and letting $\overline{q^2}=\overline{u_iu_i}$, then the substantial derivative becomes
+
+$$
+\frac {\overline{\mathrm{D}}}{\mathrm Dt}\left(\frac 12\overline{u_iu_i}\right)=U_{\infty}\frac {\partial}{\partial x}\left(\frac 12\overline{q^2}\right)
+$$
+
+The right-hand side of @eq-wakes-turbulent-kinetic-energy can be simplified by first observing that $\frac {\partial}{\partial x_1}\sim\frac 1L$ whereas $\frac {\partial}{\partial x_2}\sim\frac 1{\ell}$. Hence, $\frac {\partial}{\partial x_1}\ll\frac {\partial}{\partial x_2}$. As a result, the entire $\frac {\partial}{\partial x_1}$ term may be neglected. Since the flow is homogeneous in the spanwise $x_3$ direction, we may also neglect the entire $\frac {\partial}{\partial x_3}$ term. What is left from the turbulent transport term is
+
+$$
+\frac {\partial}{\partial x_2}\left[\frac {\overline{u_2p}}{\rho}+\frac 12\overline{u_iu_iu_2}-2\nu\overline{u_is_{i2}}\right]
+$$
+
+Viscous turbulent transport may be neglected. The fluctuating strain rate, $s_{i2}$, shares a similar order of magnitude as $s_{i2}\sim\mathcal U/\ell$
+
+:::
