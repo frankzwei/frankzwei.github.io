@@ -1,0 +1,172 @@
+---
+title: Trigonometry Handbook
+---
+
+::: {.hidden}
+
+\newcommand{\arccot}{\operatorname{arccot}}
+\newcommand{\arcsec}{\operatorname{arcsec}}
+\newcommand{\arccsc}{\operatorname{arccsc}}
+
+:::
+
+# Basic Definitions {#sec-basic-definitions}
+
+$$
+\begin{aligned}
+\tan\theta & =\frac {\sin\theta}{\cos\theta} \\
+\csc\theta & =\frac 1{\sin\theta} \\
+\sec\theta & =\frac 1{\cos\theta} \\
+\cot\theta & =\frac {\cos\theta}{\sin\theta}
+\end{aligned}
+$$
+
+# Parity {#sec-parity}
+
+An even function is defined as a function that satisfies $f(-x)=f(x)$, whereas an odd function is defined as one that satisfies $f(-x)=-f(x)$. Even functions are symmetric about the $y$-axis whereas odd functions are $180^{\circ}$ counter-clockwise rotations about the origin.
+
+$$
+\begin{aligned}
+\sin(-x) & =-\sin x \\
+\cos(-x) & =\cos x \\
+\tan(-x) & =-\tan x \\
+\csc(-x) & =-\csc x \\
+\sec(-x) & =\sec x \\
+\cot(-x) & =-\cot x
+\end{aligned}
+$$
+
+The only even functions are $\cos x$ and $\sec x$. Similarly, for the inverse trigonometric functions, we have
+
+$$
+\begin{aligned}
+\arcsin(-x) & =-\arcsin x \\
+\arccos(-x) & =\arccos x \\
+\arctan(-x) & =-\arctan x \\
+\arccsc(-x) & =-\arccsc x \\
+\arcsec(-x) & =\arcsec x \\
+\arccot(-x) & =-\arccot x
+\end{aligned}
+$$
+
+# Unit Circle
+
+Only the first quadrant is given, add the appropriate negative signs depending on whether the function is even or odd. See @sec-parity to determine whether a function is even or odd.
+
+|   $\theta$   | $0$ |   $\frac {\pi}6$  |   $\frac {\pi}4$  |   $\frac {\pi}3$  | $\frac {\pi}2$ |
+|:------------:|:---:|:-----------------:|:-----------------:|:-----------------:|:--------------:|
+| $\sin\theta$ | $0$ |     $\frac 12$    | $\frac 1{\sqrt2}$ | $\frac {\sqrt3}2$ |       $1$      |
+| $\cos\theta$ | $1$ | $\frac {\sqrt3}2$ | $\frac 1{\sqrt2}$ |     $\frac 12$    |       $0$      |
+| $\tan\theta$ | $0$ | $\frac 1{\sqrt3}$ |        $1$        |      $\sqrt3$     |    $\infty$    |
+
+: {tbl-colwidths=[20, 16, 16, 16, 16, 16] .hover}
+
+# Derivatives
+
+Any trigonometric function that begins with the letter "c" (i.e., $\cos x$, $\csc x$, and $\cot x$) will have a negative sign in their derivative.
+
+$$
+\begin{aligned}
+(\sin x)' & =\cos x \\
+(\cos x)' & =-\sin x \\
+(\tan x)' & =\sec^2 x \\
+(\csc x)' & =-\csc x\cot x \\
+(\sec x)' & =\sec x\tan x \\
+(\cot x)' & =-\csc^2x
+\end{aligned}
+$$
+
+For the inverse trigonometric functions, we also have
+
+$$
+\begin{aligned}
+(\arcsin x)' & =\frac 1{\sqrt{1-x^2}} \\
+(\arccos x)' & =-\frac 1{\sqrt{1-x^2}} \\
+(\arctan x)' & =\frac 1{1+x^2} \\
+(\arccsc x)' & =-\frac 1{|x|\sqrt{x^2-1}} \\
+(\arcsec x)' & =\frac 1{|x|\sqrt{x^2-1}} \\
+(\arccot x)' & =-\frac 1{1+x^2}
+\end{aligned}
+$$
+
+The absolute value signs in $|x|$ are necessary for $\arccsc x$ and $\arcsec x$ but may be ignored if only $x>0$ are considered.
+
+# Trigonometric Identities
+
+## Pythagorean Identities
+
+All Pythagorean-esque identities stem from the first one in terms of $\sin\theta$ and $\cos\theta$.
+
+$$
+\begin{aligned}
+\sin^2\theta+\cos^2\theta & =1 \\
+1+\tan^2\theta & =\sec^2\theta \\
+1+\cot^2\theta & =\csc^2\theta \\
+\sec^2\theta+\cos^2\theta & =\sec^2\theta\csc^2\theta
+\end{aligned}
+$$
+
+## Angle Sum Formulas
+
+For the standard trigonometric functions, these angles relate the angle sum or difference, $\theta\pm\varphi$, with the individual components, $\theta$ and $\varphi$.
+
+$$
+\begin{aligned}
+\sin(\theta\pm\varphi) & =\sin\theta\cos\varphi\pm\cos\theta\sin\varphi \\
+\cos(\theta\pm\varphi) & =\cos\theta\cos\varphi\mp\sin\theta\sin\varphi \\
+\tan(\theta\pm\varphi) & =\frac {\tan\theta\pm\tan\varphi}{1\mp\tan\theta\tan\varphi} \\
+\csc(\theta\pm\varphi) & =\frac {\sec\theta\sec\varphi\csc\theta\csc\varphi}{\sec\theta\csc\varphi\pm\csc\theta\sec\varphi} \\
+\sec(\theta\pm\varphi) & =\frac {\sec\theta\sec\varphi\csc\theta\csc\varphi}{\csc\theta\csc\varphi\mp\sec\theta\sec\varphi} \\
+\cot(\theta\pm\varphi) & =\frac {\cot\theta\cot\varphi\mp1}{\cot\varphi\pm\cot\theta}
+\end{aligned}
+$$
+
+For the inverse trigonometric functions, we also have
+
+$$
+\begin{aligned}
+\arcsin\theta\pm\arcsin\varphi & =\arcsin\left(\theta\sqrt{1-\varphi^2}\pm\varphi\sqrt{1-\theta^2}\right) \\
+\arccos\theta\pm\arccos\varphi & =\arccos\left(\theta\varphi\mp\sqrt{\left(1-\theta^2\right)\left(1-\varphi^2\right)}\right) \\
+\arctan\theta\pm\arctan\varphi & =\arctan\left(\frac {\theta\pm\varphi}{1\mp\theta\varphi}\right) \\
+\mathrm{arccot}\theta\pm\arccot\varphi & =\arccot\left(\frac {\theta\varphi\pm1}{\varphi\pm\theta}\right)
+\end{aligned}
+$$
+
+## Double Angle Identities
+
+These formulas can also be used to reduce 
+
+$$
+\begin{aligned}
+\sin2\theta & =2\sin\theta\cos\theta & =\frac {2\tan\theta}{1+\tan^2\theta} \\ & =(\sin\theta+\cos\theta)^2-1 \\
+\cos2\theta & =\cos^2\theta-\sin^2\theta & =\frac {1-\tan^2\theta}{1+\tan^2\theta} \\ & =2\cos^2\theta-1 \\ & =1-2\sin^2\theta \\
+\tan2\theta & =\frac {2\tan\theta}{1-\tan^2\theta} \\
+\csc2\theta & =\frac 12\sec\theta\csc\theta & =\frac {1+\tan^2\theta}{2\tan\theta} \\
+\sec2\theta & =\frac {\sec^2\theta}{2-\sec^2\theta} & =\frac {1+\tan^2\theta}{1-\tan^2\theta} \\
+\cot2\theta & =\frac {\cot^2\theta-1}{2\cot\theta} & =\frac {1-\tan^2\theta}{2\tan\theta}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\cos 2\theta & =\cos^2\theta-\sin^2\theta \\ & =1-2\sin^2\theta \\ & =2\cos^2\theta-1
+\sin 2\theta & =2\sin\theta\cos\theta \\
+\tan 2\theta & =\frac {2\tan\theta}{1-\tan^2\theta}
+\end{aligned}
+$$
+
+## Triple Angle Identities
+
+# Taylor Series
+
+Only the Taylor series with elementary coefficients are listed here. Series expansions exist for other functions like $\tan x$ and $\sec x$, but their coefficients are only expressible in terms of "fancy" sequences like Bernoulli numbers and Euler numbers.
+
+$$
+\begin{aligned}
+\sin x & =\sum\limits_{k=0}^{+\infty}\frac {(-1)^k}{(2k+1)!}x^{2k+1} \\
+\cos x & =\sum\limits_{k=0}^{+\infty}\frac {(-1)^k}{(2k)!}x^{2k} \\
+\arcsin x & =\sum\limits_{k=0}^{+\infty}\frac {(2k)!}{4^kk!^2(2k+1)}x^{2k+1} \\
+\arccos x & =\frac {\pi}2-\sum\limits_{k=0}^{+\infty}\frac {(2k)!}{4^kk!^2(2k+1)}x^{2k+1} \\
+\arctan x & =\sum\limits_{k=0}^{+\infty}\frac {(-1)^k}{2k+1}x^{2k+1}
+\end{aligned}
+$$

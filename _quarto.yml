@@ -112,6 +112,10 @@ website:
               contents:
                 - text: Free Shear Flows
                   href: notes/gatech/ae-6012/free-shear-flows.qmd
+        - section: Arizona State University
+          contents:
+            - text: Trigonometric Handbook
+              href: notes/asu/trigonometry-handbook.qmd
 
 format:
   html:
