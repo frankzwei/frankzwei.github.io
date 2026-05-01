@@ -53,11 +53,11 @@ $$
 
 Only the first quadrant is given, add the appropriate negative signs depending on whether the function is even or odd. See @sec-parity to determine whether a function is even or odd.
 
-|   $\theta$   | $0$ |   $\frac {\pi}6$  |   $\frac {\pi}4$  |   $\frac {\pi}3$  | $\frac {\pi}2$ |
-|:------------:|:---:|:-----------------:|:-----------------:|:-----------------:|:--------------:|
-| $\sin\theta$ | $0$ |     $\frac 12$    | $\frac 1{\sqrt2}$ | $\frac {\sqrt3}2$ |       $1$      |
-| $\cos\theta$ | $1$ | $\frac {\sqrt3}2$ | $\frac 1{\sqrt2}$ |     $\frac 12$    |       $0$      |
-| $\tan\theta$ | $0$ | $\frac 1{\sqrt3}$ |        $1$        |      $\sqrt3$     |    $\infty$    |
+|   $\theta$   | $0$ |   $\dfrac {\pi}6$  |   $\dfrac {\pi}4$  |   $\dfrac {\pi}3$  | $\dfrac {\pi}2$ |
+|:------------:|:---:|:------------------:|:------------------:|:------------------:|:---------------:|
+| $\sin\theta$ | $0$ |     $\dfrac 12$    | $\dfrac 1{\sqrt2}$ | $\dfrac {\sqrt3}2$ |       $1$       |
+| $\cos\theta$ | $1$ | $\dfrac {\sqrt3}2$ | $\dfrac 1{\sqrt2}$ |     $\dfrac 12$    |       $0$       |
+| $\tan\theta$ | $0$ | $\dfrac 1{\sqrt3}$ |         $1$        |      $\sqrt3$      |     $\infty$    |
 
 : {tbl-colwidths=[20, 16, 16, 16, 16, 16] .hover}
 
