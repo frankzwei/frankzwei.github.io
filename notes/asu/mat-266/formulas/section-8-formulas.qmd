@@ -9,7 +9,7 @@ title: "Module 8 Formulas: Series and Sequences"
 $$
 \begin{aligned}
 \left\{\frac 1{n^2}\right\}_{n=1}^{\infty} & =\left\{1,\frac 14,\frac 19,\frac 1{16},\ldots,\frac 1{n^2},\ldots\right\} \\
-\left\{\frac n{2n+1}\right\}_{k=0}^{N} & =\left\{0,\frac 13,\frac 25,\frac 37,\ldots,\frac N{2N+1},\ldots\right\}
+\left\{\frac n{2n+1}\right\}_{k=0}^{N} & =\left\{0,\frac 13,\frac 25,\frac 37,\ldots,\frac N{2N+1}\right\}
 \end{aligned}
 $$
 
