@@ -39,7 +39,7 @@ $$
 f'(c)=\frac {f(b)-f(a)}{b-a}
 $$ {#eq-mean-value-theorem-slope}
 
-Rewriting Eqn. (@eq-mean-value-theorem-slope) as a line in point-slope form, then
+Rewriting @eq-mean-value-theorem-slope as a line in point-slope form, then
 
 $$
 f(b)-f(a)=f'(c)(b-a)
@@ -47,7 +47,7 @@ $$ {#eq-mean-value-theorem-point-slope}
 
 :::
 
-Using Eqn. (@eq-mean-value-theorem-point-slope) allows us to rewrite $\Delta y_4$ in terms of $\Delta x$. Since the theorem only *guarantees* that a point will exist (i.e., the actual value of the point is still unknown), let $c_4$ be this special point. From the Mean Value Theorem, then
+Using @eq-mean-value-theorem-point-slope allows us to rewrite $\Delta y_4$ in terms of $\Delta x$. Since the theorem only *guarantees* that a point will exist (i.e., the actual value of the point is still unknown), let $c_4$ be this special point. From the Mean Value Theorem, then
 
 $$
 f(x_5)-f(x_4)=f'(c_4)(x_5-x_4)=f'(c_4)\Delta x
@@ -73,7 +73,7 @@ $$
 L\approx L_0+L_1+L_2+\cdots+L_{n-1}=\sum\limits_{k=0}^{n-1}L_k=\sum\limits_{k=0}^{n-1}\Delta x\sqrt{1+\left[f'(c_k)\right]^2}
 $$ {#eq-arc-length-approximation-riemann-sum}
 
-This accuracy will obviously improve as the number of rectangles, $n$, increases. As the width of each subinterval, $\Delta x$, becomes infinitesimally small, the error between each line segment $L_k$ and the actual arc of the function $f(x)$ will get smaller as well. As a result, the approximation in Eqn. (@eq-arc-length-approximation-riemann-sum) becomes an exact equality as $n\to+\infty$. This is where the integral comes into play: we are summing the infinitesimally small subintervals between $a\leq x\leq b$ that calculate the arc length of $f(x)$ at each interval.
+This accuracy will obviously improve as the number of rectangles, $n$, increases. As the width of each subinterval, $\Delta x$, becomes infinitesimally small, the error between each line segment $L_k$ and the actual arc of the function $f(x)$ will get smaller as well. As a result, the approximation in @eq-arc-length-approximation-riemann-sum becomes an exact equality as $n\to+\infty$. This is where the integral comes into play: we are summing the infinitesimally small subintervals between $a\leq x\leq b$ that calculate the arc length of $f(x)$ at each interval.
 
 $$
 L=\lim\limits_{n\to+\infty}\sum\limits_{k=0}^{n-1}\sqrt{1+\left[f'(c_k)\right]^2}\Delta x=\int\limits_a^b\sqrt{1+\left[f'(x)\right]^2}\,\mathrm dx
@@ -170,7 +170,7 @@ $$
 
 **Problem:** Find the arc length formed by $y=\frac 18\left(-2x^2+4\ln x\right)$ from $2\leq x\leq5$.
 
-**Answer:** Since $y$ is given in terms of $x$, we should integrate across $x$ (i.e., use the first equation in Eqn. (@eq-arc-length-integral)). Using the fact that the derivative of $x^n$ is $nx^{n-1}$, and that the derivative of $\ln x$ is $\frac 1x$, the derivative of $y(x)$ is
+**Answer:** Since $y$ is given in terms of $x$, we should integrate across $x$ (i.e., use the first equation in @eq-arc-length-integral). Using the fact that the derivative of $x^n$ is $nx^{n-1}$, and that the derivative of $\ln x$ is $\frac 1x$, the derivative of $y(x)$ is
 
 $$
 \frac {\mathrm dy}{\mathrm dx}=-\frac x2+\frac 1{2x}=\frac 12\left(\frac 1x-x\right)
@@ -240,7 +240,7 @@ $$
 
 **Problem:** Find the length of the curve $x=\frac 13\sqrt y(y-3)$ from $1\leq y\leq 9$.
 
-**Answer:** Since $x$ is given in terms of $y$, we should use the second equation in Eqn. (@eq-arc-length-integral). Since $y=\frac 13y^{3/2}-y^{1/2}$, then the derivative is $\frac {\mathrm dx}{\mathrm dy}=\frac 12y^{1/2}-\frac 12y^{-1/2}=\frac 12\left(y^{1/2}-y^{-1/2}\right)$. The integrand is
+**Answer:** Since $x$ is given in terms of $y$, we should use the second equation in @eq-arc-length-integral. Since $y=\frac 13y^{3/2}-y^{1/2}$, then the derivative is $\frac {\mathrm dx}{\mathrm dy}=\frac 12y^{1/2}-\frac 12y^{-1/2}=\frac 12\left(y^{1/2}-y^{-1/2}\right)$. The integrand is
 
 $$
 \sqrt{1+\left(\frac {\mathrm dx}{\mathrm dy}\right)^2}=\sqrt{1+\frac 14\left(\frac {y-1}{y^{1/2}}\right)^2}=\sqrt{\frac {4y+(y-1)^2}{4y}}=\frac {y+1}{2\sqrt y}=\frac {y^{1/2}+y^{-1/2}}2
