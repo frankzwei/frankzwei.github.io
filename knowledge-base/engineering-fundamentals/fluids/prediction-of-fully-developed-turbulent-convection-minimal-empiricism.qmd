@@ -63,14 +63,14 @@ $$ {#eq-churchill-alternative-constant}
 Substituting @eq-churchill-alternative-constant into @eq-churchill-alternative-nusselt-number-general gives
 
 $$
-\mathrm{Nu}=\left\{\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\frac 1{\mathrm{Nu}_1}+\left[1-\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)^{2/3}\right]\frac 1{\mathrm{Nu}_{\infty}}\right\}^{-1}
+\frac 1{\mathrm{Nu}}=\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\frac 1{\mathrm{Nu}_1}+\left[1-\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)^{2/3}\right]\frac 1{\mathrm{Nu}_{\infty}}
 $$ {#eq-churchill-alternative-correlation}
 
 where the formulations for $\mathrm{Nu}_{\infty}$ and $\mathrm{Nu}_1$ are re-stated for convenience.
 
 $$
 \begin{aligned}
-\mathrm{Nu}_1 & =\frac {u_m^+}{u_c^+}\left(\frac {T_c^+}{T_m^+}\right)_1\frac {\mathrm{Re_D}f}2
+\mathrm{Nu}_1 & =\frac {u_m^+}{u_c^+}\left(\frac {T_c^+}{T_m^+}\right)_1\frac {\mathrm{Re_D}f}2 \\
 \mathrm{Nu}_{\infty} & =0.07343\left(\frac {\mathrm{Pr}}{\mathrm{Pr}_t}\right)^{1/3}\mathrm{Re_D}\left(\frac {C_f}2\right)^{1/2}
 \end{aligned}
 $$
