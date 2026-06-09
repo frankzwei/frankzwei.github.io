@@ -21,7 +21,7 @@ $$ {#eq-nondimensional-momentum-conservation}
 For the near-wall turbulent core region, defined as $30<y^+<0.1a^+$, the general semi-logarithmic expression derived by Millikan (1938) is known to agree well with experimental data per Zagarola (1996). In this region, we may approximate $1-y^+/a^+\cong1$ and $(\overline{u'v'})^{++}\cong1-\frac 1{0.436y^+}$. For much of the derivation, we neglect $\gamma$ by assuming it to be zero and then re-apply it at the end. From the generalized nondimensional temperature distribution,
 
 $$
-\frac {\mathrm dT^+}{\mathrm dy^+}=\frac 1{1+\frac {\mathrm{Pr}{\mathrm{Pr}_t}}(0.436y^+-1)}
+\frac {\mathrm dT^+}{\mathrm dy^+}=\frac 1{1+\frac {\mathrm{Pr}}{\mathrm{Pr}_t}(0.436y^+-1)}
 $$ {#eq-nondimensional-temperature-distribution}
 
 Indefinitely integrating and assuming $\mathrm{Pr}_t$ is independent of $y^+$ gives the nondimensional temperature distribution as
