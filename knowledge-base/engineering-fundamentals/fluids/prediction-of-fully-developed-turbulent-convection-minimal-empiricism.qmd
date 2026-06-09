@@ -1,0 +1,76 @@
+---
+title: Prediction of Fully Developed Turbulent Convection with Minimal Empiricism
+format:
+  html:
+    toc: true
+    toc-location: right
+    other-links:
+      - text: Churchill and Zajic (2004)
+        href: "@FILES_BASE_URL@/knowledge-base/engineering-fundamentals/fluids/files/Churchill_Zajic-2004-Prediction_of_Fully_Developed_Turbulent_Convection_Minimal_Explicit_Empiricism-AIChe-48.pdf"
+        icon: file-pdf
+---
+
+For a circular tube, let $a$ be the internal radius. We may define the nondimensional tube radius as $a^+=\rho au_{\tau}/\mu$, where the shear velocity is defined as $u_{\tau}=\sqrt{\tau_w/\rho}$. Churchill expressed the time-averaged conservation equation for fully developed flow of a constant property fluid in a round tube as
+
+$$
+\frac {\mathrm du^+}{\mathrm dy^+}=\left(1-\frac {y^+}{a^+}\right)\left[1-\left(\overline{u'v'}\right)^{++}\right]
+$$ {#eq-nondimensional-momentum-conservation}
+
+# Alternative Analogy
+
+For the near-wall turbulent core region, defined as $30<y^+<0.1a^+$, the general semi-logarithmic expression derived by Millikan (1938) is known to agree well with experimental data per Zagarola (1996). In this region, we may approximate $1-y^+/a^+\cong1$ and $(\overline{u'v'})^{++}\cong1-\frac 1{0.436y^+}$. For much of the derivation, we neglect $\gamma$ by assuming it to be zero and then re-apply it at the end. From the generalized nondimensional temperature distribution,
+
+$$
+\frac {\mathrm dT^+}{\mathrm dy^+}=\frac 1{1+\frac {\mathrm{Pr}{\mathrm{Pr}_t}}(0.436y^+-1)}
+$$ {#eq-nondimensional-temperature-distribution}
+
+Indefinitely integrating and assuming $\mathrm{Pr}_t$ is independent of $y^+$ gives the nondimensional temperature distribution as
+
+$$
+T^+=\frac 1{0.436}\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}})\ln\left[y^+-\frac 1{0.436}\left(1-\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\right]+\Psi\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)
+$$ {#eq-churchill-alternative-nondimensional-temperature}
+
+Hence, the nondimensional temperature at the centerline is
+
+$$
+T_c^+=\frac 1{0.436}\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}})\ln\left[a^+-\frac 1{0.436}\left(1-\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\right]+\Psi\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)
+$$ {#eq-churchill-alternative-nondimensional-temperature-centerline}
+
+Using Zagarola's approximation for the time-mean velocity at the centerline
+
+$$
+u_c^+=7.64+\frac {\ln a^+}{0.436}
+$$ {#eq-zagarola-nondimensional-velocity-centerline}
+
+Then @eq-churchill-alternative-nondimensional-temperature-centerline becomes
+
+$$
+T_c^+=\frac {\mathrm{Pr}_t}{\mathrm{Pr}}(u_c^+-7.64)+\Psi\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)
+$$
+
+From the definition of the Nusselt number, then
+
+$$
+\mathrm{Nu}=\frac {2a^+}{T_m^+}=\frac {2a^+}{T_c^+}\frac {T_c^+}{T_m^+}=\frac {2a^+}{\frac {\mathrm{Pr}_t}{\mathrm{Pr}}(u_c^+-7.64)+\Psi\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)}\frac {T_c^+}{T_m^+}
+$$ {#eq-churchill-alternative-nusselt-number-general}
+
+The integration constant $\Psi$ can be determined by observing that @eq-churchill-alternative-nusselt-number-general must reduce down to $\mathrm{Nu}_1$ for $\gamma=0$ and $\mathrm{Nu}_{\infty}$ for infinitely high $\mathrm{Pr}$ only if
+
+$$
+\Psi\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)=\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\left[13.62\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)^{2/3}-5.98\right]
+$$ {#eq-churchill-alternative-constant}
+
+Substituting @eq-churchill-alternative-constant into @eq-churchill-alternative-nusselt-number-general gives
+
+$$
+\mathrm{Nu}=\left\{\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\frac 1{\mathrm{Nu}_1}+\left[1-\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)^{2/3}\right]\frac 1{\mathrm{Nu}_{\infty}}\right\}^{-1}
+$$ {#eq-churchill-alternative-correlation}
+
+where the formulations for $\mathrm{Nu}_{\infty}$ and $\mathrm{Nu}_1$ are re-stated for convenience.
+
+$$
+\begin{aligned}
+\mathrm{Nu}_1 & =\frac {u_m^+}{u_c^+}\left(\frac {T_c^+}{T_m^+}\right)_1\frac {\mathrm{Re_D}f}2
+\mathrm{Nu}_{\infty} & =0.07343\left(\frac {\mathrm{Pr}}{\mathrm{Pr}_t}\right)^{1/3}\mathrm{Re_D}\left(\frac {C_f}2\right)^{1/2}
+\end{aligned}
+$$

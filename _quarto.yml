@@ -72,6 +72,8 @@ website:
               href: knowledge-base/engineering-fundamentals/fluids/forced-flows-correlations.qmd
             - text: Free and Mixed Convection Correlations
               href: knowledge-base/engineering-fundamentals/fluids/free-mixed-convection-correlations.qmd
+            - text: Prediction of Fully Developed Turbulent Convection with Minimal Empiricism
+              href: knowledge-base/engineering-fundamentals/fluids/prediction-of-fully-developed-turbulent-convection-minimal-empiricism.qmd
         - section: Structures
           contents:
             - section: Fundamentals of Metal Fatigue Analysis

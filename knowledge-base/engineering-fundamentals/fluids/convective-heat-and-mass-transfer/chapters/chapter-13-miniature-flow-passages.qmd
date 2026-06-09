@@ -186,7 +186,7 @@ The slip flow regime is nearly always laminar and as such, analytical solutions 
 
 # Slip Couette Flow
 
-The Couette flow model derived in [](chapter-4-internal-laminar-flow.qmd#couette-flow) assumed no velocity slip and temperature jump. This is only valid when $\mathrm{Ma}\mathrm{Kn}_{l_c}\ll1$ as all streamwise derivative terms are negligible except pressure gradient. For consistency, use the following definitions for the Couette flow model, where the top surface is moving with velocity $U$.
+The Couette flow model derived in [Chapter 4. Internal Laminar Flow](chapter-4-internal-laminar-flow.qmd#couette-flow) assumed no velocity slip and temperature jump. This is only valid when $\mathrm{Ma}\mathrm{Kn}_{l_c}\ll1$ as all streamwise derivative terms are negligible except pressure gradient. For consistency, use the following definitions for the Couette flow model, where the top surface is moving with velocity $U$.
 
 ::: {#fig-couette-flow-definitions layout-ncol=2}
 
