@@ -146,7 +146,7 @@ format:
     html-math-method: katex
 
 crossref:
-  eq-prefix: Eqn.
+  eq-prefix: Eq.
   eq-title: ""
   fig-prefix: Fig.
   sec-prefix: Sec.

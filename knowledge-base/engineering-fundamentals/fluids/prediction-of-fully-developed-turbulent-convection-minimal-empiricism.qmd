@@ -27,13 +27,13 @@ $$ {#eq-nondimensional-temperature-distribution}
 Indefinitely integrating and assuming $\mathrm{Pr}_t$ is independent of $y^+$ gives the nondimensional temperature distribution as
 
 $$
-T^+=\frac 1{0.436}\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}})\ln\left[y^+-\frac 1{0.436}\left(1-\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\right]+\Psi\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)
+T^+=\frac 1{0.436}\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\ln\left[y^+-\frac 1{0.436}\left(1-\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\right]+\Psi\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)
 $$ {#eq-churchill-alternative-nondimensional-temperature}
 
 Hence, the nondimensional temperature at the centerline is
 
 $$
-T_c^+=\frac 1{0.436}\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}})\ln\left[a^+-\frac 1{0.436}\left(1-\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\right]+\Psi\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)
+T_c^+=\frac 1{0.436}\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\ln\left[a^+-\frac 1{0.436}\left(1-\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)\right]+\Psi\left(\frac {\mathrm{Pr}_t}{\mathrm{Pr}}\right)
 $$ {#eq-churchill-alternative-nondimensional-temperature-centerline}
 
 Using Zagarola's approximation for the time-mean velocity at the centerline
